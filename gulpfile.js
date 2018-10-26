@@ -11,14 +11,14 @@ var path = {
     src: {
         html:  'dist/*.html',
         js:    'dist/js/main.js',
-        style: 'dist/style/main.scss',
+        style: 'dist/scss/style.scss',
         img:   'dist/img/**/*.*',
         fonts: 'dist/fonts/**/*.*'
     },
     watch: {
         html:  'dist/**/*.html',
         js:    'dist/js/**/*.js',
-        css:   'dist/style/**/*.scss',
+        css:   'dist/scss/**/*.scss',
         img:   'dist/img/**/*.*',
         fonts: 'dist/fonts/**/*.*'
     },

@@ -1,3 +1,5 @@
+//= jquery.js
+
 function showMenu(classMenu) {
     $(classMenu).addClass("menu-show");
 };
