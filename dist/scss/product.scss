@@ -1,0 +1,16 @@
+.main-logo-menu {
+    display: block;
+}
+
+.breadcramb-current-item {
+    color: $colorBrand;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.breadcramb-container {
+    display: flex;
+    justify-content: space-between;
+}

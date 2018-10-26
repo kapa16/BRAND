@@ -11,7 +11,7 @@ var path = {
     src: {
         html:  'dist/*.html',
         js:    'dist/js/main.js',
-        style: 'dist/scss/style.scss',
+        style: 'dist/scss/*.scss',
         img:   'dist/img/**/*.*',
         fonts: 'dist/fonts/**/*.*'
     },
