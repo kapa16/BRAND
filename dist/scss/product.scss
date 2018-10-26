@@ -4,15 +4,42 @@
     display: block;
 }
 
-.breadcramb-current-item {
-    color: $colorBrand;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 20px;
-    text-transform: uppercase;
+.breadcramb {
+    height: $heightBreadcrumb + $heightLogoMenu;
+    padding-top: $heightLogoMenu;
+    background: $colorBgBreadcrumb;
 }
 
 .breadcramb-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
+.breadcramb-current-item {
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.breadcramb-nav {
+    display: flex;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+}
+
+.breadcramb-link {
+    color: $colorTextBreadcramb;
+}
+
+.breadcramb-active {
+    font-weight: 700;
+}
+
+.breadcramb-item:after {
+    content: "/";
+    margin: 0 5px;
+}
+
