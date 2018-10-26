@@ -1,8 +1,22 @@
-    <header class="header">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/product.css">
 
+    <script src="js/main.js"></script>
+
+    <!--Icon Font-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <title>BRAN products</title>
+</head>
+<body>
+    <header class="header">
         <div class="container header-flex">
             <div class="header-left">
-                <div class="logo-brand">
+                <a href="index.html" class="logo-brand">
                     <img src="img/logo.png" alt="logo">
                     <p class="brand-name">
                         BRAN<span class="brand-style letter-d">D</span>
@@ -20,7 +34,7 @@
                             </ul>
                         </div>
                     </nav>
-                </div>
+                </a>
                 <form action="#" class="search-header">
                     <div class="browse">
                         Browse <i class="fas fa-caret-down caret-browse"></i>
@@ -47,15 +61,15 @@
                             <li><a href="#" class="browse-menu-link">Sweatshirts/Hoodies</a></li>
                             <li><a href="#" class="browse-menu-link">Blazers</a></li>
                             <li><a href="#" class="browse-menu-link">Jackets/vests</a></li>
-
+        
                         </ul>
                     </div>
                     <input type="text" class="search" placeholder="Search for Item...">
                     <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
-
+        
                 </form>
             </div>
-
+        
             <div class="header-right">
                 <div class="cart-header">
                     <!--Cart icon-->
@@ -109,22 +123,32 @@
                                 <div class="fas fa-times-circle card-cart-close"></div>
                             </div>
                         </li>
-
+        
                         <li class="cart-total">
                             <p>TOTAL</p>
                             <p class="cart-total-sum">$500.00</p>
                         </li>
-
+        
                         <li class="cart-menu-buttons">
                             <a href="#" class="cart-menu-button">Checkout</a>
                             <a href="#" class="cart-menu-button">Go to cart</a>
                         </li>
                     </ul>
                 </div>
-
+        
                 <a href="#" class="button-account button-brand">
                     My Account<i class="fas fa-caret-down caret-account"></i>
                 </a>
             </div>
         </div>
     </header>
+    
+    <div class="breadcramb">
+        <div class="container breadcramb-container">
+            <div class="breadcramb-current-item">New Arrivals </div>
+        </div>               
+    </div>
+    
+    
+</body>
+</html>
