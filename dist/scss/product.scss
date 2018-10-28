@@ -46,6 +46,8 @@
 //================================================
 
 .catalog-container {
+    display: flex;
+    justify-content: space-between;
     padding: 60px 0 110px 0;
 }
 
@@ -82,8 +84,9 @@
 .menu-open {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
-    .sidebar-title-caret{
+    justify-content: space-between;
+
+    .sidebar-title-caret {
         transform: rotate(180deg);
     }
 }
@@ -100,12 +103,88 @@
 
 .menu-open .sidebar-title {
     color: $colorTextRed;
-    
+
 }
 
 .sidebar-title:hover {
     color: $colorTextRed;
-    
+
 }
 
+//============= Products =================
 
+//============= Filter ===================
+
+.products {
+    width: 100%;
+    margin-left: 50px;
+}
+
+.products-filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: $colorTextSidebar;
+}
+
+.products-filter-wrap {
+    width: 100%;
+}
+
+.products-filter-title,
+.products-filter-link,
+.filter-label{
+    font-size: 14px;
+}
+
+.products-filter-title,
+.filter-label{
+    text-transform: uppercase;
+}
+.products-filter-title {
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.products-filter-value {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.filter-label-checkbox{
+    display: flex;
+    align-items: center;
+    width: 69px;
+    margin-top: 15px;
+}
+
+.filter-label {
+    color: $colorTextSidebar;
+    font-weight: 400;
+    padding-left: 9px;
+    box-sizing: border-box;
+}
+
+.filter-checkbox, {
+    display: block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid $colorBorderSidebar;
+    background-color: $colorWhite;
+}
+
+.products-filter-list,
+.products-filter-list:not(:last-child)::after {
+    content: "|";
+    margin: 0 12px;
+    color: $colorLineFilter;
+}
+
+.products-filter-link {
+    color: $colorTextSidebar;
+    font-weight: 400;
+}
