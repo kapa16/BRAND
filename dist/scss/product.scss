@@ -18,7 +18,7 @@
 
 .breadcramb-current-item {
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -32,6 +32,9 @@
 
 .breadcramb-link {
     color: $colorTextBreadcramb;
+}
+.breadcramb-link:hover {
+    color: $colorBrand;
 }
 
 .breadcramb-active {
@@ -133,14 +136,15 @@
 
 .products-filter-title,
 .products-filter-link,
-.filter-label{
+.filter-label {
     font-size: 14px;
 }
 
 .products-filter-title,
-.filter-label{
+.filter-label {
     text-transform: uppercase;
 }
+
 .products-filter-title {
     font-weight: 700;
     margin-bottom: 25px;
@@ -151,15 +155,46 @@
     flex-wrap: wrap;
 }
 
-input[type="checkbox"] {
+.filter-label-checkbox,
+.products-filter-list {
+    padding: 7px 0;
+        line-height: 12px;
+}
+
+.products-filter-list:not(:first-child) {
+    padding-left: 12px;
+}
+
+.products-filter-list:not(:last-child)::after {
+    content: "|";
+    margin-left: 12px;
+    color: $colorLineFilter;
+        line-height: 10px;
+}
+
+.products-filter-link {
+    color: $colorTextSidebar;
+    font-weight: 400;
+}
+
+.products-filter-list:hover .products-filter-link {
+    color: $colorBrand;
+}
+
+.checkbox {
     display: none;
 }
 
-.filter-label-checkbox{
+.products-filter-list,
+.filter-label-checkbox {
+    cursor: pointer;
+}
+
+.filter-label-checkbox {
+    height: 13px;
     display: flex;
     align-items: center;
     width: 69px;
-    margin-top: 15px;
 }
 
 .filter-label {
@@ -169,7 +204,8 @@ input[type="checkbox"] {
     box-sizing: border-box;
 }
 
-.filter-checkbox, {
+.filter-checkbox {
+    position: relative;
     display: block;
     width: 13px;
     height: 13px;
@@ -177,14 +213,24 @@ input[type="checkbox"] {
     background-color: $colorWhite;
 }
 
-.products-filter-list,
-.products-filter-list:not(:last-child)::after {
-    content: "|";
-    margin: 0 12px;
-    color: $colorLineFilter;
+.checkbox:checked + .filter-checkbox::before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 13px;
+    content: "\f00c";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    color: $colorBrand;
 }
 
-.products-filter-link {
-    color: $colorTextSidebar;
-    font-weight: 400;
+.checkbox:checked + .filter-checkbox {
+    border: 1px solid $colorTextSidebar;
+}
+
+.filter-label-checkbox:hover .filter-checkbox {
+    border: 1px solid $colorTextSidebar;
+}
+
+.filter-label-checkbox:hover .filter-label {
+    color: $colorBrand;
 }
