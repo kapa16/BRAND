@@ -43,6 +43,12 @@
     margin: 0 5px;
 }
 
+//================================================
+
+.catalog-container {
+    padding: 60px 0 110px 0;
+}
+
 .sidebar {
     width: 243px;
     color: $colorTextSidebar;
@@ -57,25 +63,49 @@
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    padding-left: 11px;
+    padding: 0 5px 0 11px;
     margin-bottom: 18px;
     border-left: 5px solid $colorTextRed;
+    border-bottom: 1px solid $colorBorderSidebar;
 }
 
 .sidebar-title-active {
     color: $colorTextRed;
 }
 
-.sidebar-underlist {
+.sidebar-submenu {
+    display: none;
+    padding: 10px 17px 30px 17px;
+}
+
+//============== Open menu ====================
+.menu-open {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; 
+    .sidebar-title-caret{
+        transform: rotate(180deg);
+    }
 }
 
 .sidebar-link {
+    width: 100%;
     display: block;
     color: $colorTextSidebar;
     font-size: 14px;
     font-weight: 400;
+    padding: 10px 0;
+    box-sizing: border-box;
 }
+
+.menu-open .sidebar-title {
+    color: $colorTextRed;
+    
+}
+
+.sidebar-title:hover {
+    color: $colorTextRed;
+    
+}
+
 
