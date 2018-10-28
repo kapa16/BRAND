@@ -1,7 +1,7 @@
 //= jquery.js
 
 function showMenu(classMenu) {
-    sidebar-submenu$(classMenu).addClass("menu-show");
+    $(classMenu).addClass("menu-show");
 };
 
 function hideMenu(classMenu, elem) {
