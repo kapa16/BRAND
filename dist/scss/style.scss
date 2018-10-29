@@ -546,21 +546,6 @@ summa {
     margin-bottom: 21px;
 }
 
-.product-card:hover {
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
-}
-
-.product-card:hover .product-rating {
-    display: block;
-}
-
-.product-card:hover .product-img {
-    background-color: $colorBlack;
-}
-
-.product-card:hover img {
-    opacity: 0.5;
-}
 
 .parent-product-card {
     position: absolute;
@@ -591,8 +576,23 @@ summa {
     box-shadow: 0 0 8px $colorWhite;
 }
 
-.product-img {
+.product-img-wrap,
+.product-img{
     width: 100%;
+    line-height: 0;
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+}
+
+
+.product-card:hover .product-img {
+    opacity: 0.5;
+}
+
+.product-card:hover .product-img-wrap {
+    background-color: $colorBlack;
 }
 
 .product-card-info {
