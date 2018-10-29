@@ -262,14 +262,26 @@ body {
     height: 30px;
     position: relative;
     display: block;
-    //    background: url("../img/cart.svg") no-repeat;
-    //    background-position: center;
-    //    transition: background-size 0.3s;
 }
 
-.cart-header:hover #piu5a {
-    //    background-size: cover; //Чтобы не смещалось выпадающее меню
+.cart-header:hover #cart {
     fill: $colorBrand;
+}
+
+.cart-quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -7px;
+    left: 25px;
+    height: 19px;
+    width: 19px;
+    font-size: 12px;
+    font-weight: 700;
+    color: $colorWhite;
+    background: $colorBrand;
+    border-radius: 50%;
 }
 
 .cart-menu {
