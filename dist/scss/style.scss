@@ -577,7 +577,7 @@ summa {
 }
 
 .product-img-wrap,
-.product-img{
+.product-img {
     width: 100%;
     line-height: 0;
 }
@@ -664,12 +664,17 @@ summa {
 
 .feauter-banner {
     position: relative;
+    display: block;
     width: 767px;
+    height: 529px;
+    background: url("../img/banner_small.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-.feauter-banner-img {
-    height: 100%;
-}
+//.feauter-banner-img {
+//    height: 100%;
+//}
 
 .feauter-banner-badge {
     position: absolute;
@@ -729,9 +734,10 @@ summa {
     flex-shrink: 0;
 }
 
-.feauter-box-info{
+.feauter-box-info {
     width: 100%;
 }
+
 .feauter-box-title {
     width: 100%;
     font-size: 20px;
@@ -1007,62 +1013,80 @@ summa {
 
 //===================== MEDIA ================
 
-@media screen and (max-width: 1200px) {
-    .container {
-        max-width: 960px;
-    }
+//@media screen and (max-width: 1200px) {
+//    .container {
+//        max-width: 960px;
+//        padding: 0 10px;
+//    }
+//
+//    .slider-container {
+//        background: $colorBgSite url("../img/slider.jpg") no-repeat -140px (-$heightSliderMenu);
+//    }
+//
+//    .brand {
+//        font-size: 50px;
+//        line-height: 35px;
+//    }
+//
+//    .fashion {
+//        margin-top: 20px;
+//        font-size: 35px;
+//        line-height: 25px;
+//    }
+//
+//    .category {
+//        height: 760px;
+//    }
+//
+//    .category-card-img {
+//        max-width: 470px;
+//    }
+//
+//
+//    .feauter-container {
+//        flex-direction: column;
+//        justify-content: center;
+//        align-items: center;
+//        height: auto;
+//    }
+//
+//    .feauter-banner {
+//        width: 100%;
+//    }
+//
+//    .feauter-boxes {
+//        width: 100%;
+//        flex-direction: row;
+//        justify-content: space-between;
+//        align-items: center;
+//        padding: 20px 0;
+//    }
+//
+//    .feauter-box {
+//        flex-direction: column;
+//        justify-content: center;
+//        align-items: center;
+//        text-align: center;
+//        margin: 0 10px;
+//    }
+//
+//    .feauter-box-icon {
+//        height: auto;
+//        width: auto;
+//    }
+//
+//    .feauter-box-title {
+//        margin: 20px 0 10px 0;
+//        line-height: 17px;
+//    }
+//
+//    .feauter-box-info {
+//        text-align: center;
+//    }
+//    
+//    .subscribe{
+//        margin-top: 0;
+//    }
+//}
 
-    .slider-container {
-        background: $colorBgSite url("../img/slider.jpg") no-repeat -140px (-$heightSliderMenu);
-    }
 
-    .brand {
-        font-size: 50px;
-        line-height: 35px;
-    }
-
-    .fashion {
-        margin-top: 20px;
-        font-size: 35px;
-        line-height: 25px;
-    }
-
-    .category {
-        height: 760px;
-    }
-
-    .category-card-img {
-        max-width: 470px;
-    }
-
-
-    .feauter-container {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-    }
-
-    .feauter-banner {
-        width: auto;
-
-    }
-
-    .feauter-boxes {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .feauter-box {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 0 10px;
-    }
-
-    .feauter-box-title {
-        margin: 20px 0 10px 0;
-    }
-}
