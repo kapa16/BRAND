@@ -315,15 +315,82 @@
 //=================== SORT ======================
 
 .product-sort {
+    display: flex;
+    align-items: center;
     width: 100%;
     height: 50px;
     background-color: #f3f3f3;
     margin-top: 40px;
 }
 
-.product-sort-items{
-    
+.product-sort-form {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-left: 9px;
 }
+
+.product-sort-select-wrap,
+.product-sort-label,
+.product-sort-select {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: $colorTextSidebar;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: $colorWhite;
+}
+
+.product-sort-label {
+    padding-left: 13px;
+    border: 1px solid $colorBorderSidebar;
+}
+
+.product-sort-select-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid $colorBorderSidebar;
+    margin-left: 8px;
+
+    .fa-caret-down {
+        position: absolute;
+    }
+}
+
+.fa-caret-down-sort-by {
+    left: 68px;
+}
+
+.fa-caret-down-show {
+    left: 46px;
+}
+
+.product-sort-select {
+    /*for WebKit*/
+    -webkit-appearance: none;
+    /* for FF */
+    -moz-appearance: none;
+    /* for IE */
+    -ms-appearance: none;
+    appearance: none !important;
+
+    border: none;
+    position: relative;
+    padding: 0 39px 0 11px;
+    background: transparent;
+}
+
+.product-sort-select-show{
+    padding: 0 35px 0 11px;
+}
+
+.product-sort-select-wrap:hover {
+    cursor: pointer;
+    color: $colorTextRed;
+}
+
 
 //===================== Pagination ====================
 
@@ -349,7 +416,8 @@
     font-weight: bold;
     padding: 12px 46px;
 }
-.view-all:hover{
+
+.view-all:hover {
     color: $colorWhite;
     background: $colorTextRed;
 }
@@ -386,6 +454,7 @@
     height: 341px;
     background: $colorTextDarkLittleLight;
 }
+
 .feauter-boxes {
     height: 100%;
     width: 100%;
@@ -401,16 +470,17 @@
     align-items: center;
 }
 
-.feauter-box-info{
+.feauter-box-info {
     text-align: center;
 }
 
-.feauter-box-icon{
+.feauter-box-icon {
     margin-bottom: 23px;
     height: auto;
     width: auto;
 }
-.feauter-box-title{
+
+.feauter-box-title {
     line-height: 17px;
     margin-bottom: 21px;
 }

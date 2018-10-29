@@ -180,15 +180,29 @@
                 </div>
 
                 <div class="product-sort">
-                    <div class="product-sort-by">
-                        <form action="#">
-                            <label class="product-sort-items" for="sort-by">Sort By</label>
-                            <select class="product-sort-items" name="sort-by" id="sort-by">
-                                <option value="name">Name</option>
-                                <option value="price">Price</option>
-                            </select>
-                        </form>
-                    </div>
+                    <form class="product-sort-form" action="#">
+                        <label class="product-sort-label" for="sort-by">Sort By
+                            <span class="product-sort-select-wrap">
+                                <i class="fas fa-caret-down fa-caret-down-sort-by"></i>
+                                <select class="product-sort-select" name="sort-by" id="sort-by">
+                                    <option value="name">Name</option>
+                                    <option value="price">Price</option>
+                                </select>
+                            </span>
+                        </label>
+                    </form>
+                    <form class="product-sort-form" action="#">
+                        <label class="product-sort-label" for="show">Show
+                            <span class="product-sort-select-wrap">
+                                <i class="fas fa-caret-down fa-caret-down-show"></i>
+                                <select class="product-sort-select product-sort-select-show" name="show" id="show">
+                                    <option value="09">09</option>
+                                    <option value="18">18</option>
+                                    <option value="27">27</option>
+                                </select>
+                            </span>
+                        </label>
+                    </form>
                 </div>
 
                 <div class="products">
