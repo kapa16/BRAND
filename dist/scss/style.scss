@@ -952,8 +952,9 @@ summa {
 }
 
 .footer-menu-link:hover {
-    color: $colorTextDark;
-    border-bottom: 3px solid $colorMenuBorderHover;
+    color: $colorBrand;
+//    color: $colorTextDark;
+//    border-bottom: 3px solid $colorMenuBorderHover;
 }
 
 .footer-bottom {
