@@ -158,9 +158,14 @@ body {
     background: $colorBgButton;
 }
 
-.browse-menu {
+.dropdown-box {
     display: none;
-    min-width: 262px;
+    display: flex;
+}
+
+.dropdown-flex {
+
+
     position: absolute;
     top: 36px;
     left: -1px;
@@ -168,6 +173,13 @@ body {
     border: 1px solid $colorBgSite;
     background-color: $colorWhite;
     padding: 20px 0;
+}
+
+.dropdown-heading {
+    width: 262px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $colorBgSite;
+    font-weight: 700;
 }
 
 .browse-menu:after {
@@ -198,14 +210,7 @@ body {
     background: rgba(0, 0, 0, 0.1);
 }
 
-.main-category {
-    text-transform: uppercase;
-    border-bottom: 1px solid $colorBgSite;
 
-    .browse-menu-link {
-        font-weight: 700;
-    }
-}
 
 .main-category:not(:first-child) {
     margin-top: 30px;
@@ -953,8 +958,8 @@ summa {
 
 .footer-menu-link:hover {
     color: $colorBrand;
-//    color: $colorTextDark;
-//    border-bottom: 3px solid $colorMenuBorderHover;
+    //    color: $colorTextDark;
+    //    border-bottom: 3px solid $colorMenuBorderHover;
 }
 
 .footer-bottom {
@@ -1089,5 +1094,3 @@ summa {
 //        margin-top: 0;
 //    }
 //}
-
-
