@@ -110,9 +110,10 @@
 
 }
 
-.sidebar-title:hover {
+.sidebar-title:hover,
+.sidebar-link:hover {
+    cursor: pointer;
     color: $colorTextRed;
-
 }
 
 //============= Products =================
@@ -380,6 +381,11 @@
     position: relative;
     padding: 0 39px 0 11px;
     background: transparent;
+}
+
+/* Убираем стандартные стрелочки в IE */
+.product-sort-select::-ms-expand {
+    display: none;
 }
 
 .product-sort-select-show{
