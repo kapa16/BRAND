@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/product.css">
 
     <script src="js/main.js"></script>
-       
+
     <!--Icon Font-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
@@ -104,7 +104,7 @@
                     </ul>
                 </nav>
             </aside>
-            <content class="products-list">
+            <div class="products-content">
 
                 <div class="products-filter">
                     <div class="products-filter-wrap">
@@ -180,7 +180,15 @@
                 </div>
 
                 <div class="product-sort">
-
+                    <div class="product-sort-by">
+                        <form action="#">
+                            <label class="product-sort-items" for="sort-by">Sort By</label>
+                            <select class="product-sort-items" name="sort-by" id="sort-by">
+                                <option value="name">Name</option>
+                                <option value="price">Price</option>
+                            </select>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="products">
@@ -483,13 +491,38 @@
                     </div>
                     <!--card of product end-->
 
-
                 </div>
 
-            </content>
+                <div class="content-footer">
+                    <ul class="pagination">
+                        <li class="pagination-list">
+                            <a href="" class="pagination-link pagination-link-prev"><i class="fas fa-angle-left"></i></a>
+                            <a href="" class="pagination-link pagination-link-active">1</a>
+                            <a href="" class="pagination-link">2</a>
+                            <a href="" class="pagination-link">3</a>
+                            <a href="" class="pagination-link">4</a>
+                            <a href="" class="pagination-link">5</a>
+                            <a href="" class="pagination-link">6</a>
+                            <a href="" class="pagination-link pagination-link-dot">......</a>
+                            <a href="" class="pagination-link">20</a>
+                            <a href="" class="pagination-link pagination-link-next"><i class="fas fa-angle-right"></i></a>
+                        </li>
+                    </ul>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+
+            </div>
         </div>
 
     </main>
+
+
+    <div class="feauter">
+        <div class="container container-feauter">
+            //= src/feauter.html
+        </div>
+    </div>
+
     //= src/subscribe.html
 
     //= src/footer.html
