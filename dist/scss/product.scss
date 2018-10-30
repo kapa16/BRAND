@@ -354,30 +354,9 @@
     align-items: center;
     border-left: 1px solid $colorBorderSidebar;
     margin-left: 8px;
-
-    .fa-caret-down {
-        position: absolute;
-        top: 8px;
-    }
-}
-
-.fa-caret-down-sort-by {
-    left: 68px;
-}
-
-.fa-caret-down-show {
-    left: 46px;
 }
 
 .product-sort-select {
-    /*for WebKit*/
-    -webkit-appearance: none;
-    /* for FF */
-    -moz-appearance: none;
-    /* for IE */
-    -ms-appearance: none;
-    appearance: none !important;
-
     border: none;
     position: relative;
     padding: 0 39px 0 11px;
