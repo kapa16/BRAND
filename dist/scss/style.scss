@@ -107,11 +107,12 @@ body {
     cursor: pointer;
 
     .main-logo-menu {
-        display: block;
+        display: flex;
     }
 }
 
 .logo-menu {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,10 +127,31 @@ body {
     padding: 20px 24px 12px 24px;
     text-transform: uppercase;
     border-bottom: 3px solid $colorWhite;
+
 }
 
 .logo-menu-link:hover {
     border-bottom: 3px solid $colorMenuBorderHover;
+}
+
+.logo-menu-list:hover {
+    .dropdown-box {
+        display: flex;
+        top: 46px;
+        left: 25px;
+    }
+}
+
+.list-man {
+    .dropdown-box:after {
+        left: 102px;
+    }
+}
+
+.list-women {
+    .dropdown-box:after {
+        left: 198px;
+    }
 }
 
 .search-header {
@@ -171,8 +193,8 @@ body {
     color: $colorBlack;
     background: $colorBgButton;
 
-    .dropdown-browse {
-        display: block;
+    .dropdown-box {
+        display: flex;
     }
 }
 

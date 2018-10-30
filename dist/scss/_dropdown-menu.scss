@@ -1,8 +1,5 @@
-.dropdown-browse{
-    display: none;
-}
 .dropdown-box {
-    display: block;
+    display: none;
     position: absolute;
     z-index: 10; //over header (2) and main menu (3)
     top: 36px;
@@ -10,10 +7,11 @@
     border-radius: 5px;
     border: 1px solid $colorBgSite;
     background-color: $colorWhite;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
     padding: 20px;
 }
 
-.dropdown-flex:not(:last-type) {
+.dropdown-flex:not(:last-of-type) {
     margin-right: 46px;
 }
 
@@ -64,3 +62,20 @@
     color: $colorBrand;
 }
 
+.super-sale{
+    width: 255px;
+    height: 118px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    background: url("../img/superSale.jpg") no-repeat;
+}
+
+.super-sale-text{
+    color: $colorWhite;
+font-size: 22px;
+font-weight: 400;
+text-transform: uppercase;
+letter-spacing: 0.55px;
+}
