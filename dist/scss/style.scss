@@ -458,13 +458,13 @@ summa {
     position: relative;
     margin-top: 39px;
     margin-bottom: 21px;
+    display: flex;
+    justify-content: center;
 }
-
 
 .parent-product-card {
     position: absolute;
     top: 98px;
-    width: 100%;
     display: none;
     justify-content: center;
     align-items: center;
