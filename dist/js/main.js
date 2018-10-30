@@ -15,7 +15,7 @@ $(document).ready(function () {
     });
 
     $(".browse").on("mouseenter", function () {
-        showMenu(".browse-menu");
+        showMenu(".dropdown-box");
     });
 
     $(".cart-header").on("mouseenter", function () {
@@ -24,7 +24,7 @@ $(document).ready(function () {
 
     $(document).on("click", function (elem) {
         hideMenu($(".main-logo-menu"), elem);
-        hideMenu($(".browse-menu"), elem);
+        hideMenu($(".dropdown-box"), elem);
         hideMenu($(".cart-menu"), elem);
     });
 

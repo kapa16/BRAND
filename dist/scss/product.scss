@@ -1,13 +1,13 @@
 @import 'variables';
 
-.main-logo-menu {
-    display: block;
-}
+//.main-logo-menu {
+//    display: block;
+//}
 
 .breadcramb {
-    height: $heightBreadcrumb + $heightLogoMenu;
-    padding-top: $heightLogoMenu;
+    height: $heightBreadcrumb;
     background: $colorBgBreadcrumb;
+    margin-top: 8px;
 }
 
 .breadcramb-container {
