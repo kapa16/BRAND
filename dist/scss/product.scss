@@ -372,9 +372,14 @@
     padding: 0 35px 0 11px;
 }
 
-.product-sort-select-wrap:hover {
+.product-sort-select:hover {
     cursor: pointer;
+}
+
+.product-sort-select-wrap:hover {
     color: $colorTextRed;
+    outline: 1px solid $colorTextRed;
+    
 }
 
 
