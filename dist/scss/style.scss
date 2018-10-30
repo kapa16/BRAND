@@ -17,7 +17,7 @@ body {
     border: 1px solid #ececec;
     background-color: $colorWhite;
     position: relative;
-//    z-index: 2;
+    //    z-index: 2;
 }
 
 .container {
@@ -63,21 +63,24 @@ body {
 
 .header-left {
     display: flex;
+    height: 100%;
 }
 
 .logo-brand {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo-brand-link {
+    height: 100%;
     display: flex;
     align-items: center;
     color: $colorTextDark;
-    font-family: Lato;
     font-size: 27px;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.68px;
-}
-
-.logo-brand:hover {
-    cursor: pointer;
 }
 
 .letter-d {
@@ -93,9 +96,19 @@ body {
     position: absolute;
     z-index: 10;
     left: 0;
-    top: $heightHeader + 1px;
+    top: $heightHeader;
+    border-top: 1px solid #ececec;
     width: 100%;
     background-color: $colorWhite;
+}
+
+
+.logo-brand:hover {
+    cursor: pointer;
+
+    .main-logo-menu {
+        display: block;
+    }
 }
 
 .logo-menu {
@@ -157,6 +170,10 @@ body {
     cursor: pointer;
     color: $colorBlack;
     background: $colorBgButton;
+
+    .dropdown-browse {
+        display: block;
+    }
 }
 
 

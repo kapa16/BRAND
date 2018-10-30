@@ -1,5 +1,8 @@
-.dropdown-box {
+.dropdown-browse{
     display: none;
+}
+.dropdown-box {
+    display: block;
     position: absolute;
     z-index: 10; //over header (2) and main menu (3)
     top: 36px;
