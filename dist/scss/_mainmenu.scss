@@ -1,0 +1,34 @@
+.main-menu {
+    width: 100%;
+    height: $heightMainMenu;
+    background-color: $colorBgSliderMenu;
+}
+
+.main-menu-wrapper {
+    .main-menu {
+        position: relative;
+        z-index: 3; //over header, to hide the shadow from the header
+    }
+}
+
+.main-menu-ul {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.main-menu-link {
+    margin-left: 40px;
+    color: $colorTextDarkLighter;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: 0.4px;
+    border-bottom: 3px solid transparent;
+}
+
+.main-menu-link:hover {
+    border-bottom: 3px solid $colorMenuBorderHover;
+}
