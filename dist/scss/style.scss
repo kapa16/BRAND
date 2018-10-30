@@ -1,57 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900');
 @import 'normalize';
 @import 'variables';
+@import 'common-style';
 @import 'dropdown-menu';
 @import 'mainmenu';
-
-//================= Common styles ======================
-body {
-    font-family: 'Lato', sans-serif;
-    color: $colorTextDark;
-}
-
-.header {
-    width: 100%;
-    height: $heightHeader;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
-    border: 1px solid #ececec;
-    background-color: $colorWhite;
-    position: relative;
-    //    z-index: 2;
-}
-
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    height: 100%;
-}
-
-//Для ссылок меню
-.menu-link {
-    display: block;
-    height: 100%;
-}
-
-.brand-style {
-    color: $colorBrand;
-}
-
-.button-brand {
-    background-color: $colorBrand;
-    color: $colorWhite;
-    font-weight: 400;
-    border: 1px solid $colorBrand;
-}
-
-
-.button-brand:hover {
-    color: $colorBrand;
-    background: $colorWhite;
-    border: 1px solid $colorBrand;
-}
-
-//================= Common styles ======================
-
 
 
 //===================== Header BEGIN ================
