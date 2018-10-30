@@ -53,12 +53,16 @@
     margin-top: 17px;
 }
 
+.product-rating{
+    margin-top: 24px;
+}
+
 .single-product-description {
     color: #5e5e5e;
     font-size: 14px;
     font-weight: 300;
     line-height: 28px;
-    margin-top: 67px;
+    margin-top: 26px;
     text-align: center;
 }
 
@@ -96,7 +100,7 @@
 
 .single-product-form {
     width: 537px;
-    margin: 63px 0 120px 0;
+    margin-top: 63px;
 }
 
 .product-options {
@@ -149,9 +153,20 @@
     color: $colorTextRed;
     font-size: 16px;
     font-weight: 700;
-
-
 }
-    #catr-btn {
-        fill: $colorBrand;
+
+#catr-btn {
+    fill: $colorBrand;
+    margin-right: 15px;
+}
+
+.btn-add-to-cart:hover {
+    .add-to-cart {
+        background: $colorBrand;
+        color: $colorWhite;
     }
+
+    #catr-btn {
+        fill: $colorWhite;
+    }
+}
