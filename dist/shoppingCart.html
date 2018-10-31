@@ -152,8 +152,8 @@
         </div>
 
         <div class="checkout-form">
-            <div class="shipping">
-                <h3 class="shipping-title">Shipping Adress</h3>
+            <div class="checkout-form-flex">
+                <h3 class="checkout-form-title">Shipping Adress</h3>
                 <label for="country" class="select-wrap">
                     <i class="fas fa-caret-down icon-drop-list"></i>
                     <select class="select-item" name="country" id="country">
@@ -165,10 +165,35 @@
 
                 <span class="select-wrap">
                     <input class="select-item" type="text" id="state" placeholder="State">
-                </span>               
+                </span>
                 <span class="select-wrap">
                     <input class="select-item" type="text" id="postcode" placeholder="Postcode / Zip">
                 </span>
+
+                <a class="button-form" href="#">get a quote</a>
+            </div>
+
+            <div class="checkout-form-flex">
+                <h3 class="checkout-form-title">coupon discount</h3>
+
+
+                <label class="coupon-label" for="coupon">
+                    Enter your coupon code if you have one
+                </label>
+                <span class="select-wrap">
+                    <input class="select-item" type="text" id="coupon" placeholder="Coupon">
+                </span>
+
+                <a class="button-form" href="#">Apply coupon</a>
+            </div>
+
+            <div class="checkout-form-flex">
+                <div class=" proceed-checkout">
+                    <div class="checkout-subtotal">Sub total<span class="checkout-subtotal-value">$900</span></div>
+                    <div class="checkout-total">GRAND TOTAL <span class="checkout-total-value">$900</span></div>
+
+                    <a class="button-form-checkout  button-brand" href="#">proceed to checkout</a>
+                </div>
             </div>
         </div>
 
