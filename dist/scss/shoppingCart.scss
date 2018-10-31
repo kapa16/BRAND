@@ -1,0 +1,147 @@
+@import 'variables';
+
+.product-details-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 21px;
+}
+
+.cart-table {
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 44px;
+}
+
+.cart-table-row {
+    th {
+        color: $colorTextDark;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: -0.2px;
+    }
+
+}
+
+.cart-table-cell {
+    width: 11.6%;
+    border-bottom: 1px solid $colorBorderForms;
+    text-align: center;
+    color: #656565;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 25px 0;
+
+}
+
+.cart-table-cell-header {
+    padding: 0 0 20px 0;
+}
+
+.cart-table-cell:first-of-type {
+    width: 42%;
+    text-align: left;
+
+}
+
+.cart-table-close-icon {
+    color: #c0c0c0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.cart-table-close-icon:hover {
+    cursor: pointer;
+    color: $colorBlack;
+}
+
+.product-details {
+    display: flex;
+}
+
+.product-details-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.product-rating {
+    color: #e4af48;
+    font-size: 13px;
+    margin-top: 11px;
+    margin-bottom: 2px;
+}
+
+.cart-table-quantity {
+    width: 54px;
+    height: 30px;
+    border: 1px solid $colorBorderForms;
+    background-color: $colorWhite;
+    text-align: center;
+}
+
+.product-details-properties {
+    margin-top: 13px;
+    color: $colorTextSidebar;
+    font-size: 13px;
+    color: #575757;
+    font-weight: 700;
+}
+
+.product-details-value {
+    font-weight: 300;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-button {
+    width: 235px;
+    height: 50px;
+    border: 1px solid $colorBorderForms;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+}
+
+.cart-button:hover {
+    border: 1px solid $colorBrand;
+    color: $colorBrand;
+}
+
+.checkout-form{
+    margin-top: 63px;
+}
+
+.shipping-title {
+    color: $colorTextDark;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.select-wrap {
+    width: 355px;
+    height: 45px;
+    border: 1px solid $colorBorderForms;
+    margin: 20px 0 0 0;
+}
+
+.icon-drop-list {
+    color: #bdbdbd;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.select-item {
+    color: #b1b1b1;
+    font-size: 13px;
+    font-weight: 300;
+}
