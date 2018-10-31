@@ -60,6 +60,8 @@
 }
 
 .single-product-description {
+    display: block;
+    width: 100%;
     color: #5e5e5e;
     font-size: 14px;
     font-weight: 300;
@@ -132,11 +134,24 @@
 
 .product-sort-select {
     width: 100%;
-    padding-left: 15px;
+    padding-left: 37px;
 }
 
 #color {
     text-transform: capitalize;
+}
+
+.color-example {
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 11px;
+    left: 14px;
+}
+
+.color-red{
+    background: $colorTextRed;;
 }
 
 .btn-add-to-cart {

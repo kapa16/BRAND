@@ -205,6 +205,9 @@
     display: block;
 }
 
+#cart {
+    fill: #222;
+}
 .cart-header:hover #cart {
     fill: $colorBrand;
 }
@@ -492,7 +495,8 @@ summa {
 
 .product-img-wrap,
 .product-img {
-    width: 100%;
+    width: $widthImgCard;
+    height: $heightImgCards;
     line-height: 0;
 }
 
@@ -525,6 +529,7 @@ summa {
     font-weight: 600;
     text-transform: uppercase;
     text-align: left;
+    word-wrap: break-word;
 }
 
 .product-bottom {

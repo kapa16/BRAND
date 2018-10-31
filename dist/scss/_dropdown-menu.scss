@@ -11,23 +11,24 @@
     padding: 20px;
 }
 
-.dropdown-flex:not(:last-of-type) {
+.dropdown-flex {
+    width: 262px;
     margin-right: 46px;
 }
 
+.dropdown-flex:last-of-type {
+    margin-right: 0px;
+}
+
 .dropdown-heading {
-    width: 262px;
+    
     text-transform: uppercase;
     border-bottom: 1px solid $colorBgSite;
     color: $colorTextDarkLighter;
     font-size: 14px;
     font-weight: 700;
     line-height: 32px;
-}
-
-.w-omen {
     letter-spacing: 0.35px;
-    margin-bottom: 12px;
 }
 
 //============ Triangle for dropdown menu ==================
