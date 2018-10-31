@@ -134,11 +134,11 @@
 
 .select-item {
     width: 100%;
-    padding-left: 37px;
 }
 
 #color {
     text-transform: capitalize;
+    padding: 0 11px 0 39px;
 }
 
 .color-example {
@@ -172,8 +172,11 @@
     font-weight: 700;
 }
 
-#catr-btn {
+#cart-btn{
     fill: $colorBrand;
+}
+
+.cart-btn{
     margin-right: 15px;
 }
 
@@ -183,7 +186,7 @@
         color: $colorWhite;
     }
 
-    #catr-btn {
+    #cart-btn {
         fill: $colorWhite;
     }
 }
