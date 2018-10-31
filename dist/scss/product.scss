@@ -331,9 +331,9 @@
     margin-left: 9px;
 }
 
-.product-sort-select-wrap,
+.select-wrap,
 .product-sort-label,
-.product-sort-select {
+.select-item {
     height: 100%;
     display: flex;
     align-items: center;
@@ -348,7 +348,7 @@
     border: 1px solid $colorBorderSidebar;
 }
 
-.product-sort-select-wrap {
+.select-wrap {
     position: relative;
     display: flex;
     align-items: center;
@@ -356,7 +356,7 @@
     margin-left: 8px;
 }
 
-.product-sort-select {
+.select-item {
     border: none;
     position: relative;
     padding: 0 39px 0 11px;
@@ -364,19 +364,19 @@
 }
 
 /* Убираем стандартные стрелочки в IE */
-.product-sort-select::-ms-expand {
+.select-item::-ms-expand {
     display: none;
 }
 
-.product-sort-select-show{
+.select-item-show{
     padding: 0 35px 0 11px;
 }
 
-.product-sort-select:hover {
+.select-item:hover {
     cursor: pointer;
 }
 
-.product-sort-select-wrap:hover {
+.select-wrap:hover {
     color: $colorTextRed;
     outline: 1px solid $colorTextRed;
     

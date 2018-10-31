@@ -1,7 +1,7 @@
 @import 'variables';
 
 .image-slide {
-    border: 1px solid #eaeaea;
+    border: 1px solid $colorBorderForms;
     background-color: #f7f7f7;
     padding-bottom: 90px;
 }
@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #eaeaea;
+    border: 1px solid $colorBorderForms;
     background-color: $colorWhite;
 }
 
@@ -29,7 +29,7 @@
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid $colorBorderForms;
     padding: 12px 0;
 }
 
@@ -99,7 +99,7 @@
     text-align: center;
     margin-top: 37px;
     padding-bottom: 43px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid $colorBorderForms;
 }
 
 .single-product-form {
@@ -124,15 +124,15 @@
     margin: 0;
 }
 
-.product-sort-select-wrap {
+.select-wrap {
     margin: 16px 0;
     width: 144px;
     height: 35px;
-    border: 1px solid #eaeaea;
+    border: 1px solid $colorBorderForms;
     background-color: $colorWhite;
 }
 
-.product-sort-select {
+.select-item {
     width: 100%;
     padding-left: 37px;
 }

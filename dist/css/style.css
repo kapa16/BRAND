@@ -278,7 +278,7 @@ summa {
   text-transform: uppercase;
   color: #4a4a4a;
   background: #fff;
-  border: 1px solid #eaeaea;
+  border: 1px solid $colorBorderForms;
   margin-top: 11px; }
 
 .cart-menu-button:hover {
