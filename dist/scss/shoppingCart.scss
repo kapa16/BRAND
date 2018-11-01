@@ -203,6 +203,11 @@
 
 .checkout-total-value {
     color: $colorBrand;
+    padding-left: 20px;
+}
+
+.checkout-subtotal-value {
+    padding-left: 20px;
 }
 
 .button-form-checkout {
@@ -213,3 +218,5 @@
     padding: 20px 40px;
     margin-top: 17px;
 }
+
+
