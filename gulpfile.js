@@ -6,24 +6,21 @@ var path = {
         js:    'app/js/',
         css:   'app/css/',
         img:   'app/img/',
-        fonts: 'app/fonts/',
-        webfonts: 'app/webfonts/'
+        fonts: 'app/fonts/'
     },
     src: {
         html:  'dist/*.html',
         js:    'dist/js/main.js',
         style: 'dist/scss/*.scss',
         img:   'dist/img/**/*.*',
-        fonts: 'dist/fonts/**/*.*',
-        webfonts: 'dist/webfonts/**/*.*'
+        fonts: 'dist/fonts/**/*.*'
     },
     watch: {
         html:  'dist/**/*.html',
         js:    'dist/js/**/*.js',
         css:   'dist/scss/**/*.scss',
         img:   'dist/img/**/*.*',
-        fonts: 'dist/fonts/**/*.*',
-        webfonts: 'dist/webfonts/**/*.*'
+        fonts: 'dist/fonts/**/*.*'
     },
     clean:     './app'
 };
@@ -88,10 +85,6 @@ gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts));
 });
-gulp.task('webfonts:build', function() {
-    gulp.src(path.src.webfonts)
-        .pipe(gulp.dest(path.build.webfonts));
-});
 
 // обработка картинок
 gulp.task('image:build', function () {
@@ -116,7 +109,6 @@ gulp.task('build', [
     'css:build',
     'js:build',
     'fonts:build',
-    'webfonts:build',
     'image:build'
 ]);
 
@@ -127,7 +119,6 @@ gulp.task('watch', function() {
     gulp.watch(path.watch.js, ['js:build']);
     gulp.watch(path.watch.img, ['image:build']);
     gulp.watch(path.watch.fonts, ['fonts:build']);
-    gulp.watch(path.watch.fonts, ['webfonts:build']);
 });
 
 // задача по умолчанию
