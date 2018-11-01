@@ -364,11 +364,6 @@
     background: transparent;
 }
 
-/* Убираем стандартные стрелочки в IE */
-.select-item::-ms-expand {
-    display: none;
-}
-
 .select-item-show{
     padding: 0 35px 0 11px;
 }
@@ -378,9 +373,10 @@
 }
 
 .select-wrap:hover {
-    color: $colorTextRed;
     outline: 1px solid $colorTextRed;
-    
+        .icon-drop-list{
+        color: $colorTextRed;
+    }
 }
 
 

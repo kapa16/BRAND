@@ -423,3 +423,7 @@ select {
     -ms-appearance: none;
     appearance: none !important;
 }
+
+select::-ms-expand {
+    display: none;
+}
