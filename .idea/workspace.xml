@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f012702a-6e63-475a-99a3-d62ceea5defc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dist/scss/_breadcramb.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/scss/main.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/checkout.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/product.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/shoppingCart.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/singlePage.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/shoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/shoppingCart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/singlePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/singlePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/scss/_checkout.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_checkout.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,24 +74,25 @@
     <session id="316864664">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="117" />
+          <entry key="html" value="131" />
           <entry key="js" value="9" />
-          <entry key="sass" value="42" />
-          <entry key="scss" value="233" />
+          <entry key="sass" value="96" />
+          <entry key="scss" value="237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="117" />
+          <entry key="HTML" value="131" />
           <entry key="JavaScript" value="9" />
-          <entry key="SCSS" value="233" />
-          <entry key="Sass" value="42" />
+          <entry key="SCSS" value="237" />
+          <entry key="Sass" value="96" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -111,7 +101,7 @@
           <entry key="html" value="14" />
           <entry key="js" value="2" />
           <entry key="sass" value="11" />
-          <entry key="scss" value="24" />
+          <entry key="scss" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -119,7 +109,7 @@
           <entry key="CSS" value="4" />
           <entry key="HTML" value="14" />
           <entry key="JavaScript" value="2" />
-          <entry key="SCSS" value="24" />
+          <entry key="SCSS" value="25" />
           <entry key="Sass" value="11" />
         </counts>
       </usages-collector>
@@ -132,8 +122,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/checkout.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" selection-start-line="16" selection-end-line="16" />
+                <state relative-caret-position="493">
+                  <caret line="29" column="41" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="41" />
                 </state>
               </provider>
             </entry>
@@ -142,43 +132,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/scss/_checkout.sass">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/scss/_product.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="475">
-                  <caret line="322" column="20" selection-start-line="322" selection-start-column="20" selection-end-line="322" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/scss/_normalize.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="88">
-                  <caret line="82" selection-start-line="82" selection-end-line="82" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/scss/_mixins.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="51">
-                  <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/dist/scss/_mainmenu.scss">
+            <entry file="file://$PROJECT_DIR$/dist/scss/_checkout.sass">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+                <state relative-caret-position="34">
+                  <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -267,8 +225,9 @@
         <option value="$PROJECT_DIR$/dist/scss/_product.scss" />
         <option value="$PROJECT_DIR$/dist/scss/_shoppingCart.scss" />
         <option value="$PROJECT_DIR$/dist/scss/_singlePage.scss" />
-        <option value="$PROJECT_DIR$/dist/scss/_checkout.sass" />
+        <option value="$PROJECT_DIR$/dist/scss/_mainmenu.scss" />
         <option value="$PROJECT_DIR$/dist/checkout.html" />
+        <option value="$PROJECT_DIR$/dist/scss/_checkout.sass" />
       </list>
     </option>
   </component>
@@ -353,10 +312,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1637" />
+    <option name="x" value="391" />
     <option name="y" value="-8" />
-    <option name="width" value="1400" />
-    <option name="height" value="978" />
+    <option name="width" value="933" />
+    <option name="height" value="924" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -455,12 +414,12 @@
       <updated>1541130935239</updated>
       <workItem from="1541130938311" duration="14349000" />
       <workItem from="1541163482488" duration="199000" />
-      <workItem from="1541163789633" duration="10236000" />
+      <workItem from="1541163789633" duration="12280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24784000" />
+    <option name="totallyTimeSpent" value="26828000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -472,10 +431,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1296" height="979" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1035" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4972253" visible="true" weight="0.27993527" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4972253" visible="true" weight="0.18443497" />
       <window_info id="Structure" order="1" sideWeight="0.5005549" side_tool="true" weight="0.17857143" />
       <window_info id="Gulp" order="2" sideWeight="0.5027747" side_tool="true" weight="0.18443497" />
       <window_info id="npm" order="3" sideWeight="0.5005549" side_tool="true" weight="0.17857143" />
@@ -775,34 +734,17 @@
     <entry file="file://$PROJECT_DIR$/dist/scss/_shoppingCart.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/checkout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_checkout.sass">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/scss/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="34">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_product.scss">
+    <entry file="file://$PROJECT_DIR$/dist/scss/_mainmenu.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="322" column="20" selection-start-line="322" selection-start-column="20" selection-end-line="322" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_normalize.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -813,10 +755,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_mainmenu.scss">
+    <entry file="file://$PROJECT_DIR$/dist/scss/_normalize.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="88">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scss/_product.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="322" column="20" selection-start-line="322" selection-start-column="20" selection-end-line="322" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scss/_checkout.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/checkout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="41" />
         </state>
       </provider>
     </entry>
