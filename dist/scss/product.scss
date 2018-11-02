@@ -29,10 +29,9 @@
 
 .breadcramb-link {
   color: $colorTextBreadcramb;
-}
-
-.breadcramb-link:hover {
-  color: $colorBrand;
+  &:hover {
+    color: $colorBrand;
+  }
 }
 
 .breadcramb-active {
@@ -131,37 +130,36 @@
   display: flex;
   justify-content: space-between;
   color: $colorTextSidebar;
+  &-wrap {
+    width: 100%;
+  }
+  &-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+  &-value {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-link {
+    color: $colorTextSidebar;
+    font-size: 14px;
+    font-weight: 400;
+  }
 }
 
-.products-filter-wrap {
-  width: 100%;
-}
-
-.products-filter-title,
-.products-filter-link,
 .filter-label {
   font-size: 14px;
-}
-
-.products-filter-title,
-.filter-label {
   text-transform: uppercase;
-}
-
-.products-filter-title {
-  font-weight: 700;
-  margin-bottom: 25px;
-}
-
-.products-filter-value {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .filter-label-checkbox,
 .products-filter-list {
   padding: 7px 0;
   line-height: 12px;
+  cursor: pointer;
 }
 
 .products-filter-list:not(:first-child) {
@@ -175,11 +173,6 @@
   line-height: 10px;
 }
 
-.products-filter-link {
-  color: $colorTextSidebar;
-  font-weight: 400;
-}
-
 .products-filter-list:hover .products-filter-link {
   color: $colorBrand;
 }
@@ -187,11 +180,6 @@
 //================= SIZE ====================
 .checkbox {
   display: none;
-}
-
-.products-filter-list,
-.filter-label-checkbox {
-  cursor: pointer;
 }
 
 .filter-label-checkbox {

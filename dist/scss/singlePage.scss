@@ -159,9 +159,7 @@
 .add-to-cart {
   width: 100%;
   height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include disp_flex_ai_jc_fd(center, center, row);
   background: $colorWhite;
   border: 1px solid $colorTextRed;
   color: $colorTextRed;

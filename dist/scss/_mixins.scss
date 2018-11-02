@@ -4,3 +4,10 @@
   top: $top;
   left: $left;
 }
+
+@mixin disp_flex_ai_jc_fd($align, $justify, $flex-direction){
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $flex-direction;
+}
