@@ -277,6 +277,7 @@
 
 .subscribe-box {
     @include display_align_justify_direction(flex, center, center, column);
+    margin: 0 auto;
 }
 
 .feauter-box-info {

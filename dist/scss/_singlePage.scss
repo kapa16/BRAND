@@ -110,7 +110,7 @@
     justify-content: space-between;
 }
 
-.product-sort-label {
+.single-product-sort-label {
     height: auto;
     color: #2f2f2f;
     font-size: 14px;
@@ -122,6 +122,9 @@
 }
 
 .select-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
     margin: 16px 0;
     width: 144px;
     height: 35px;
@@ -131,6 +134,14 @@
 
 .select-item {
     width: 100%;
+    border: none;
+    position: relative;
+    padding: 0 25px 0 11px;
+    background: transparent;
+}
+
+.select-item:hover {
+    cursor: pointer;
 }
 
 #color {

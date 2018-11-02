@@ -1,0 +1,24 @@
+@mixin position_absolute_top_left($top, $left) 
+    position: absolute
+    top: $top
+    @if ($left != 0) 
+        left: $left
+
+@mixin display_align_justify_direction($display, $align, $justify, $flex-direction) 
+    display: $display
+    @if ($align != "") 
+        align-items: $align
+    
+
+    @if ($justify != "") 
+        justify-content: $justify
+    
+
+    @if ($flex-direction != "") 
+        flex-direction: $flex-direction
+    
+@mixin font-color-size-weight-transform($color, $size, $weight: 400, $transform:none)
+    color: $color
+    font-size: $size
+    font-weight: $weight
+    text-transform: $transform

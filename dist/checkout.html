@@ -27,7 +27,59 @@
 <div class="container">
     <div class="checkout-info">
         <ul class="checkout-info-ul">
-            <li class="checkout-info-list"><a class="checkout-info-link" href="#">01. Shipping Adress</a></li>
+            <li class="checkout-info-list"><a class="checkout-info-link" href="#">01. Shipping Adress</a>
+                <div class="checkout-info-list-content">
+                    <form class="checkout-info-list-left" action="#">
+                        <h4 class="checkout-info-title">Check as a guest or register</h4>
+                        <p class="checkout-info-paragraph">Register with us for future convenience</p>
+
+                        <label class="checkout-info-label" for="checkout-radio">
+                            <input class="checkout-info-radio" type="radio" name="register-choise" id="checkout-radio">
+                            checkout as guest
+                        </label>
+                        <label class="checkout-info-label" for="register-radio">
+                            <input class="checkout-info-radio" type="radio" name="register-choise" id="register-radio"
+                                   checked>
+                            register
+                        </label>
+
+                        <h4 class="checkout-info-title">register and save time!</h4>
+                        <p class="checkout-info-paragraph">Register with us for future convenience</p>
+
+                        <ul class="checkout-info-extra-info">
+                            <li class="checkout-info-extra-info-list"><a class="checkout-info-extra-info-link" href="#"><i
+                                    class="fas fa-angle-double-right"></i> Fast and easy checkout</a></li>
+                            <li class="checkout-info-extra-info-list"><a class="checkout-info-extra-info-link" href="#"><i
+                                    class="fas fa-angle-double-right"></i> Easy access to your order history and status</a>
+                            </li>
+                        </ul>
+
+                        <button class="button-form button-checkout-form" type="submit">Continue</button>
+                    </form>
+
+                    <form class="checkout-info-list-right" action="#">
+                        <h4 class="checkout-info-title">Already registed?</h4>
+                        <p class="checkout-info-paragraph">Please log in below</p>
+
+                        <label class="checkout-info-label checkout-info-label-login" for="email">
+                            EMAIL ADDRESS <span class="required-fileds">*</span>
+                        </label>
+                        <input class="checkout-info-select-item" type="email" id="email">
+
+                        <label class="checkout-info-label checkout-info-label-login" for="password">
+                            PASSWORD <span class="required-fileds">*</span>
+                        </label>
+                        <input class="checkout-info-select-item" type="password" id="password">
+
+                        <p class="required-fileds required-fileds-text">* Required Fileds</p>
+
+                        <div class="button-log-in">
+                            <button class="button-form button-checkout-form" type="submit">Log in</button>
+                            <a class="forgot-password" href="#">Forgot Password ?</a>
+                        </div>
+                    </form>
+                </div>
+            </li>
             <li class="checkout-info-list"><a class="checkout-info-link" href="#">02. BILLING INFORMATION</a></li>
             <li class="checkout-info-list"><a class="checkout-info-link" href="#">03. SHIPPING INFORMATION</a></li>
             <li class="checkout-info-list"><a class="checkout-info-link" href="#">04. SHIPPING METHOD</a></li>

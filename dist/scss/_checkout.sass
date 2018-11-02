@@ -2,11 +2,93 @@
     margin-top: 60px
     margin-bottom: 90px
 
-.checkout-info-link
+    &-link
+        display: block
+        color: $colorTextDark
+        font-size: 16px
+        font-weight: 700
+        text-transform: uppercase
+        padding: 30px 0 6px 0
+
+
+    &-list
+        border-bottom: 1px solid $colorBgSite
+
+        &-content
+            @include display_align_justify_direction($display:flex, $align:flex-start, $justify:"", $flex-direction:row)
+            margin-bottom: 80px
+
+        &-left
+            margin-left: 35px
+
+    &-title
+        @include font-color-size-weight-transform($color: $colorTextDark, $size:13px, $weight: 400, $transform:uppercase)
+        margin-top: 33px
+
+    &-paragraph
+        @include font-color-size-weight-transform($color: #b3b2b2, $size:13px)
+        margin: 15px 0 34px 0
+
+    &-label
+        @include font-color-size-weight-transform($color: $colorTextDark, $size:12px, $weight: 400, $transform:uppercase)
+        display: block
+
+        &:not(:last-of-type)
+            margin-bottom: 20px
+
+    &-input
+        width: 390px
+        height: 45px
+
+    &-extra-info-link
+        @include font-color-size-weight-transform($color: #b3b2b2, $size:13px)
+
+    &-extra-info-list:not(:last-of-type)
+        margin-bottom: 15px
+
+    &-extra-info-list:last-of-type
+        margin-bottom: 38px
+
+    &-list-right
+        margin-left: 290px
+
+    &-label-login
+        margin: 23px 0 16px 0;
+
+    &-select-item
+        color: #b1b1b1
+        font-size: 13px
+        font-weight: 300
+        position: relative
+        padding: 0 25px 0 11px
+        border: 1px solid #eaeaea
+        box-sizing: border-box
+        background-color:  #ffffff
+        width: 390px
+        height: 45px
+
+        &:hover
+            cursor: pointer
+
+.button-form.button-checkout-form
+    width: 180px
+    height: 50px
+    margin: 0;
+    @include font-color-size-weight-transform($color: #4a4a4a, $size:14px, $weight: 700, $transform:uppercase)
+
+.required-fileds
+    @include font-color-size-weight-transform($color: #ff0d0d, $size:17px, $weight: 400)
+
+    &-text
+        font-size: 13px
+        margin-top: 22px
+
+.button-log-in
+    margin-top: 26px
+    @include display_align_justify_direction($display:flex, $align:center, $justify:flex-start, $flex-direction:row)
+
+
+.forgot-password
     display: block
-    color: $colorTextDark
-    font-size: 16px
-    font-weight: 700
-    text-transform: uppercase
-    padding: 30px 0
-    border-bottom: 1px solid $colorBgSite
+    margin-left: 32px
+    @include font-color-size-weight-transform($color: #222222, $size:14px, $weight: 400)
