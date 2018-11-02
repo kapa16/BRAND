@@ -1,480 +1,465 @@
 @import 'variables';
-
-//.main-logo-menu {
-//    display: block;
-//}
+@import 'mixins';
 
 .breadcramb {
-    height: $heightBreadcrumb;
-    background: $colorBgBreadcrumb;
-    margin-top: 8px;
+  height: $heightBreadcrumb;
+  background: $colorBgBreadcrumb;
+  margin-top: 8px;
 }
 
 .breadcramb-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .breadcramb-current-item {
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .breadcramb-nav {
-    display: flex;
-    font-size: 14px;
-    font-weight: 300;
-    text-transform: uppercase;
+  display: flex;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
 
 }
 
 .breadcramb-link {
-    color: $colorTextBreadcramb;
+  color: $colorTextBreadcramb;
 }
 
 .breadcramb-link:hover {
-    color: $colorBrand;
+  color: $colorBrand;
 }
 
 .breadcramb-active {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .breadcramb-item:after {
-    content: "/";
-    margin: 0 5px;
+  content: "/";
+  margin: 0 5px;
 }
 
 //================================================
 
 .catalog-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 60px 0 110px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 0 110px 0;
 }
 
 .sidebar {
-    width: 243px;
-    color: $colorTextSidebar;
+  width: 243px;
+  color: $colorTextSidebar;
 }
 
 .sidebar-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 37px;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 0 5px 0 11px;
-    margin-bottom: 18px;
-    border-left: 5px solid $colorTextRed;
-    border-bottom: 1px solid $colorBorderSidebar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 37px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 5px 0 11px;
+  margin-bottom: 18px;
+  border-left: 5px solid $colorTextRed;
+  border-bottom: 1px solid $colorBorderSidebar;
 }
 
 .sidebar-title-active {
-    color: $colorTextRed;
+  color: $colorTextRed;
 }
 
 .sidebar-submenu {
-    display: none;
-    padding: 10px 17px 30px 17px;
+  display: none;
+  padding: 10px 17px 30px 17px;
 }
 
 //============== Open menu ====================
 .menu-open {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    .sidebar-title-caret {
-        transform: rotate(180deg);
-    }
+  .sidebar-title-caret {
+    transform: rotate(180deg);
+  }
 }
 
 .sidebar-link {
-    width: 100%;
-    display: block;
-    color: $colorTextSidebar;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 10px 0;
-    box-sizing: border-box;
+  width: 100%;
+  display: block;
+  color: $colorTextSidebar;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 0;
+  box-sizing: border-box;
 }
 
 .menu-open .sidebar-title {
-    color: $colorTextRed;
+  color: $colorTextRed;
 
 }
 
 .sidebar-title:hover,
 .sidebar-link:hover {
-    cursor: pointer;
-    color: $colorTextRed;
+  cursor: pointer;
+  color: $colorTextRed;
 }
 
 //============= Products =================
 
 .products {
-    margin-bottom: 43px;
+  margin-bottom: 43px;
 }
 
 //============= Filter ===================
 
 .products-content {
-    width: 100%;
-    margin-left: 50px;
+  width: 100%;
+  margin-left: 50px;
 }
 
 .products-filter {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    color: $colorTextSidebar;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: $colorTextSidebar;
 }
 
 .products-filter-wrap {
-    width: 100%;
+  width: 100%;
 }
 
 .products-filter-title,
 .products-filter-link,
 .filter-label {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .products-filter-title,
 .filter-label {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .products-filter-title {
-    font-weight: 700;
-    margin-bottom: 25px;
+  font-weight: 700;
+  margin-bottom: 25px;
 }
 
 .products-filter-value {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .filter-label-checkbox,
 .products-filter-list {
-    padding: 7px 0;
-    line-height: 12px;
+  padding: 7px 0;
+  line-height: 12px;
 }
 
 .products-filter-list:not(:first-child) {
-    padding-left: 12px;
+  padding-left: 12px;
 }
 
 .products-filter-list:not(:last-child)::after {
-    content: "|";
-    margin-left: 12px;
-    color: $colorLineFilter;
-    line-height: 10px;
+  content: "|";
+  margin-left: 12px;
+  color: $colorLineFilter;
+  line-height: 10px;
 }
 
 .products-filter-link {
-    color: $colorTextSidebar;
-    font-weight: 400;
+  color: $colorTextSidebar;
+  font-weight: 400;
 }
 
 .products-filter-list:hover .products-filter-link {
-    color: $colorBrand;
+  color: $colorBrand;
 }
 
 //================= SIZE ====================
 .checkbox {
-    display: none;
+  display: none;
 }
 
 .products-filter-list,
 .filter-label-checkbox {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .filter-label-checkbox {
-    height: 13px;
-    display: flex;
-    align-items: center;
-    width: 69px;
+  height: 13px;
+  display: flex;
+  align-items: center;
+  width: 69px;
 }
 
 .filter-label {
-    color: $colorTextSidebar;
-    font-weight: 400;
-    padding-left: 9px;
-    box-sizing: border-box;
+  color: $colorTextSidebar;
+  font-weight: 400;
+  padding-left: 9px;
+  box-sizing: border-box;
 }
 
 .filter-checkbox {
-    position: relative;
-    display: block;
-    width: 13px;
-    height: 13px;
-    border: 1px solid $colorBorderSidebar;
-    background-color: $colorWhite;
+  position: relative;
+  display: block;
+  width: 13px;
+  height: 13px;
+  border: 1px solid $colorBorderSidebar;
+  background-color: $colorWhite;
 }
 
 .checkbox:checked + .filter-checkbox::before {
-    font-family: "Font Awesome 5 Free";
-    font-size: 13px;
-    content: "\2714";
-    position: absolute;
-    top: 0px;
-    left: 1px;
-    color: $colorBrand;
+  font-family: "Font Awesome 5 Free";
+  font-size: 13px;
+  content: "\2714";
+  @include pos_abs_top_left(0px, 1px);
+  color: $colorBrand;
 }
 
 .checkbox:checked + .filter-checkbox {
-    border: 1px solid $colorTextSidebar;
+  border: 1px solid $colorTextSidebar;
 }
 
 .filter-label-checkbox:hover .filter-checkbox {
-    border: 1px solid $colorTextSidebar;
+  border: 1px solid $colorTextSidebar;
 }
 
 .filter-label-checkbox:hover .filter-label {
-    color: $colorBrand;
+  color: $colorBrand;
 }
 
 //====================== Slider ==========================
 
 .products-filter-slider {
-    position: relative;
-    width: 100%;
-    height: 6px;
-    border-radius: 3px;
-    background-color: #f0f0f0;
-    margin: 32px 0 18px 0;
+  position: relative;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+  margin: 32px 0 18px 0;
 }
 
 .products-filter-bar {
-    position: absolute;
-    top: 0;
-    left: 31px;
-    width: 124px;
-    height: 6px;
-    background-color: $colorBrand;
+  @include pos_abs_top_left(0px, 31px);
+  width: 124px;
+  height: 6px;
+  background-color: $colorBrand;
 }
 
 .products-filter-leftpoint,
 .products-filter-rightpoint {
-    cursor: pointer;
-    width: 14px;
-    height: 14px;
-    background-color: $colorBrand;
-    border-radius: 50%;
+  cursor: pointer;
+  width: 14px;
+  height: 14px;
+  background-color: $colorBrand;
+  border-radius: 50%;
 }
 
 .products-filter-leftpoint {
-    position: absolute;
-    top: -4px;
-    left: -7px;
+  @include pos_abs_top_left(-4px, -7px);
 }
 
 .products-filter-rightpoint {
-    position: absolute;
-    top: -4px;
-    left: 117px;
+  @include pos_abs_top_left(-4px, 117px);
 }
 
 .price-range {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
-
 .product-card-hover {
-    border-radius: 3px;
-    margin: 0 4.5px;
+  border-radius: 3px;
+  margin: 0 4.5px;
 }
 
 .add-cart-wrap {
-    margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 
-
 .reload {
-    background: url("../img/reload.svg") no-repeat;
+  background: url("../img/reload.svg") no-repeat;
 
 }
 
 .favorite {
-    background: url("../img/favorite.svg") no-repeat;
+  background: url("../img/favorite.svg") no-repeat;
 }
 
 .reload,
 .favorite {
-    background-position: center;
+  background-position: center;
 }
 
 //=================== SORT ======================
 
 .product-sort {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background-color: #f3f3f3;
-    margin-top: 40px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #f3f3f3;
+  margin-top: 40px;
 }
 
 .product-sort-form {
-    height: 30px;
-    display: flex;
-    align-items: center;
-    margin-left: 9px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin-left: 9px;
 }
 
 .select-wrap,
 .product-sort-label,
 .select-item {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    color: $colorTextSidebar;
-    font-size: 14px;
-    font-weight: 400;
-    background-color: $colorWhite;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: $colorTextSidebar;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: $colorWhite;
 }
 
 .product-sort-label {
-    padding-left: 13px;
-    border: 1px solid $colorBorderSidebar;
+  padding-left: 13px;
+  border: 1px solid $colorBorderSidebar;
 }
 
 .select-wrap {
-    position: relative;
-    display: flex;
-    align-items: center;
-    border-left: 1px solid $colorBorderSidebar;
-    margin-left: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid $colorBorderSidebar;
+  margin-left: 8px;
 }
 
 .select-item {
-    width: 100%;
-    border: none;
-    position: relative;
-    padding: 0 25px 0 11px;
-    background: transparent;
+  width: 100%;
+  border: none;
+  position: relative;
+  padding: 0 25px 0 11px;
+  background: transparent;
 }
 
-.select-item-show{
-    padding: 0 35px 0 11px;
+.select-item-show {
+  padding: 0 35px 0 11px;
 }
 
 .select-item:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .select-wrap:hover {
-    outline: 1px solid $colorTextRed;
-        .icon-drop-list{
-        color: $colorTextRed;
-    }
+  outline: 1px solid $colorTextRed;
+  .icon-drop-list {
+    color: $colorTextRed;
+  }
 }
-
 
 //===================== Pagination ====================
 
-
 .content-footer {
-    height: 44px;
-    display: flex;
-    justify-content: space-between;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .pagination {
-    display: flex;
-    align-items: center;
-    border-radius: 3px;
-    border: 1px solid $colorBorderSidebar;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  border: 1px solid $colorBorderSidebar;
 }
 
 .view-all {
-    border-radius: 3px;
-    border: 1px solid $colorTextRed;
-    color: $colorTextRed;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px 46px;
+  border-radius: 3px;
+  border: 1px solid $colorTextRed;
+  color: $colorTextRed;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 46px;
 }
 
 .view-all:hover {
-    color: $colorWhite;
-    background: $colorTextRed;
+  color: $colorWhite;
+  background: $colorTextRed;
 }
 
 .pagination-link {
-    color: #c4c4c4;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px;
+  color: #c4c4c4;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
 }
 
 .pagination-link-prev {
-    padding-left: 15px;
-    color: #aaaaaa;
+  padding-left: 15px;
+  color: #aaaaaa;
 }
 
 .pagination-link-next {
-    padding-right: 15px;
-    color: #aaaaaa;
+  padding-right: 15px;
+  color: #aaaaaa;
 }
 
 .pagination-link-dot {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .pagination-link:hover,
 .pagination-link-active {
-    color: $colorTextRed;
+  color: $colorTextRed;
 }
 
 //=================== Feauter =====================
 
 .feauter {
-    height: 341px;
-    background: $colorTextDarkLittleLight;
+  height: 341px;
+  background: $colorTextDarkLittleLight;
 }
 
 .feauter-boxes {
-    height: 100%;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    color: $colorTextWhiteDarker;
-    padding: 0;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: $colorTextWhiteDarker;
+  padding: 0;
 }
 
 .feauter-box {
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .feauter-box-info {
-    text-align: center;
+  text-align: center;
 }
 
 .feauter-box-icon {
-    margin-bottom: 23px;
-    height: auto;
-    width: auto;
+  margin-bottom: 23px;
+  height: auto;
+  width: auto;
 }
 
 .feauter-box-title {
-    line-height: 17px;
-    margin-bottom: 21px;
+  line-height: 17px;
+  margin-bottom: 21px;
 }
 
 //=================== subscribe =====================
 
 .subscribe {
-    margin-top: 0;
+  margin-top: 0;
 }

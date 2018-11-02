@@ -1,219 +1,216 @@
 @import 'variables';
+@import 'mixins';
 
 .image-slide {
-    border: 1px solid $colorBorderForms;
-    background-color: #f7f7f7;
-    padding-bottom: 90px;
+  border: 1px solid $colorBorderForms;
+  background-color: #f7f7f7;
+  padding-bottom: 90px;
 }
 
 .slider-photos {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
 }
 
 .product-description {
-    position: relative;
-    margin-top: -90px;
-    padding: 73px 250px 120px 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid $colorBorderForms;
-    background-color: $colorWhite;
+  position: relative;
+  margin-top: -90px;
+  padding: 73px 250px 120px 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $colorBorderForms;
+  background-color: $colorWhite;
 }
 
 .collection-name {
-    position: relative;
-    color: $colorBrand;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-bottom: 1px solid $colorBorderForms;
-    padding: 12px 0;
+  position: relative;
+  color: $colorBrand;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 1px solid $colorBorderForms;
+  padding: 12px 0;
 }
 
 .collection-name:after {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -32.5px;
-    margin-top: -1px;
-    content: "";
-    height: 3px;
-    width: 63px;
-    background-color: $colorTextRed;
+  @include pos_abs_top_left(100%, 50%);
+  margin-left: -32.5px;
+  margin-top: -1px;
+  content: "";
+  height: 3px;
+  width: 63px;
+  background-color: $colorTextRed;
 }
 
 .single-product-name {
-    color: #4d4d4d;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-top: 17px;
+  color: #4d4d4d;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 17px;
 }
 
 .product-description {
-    .product-rating {
-        margin-top: 24px;
-    }
+  .product-rating {
+    margin-top: 24px;
+  }
 }
 
 .single-product-description {
-    display: block;
-    width: 100%;
-    color: #5e5e5e;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 28px;
-    margin-top: 26px;
-    text-align: center;
+  display: block;
+  width: 100%;
+  color: #5e5e5e;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 28px;
+  margin-top: 26px;
+  text-align: center;
 }
 
 .single-product-info {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .single-product-info-wrap {
-    margin: 28px 22px;
+  margin: 28px 22px;
 }
 
 .title-info {
-    color: #b9b9b9;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
+  color: #b9b9b9;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
 
 }
 
 .value-info {
-    color: #2f2f2f;
+  color: #2f2f2f;
 }
 
 .single-product-price {
-    width: 100%;
-    color: $colorTextRed;
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 37px;
-    padding-bottom: 43px;
-    border-bottom: 1px solid $colorBorderForms;
+  width: 100%;
+  color: $colorTextRed;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 37px;
+  padding-bottom: 43px;
+  border-bottom: 1px solid $colorBorderForms;
 }
 
 .single-product-form {
-    width: 537px;
-    margin-top: 63px;
+  width: 537px;
+  margin-top: 63px;
 }
 
 .product-options {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .product-sort-label {
-    height: auto;
-    color: #2f2f2f;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border: 0;
-    padding: 0;
-    margin: 0;
+  height: auto;
+  color: #2f2f2f;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .select-wrap {
-    margin: 16px 0;
-    width: 144px;
-    height: 35px;
-    border: 1px solid $colorBorderForms;
-    background-color: $colorWhite;
+  margin: 16px 0;
+  width: 144px;
+  height: 35px;
+  border: 1px solid $colorBorderForms;
+  background-color: $colorWhite;
 }
 
 .select-item {
-    width: 100%;
+  width: 100%;
 }
 
 #color {
-    text-transform: capitalize;
-    padding: 0 11px 0 39px;
+  text-transform: capitalize;
+  padding: 0 11px 0 39px;
 }
 
 .color-example {
-    display: block;
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 11px;
-    left: 14px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  @include pos_abs_top_left(11px, 14px);
 }
 
-.color-red{
-    background: $colorTextRed;;
+.color-red {
+  background: $colorTextRed;;
 }
 
 .btn-add-to-cart {
-    width: 100%;
-    margin-top: 28px;
+  width: 100%;
+  margin-top: 28px;
 }
 
 .add-to-cart {
-    width: 100%;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $colorWhite;
-    border: 1px solid $colorTextRed;
-    color: $colorTextRed;
-    font-size: 16px;
-    font-weight: 700;
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $colorWhite;
+  border: 1px solid $colorTextRed;
+  color: $colorTextRed;
+  font-size: 16px;
+  font-weight: 700;
 }
 
-#cart-btn{
-    fill: $colorBrand;
+#cart-btn {
+  fill: $colorBrand;
 }
 
-.cart-btn{
-    margin-right: 15px;
+.cart-btn {
+  margin-right: 15px;
 }
 
 .btn-add-to-cart:hover {
-    .add-to-cart {
-        background: $colorBrand;
-        color: $colorWhite;
-    }
+  .add-to-cart {
+    background: $colorBrand;
+    color: $colorWhite;
+  }
 
-    #cart-btn {
-        fill: $colorWhite;
-    }
+  #cart-btn {
+    fill: $colorWhite;
+  }
 }
 
 .like-also-container {
-    margin-top: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .like-also-heading {
-    color: #4d4d4d;
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
+  color: #4d4d4d;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .products {
-    width: 100%;
-    margin-bottom: 70px;
+  width: 100%;
+  margin-bottom: 70px;
 }
 
 .product-card:hover .product-img {
-    opacity: 1;
+  opacity: 1;
 }
 
 .product-card:hover .product-img-wrap {
-    background-color: $colorWhite;
+  background-color: $colorWhite;
 }

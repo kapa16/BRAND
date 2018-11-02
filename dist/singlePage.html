@@ -11,85 +11,88 @@
     <script src="js/main.js"></script>
 
     <!--Icon Font-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
     <title>BRAND products</title>
 </head>
 
 <body>
 
-    <header class="header">
-        //= src/header.html
-    </header>
+<header class="header">
+    //= src/header.html
+</header>
 
-    <div class="main-menu-wrapper">
-        //= src/mainmenu.html
+<div class="main-menu-wrapper">
+    //= src/mainmenu.html
+</div>
+
+<div class="breadcramb">
+    <div class="container breadcramb-container">
+        <div class="breadcramb-current-item brand-style">New Arrivals</div>
+        <nav>
+            <ul class="breadcramb-nav">
+                <li class="breadcramb-item"><a class="breadcramb-link" href="index.html">Home</a></li>
+                <li class="breadcramb-item"><a class="breadcramb-link" href="product.html">Men</a></li>
+                <li class="breadcramb-active brand-style">New Arrivals</li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="image-slide">
+    <div class="container slider-photos">
+        <img src="img/productsingle.jpg" alt="product">
+    </div>
+</div>
+
+<div class="container product-description">
+    <div class="collection-name">WOMEN COLLECTION</div>
+
+    <h3 class="single-product-name">Moschino Cheap And Chic</h3>
+
+    <div class="product-rating">
+        <i class="fas fa-star rating-star"></i>
+        <i class="fas fa-star rating-star"></i>
+        <i class="fas fa-star rating-star"></i>
+        <i class="fas fa-star rating-star"></i>
+        <i class="far fa-star rating-star"></i>
     </div>
 
-    <div class="breadcramb">
-        <div class="container breadcramb-container">
-            <div class="breadcramb-current-item brand-style">New Arrivals </div>
-            <nav>
-                <ul class="breadcramb-nav">
-                    <li class="breadcramb-item"><a class="breadcramb-link" href="index.html">Home</a></li>
-                    <li class="breadcramb-item"><a class="breadcramb-link" href="product.html">Men</a></li>
-                    <li class="breadcramb-active brand-style">New Arrivals</li>
-                </ul>
-            </nav>
+    <div class="single-product-description">
+        <p>Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate
+            collaborative architectures before cutting-edge services. Completely visualize parallel core competencies
+            rather than exceptional portals. </p>
+    </div>
+
+    <div class="single-product-info">
+        <div class="single-product-info-wrap">
+            <span class="title-info">MATERIAL: <span class="value-info">COTTON</span></span>
+        </div>
+        <div class="single-product-info-wrap">
+            <span class="title-info">DESIGNER: <span class="value-info">BINBURHAN</span></span>
         </div>
     </div>
 
-    <div class="image-slide">
-        <div class="container slider-photos">
-            <img src="img/productsingle.jpg" alt="product">
-        </div>
-    </div>
+    <div class="single-product-price">$561</div>
 
-    <div class="container product-description">
-        <div class="collection-name">WOMEN COLLECTION</div>
-
-        <h3 class="single-product-name">Moschino Cheap And Chic</h3>
-
-        <div class="product-rating">
-            <i class="fas fa-star rating-star"></i>
-            <i class="fas fa-star rating-star"></i>
-            <i class="fas fa-star rating-star"></i>
-            <i class="fas fa-star rating-star"></i>
-            <i class="far fa-star rating-star"></i>
-        </div>
-
-       <div class="single-product-description">
-             <p>Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals. </p>
-        </div>
-
-        <div class="single-product-info">
-            <div class="single-product-info-wrap">
-                <span class="title-info">MATERIAL: <span class="value-info">COTTON</span></span>
-            </div>
-            <div class="single-product-info-wrap">
-                <span class="title-info">DESIGNER: <span class="value-info">BINBURHAN</span></span>
-            </div>
-        </div>
-
-        <div class="single-product-price">$561</div>
-
-        <form class="single-product-form">
-            <div class="product-options">
-                <div class="product-option">
-                    <label class="product-sort-label" for="color">CHOOSE COLOR</label>
-                    <span class="select-wrap">
+    <form class="single-product-form">
+        <div class="product-options">
+            <div class="product-option">
+                <label class="product-sort-label" for="color">CHOOSE COLOR</label>
+                <span class="select-wrap">
                         <span class="color-example color-red"></span>
                         <i class="fas fa-angle-down icon-drop-list"></i>
                         <select class="select-item" name="color" id="color">
                             <option value="red">red</option>
-                            <option value="blue"><span class="color-example color-red"></span>blue</option>
-                            <option value="black"><span class="color-example color-red"></span>black</option>
+                            <option value="blue">blue</option>
+                            <option value="black">black</option>
                         </select>
                     </span>
-                </div>
-                <div class="product-option">
-                    <label class="product-sort-label" for="size">CHOOSE SIZE</label>
-                    <span class="select-wrap">
+            </div>
+            <div class="product-option">
+                <label class="product-sort-label" for="size">CHOOSE SIZE</label>
+                <span class="select-wrap">
                         <i class="fas fa-angle-down icon-drop-list"></i>
                         <select class="select-item" name="size" id="size">
                             <option value="XXL">XXL</option>
@@ -101,147 +104,149 @@
                             <option value="XXS">XXS</option>
                         </select>
                     </span>
-                </div>
-                <div class="product-option">
-                    <label class="product-sort-label" for="quantity">QUANTITY</label>
-                    <span class="select-wrap">
+            </div>
+            <div class="product-option">
+                <label class="product-sort-label" for="quantity">QUANTITY</label>
+                <span class="select-wrap">
                         <input class="select-item" type="number" name="quantity" id="quantity">
                     </span>
-                </div>
             </div>
+        </div>
 
-            <div class="btn-add-to-cart">
-                <button class="add-to-cart">
-                                   <svg class="cart-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="24" viewBox="0 0 32 29">
+        <div class="btn-add-to-cart">
+            <button class="add-to-cart">
+                <svg class="cart-btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="26" height="24" viewBox="0 0 32 29">
                     <defs>
-                        <path id="cart-btn" d="M1181 41.182c0-.65.533-1.182 1.184-1.182h4.28c.533 0 1.007.354 1.145.867l4.833 17.455h13.178l4.379-10.048H1195.4a1.186 1.186 0 0 1-1.184-1.182c0-.65.533-1.182 1.184-1.182h16.413c.394 0 .77.197.986.532.217.335.257.749.099 1.123l-5.405 12.412c-.198.433-.612.709-1.085.709h-14.855a1.184 1.184 0 0 1-1.144-.867l-4.833-17.455h-3.393a1.186 1.186 0 0 1-1.184-1.182zm6.747 25.138a2.684 2.684 0 0 1 5.365 0 2.684 2.684 0 0 1-5.365 0zm16.788.178c-.1-1.458 1.006-2.758 2.485-2.857 1.48-.098 2.762 1.025 2.86 2.483.04.728-.177 1.418-.65 1.95a2.678 2.678 0 0 1-1.835.926h-.197c-1.401 0-2.565-1.103-2.663-2.502z" />
+                        <path id="cart-btn"
+                              d="M1181 41.182c0-.65.533-1.182 1.184-1.182h4.28c.533 0 1.007.354 1.145.867l4.833 17.455h13.178l4.379-10.048H1195.4a1.186 1.186 0 0 1-1.184-1.182c0-.65.533-1.182 1.184-1.182h16.413c.394 0 .77.197.986.532.217.335.257.749.099 1.123l-5.405 12.412c-.198.433-.612.709-1.085.709h-14.855a1.184 1.184 0 0 1-1.144-.867l-4.833-17.455h-3.393a1.186 1.186 0 0 1-1.184-1.182zm6.747 25.138a2.684 2.684 0 0 1 5.365 0 2.684 2.684 0 0 1-5.365 0zm16.788.178c-.1-1.458 1.006-2.758 2.485-2.857 1.48-.098 2.762 1.025 2.86 2.483.04.728-.177 1.418-.65 1.95a2.678 2.678 0 0 1-1.835.926h-.197c-1.401 0-2.565-1.103-2.663-2.502z"/>
                     </defs>
                     <g>
                         <g transform="translate(-1181 -40)">
-                            <use xlink:href="#cart-btn" />
+                            <use xlink:href="#cart-btn"/>
                         </g>
                     </g>
                 </svg>
-<!--
-                    <svg  width="26" height="24" viewBox="0 0 32 29" class="cart-btn">
-                        <g class="cart-btn" transform="translate(-1181 -40)">
-                            <use class="cart-btn" xlink:href="#cart" />
-                        </g>
-                    </svg>
--->
-                    <span>Add to Cart</span>
-                </button>
-            </div>
-        </form>
-    </div>
-
-    <section class="container like-also-container">
-        <h3 class="like-also-heading">you may like also</h3>
-
-        <div class="products">
-
-            <!--card of product begin-->
-            <div class="product-card">
-                <a class="product-card-link" href="singlePage.html">
-                    <div class="product-img-wrap">
-                        <img class="product-img" src="img/products/product18.jpg" alt="product">
-                    </div>
-
-                    <div class="product-card-info">
-                        <p class="product-name">Mango People T-shirt</p>
-
-                        <div class="product-bottom">
-                            <p class="product-price">$52.00</p>
-                            <div class="product-rating">
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="far fa-star rating-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--card of product end-->
-            <!--card of product begin-->
-            <div class="product-card">
-                <a class="product-card-link" href="singlePage.html">
-                    <div class="product-img-wrap">
-                        <img class="product-img" src="img/products/product19.jpg" alt="product">
-                    </div>
-
-                    <div class="product-card-info">
-                        <p class="product-name">Mango People T-shirt</p>
-
-                        <div class="product-bottom">
-                            <p class="product-price">$52.00</p>
-                            <div class="product-rating">
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--card of product end-->
-            <!--card of product begin-->
-            <div class="product-card">
-                <a class="product-card-link" href="singlePage.html">
-                    <div class="product-img-wrap">
-                        <img class="product-img" src="img/products/product20.jpg" alt="product">
-                    </div>
-
-                    <div class="product-card-info">
-                        <p class="product-name">Mango People T-shirt</p>
-
-                        <div class="product-bottom">
-                            <p class="product-price">$52.00</p>
-                            <div class="product-rating">
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="far fa-star rating-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--card of product end-->
-            <!--card of product begin-->
-            <div class="product-card">
-                <a class="product-card-link" href="singlePage.html">
-                    <div class="product-img-wrap">
-                        <img class="product-img" src="img/products/product21.jpg" alt="product">
-                    </div>
-
-                    <div class="product-card-info">
-                        <p class="product-name">Mango People T-shirt</p>
-
-                        <div class="product-bottom">
-                            <p class="product-price">$52.00</p>
-                            <div class="product-rating">
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="fas fa-star rating-star"></i>
-                                <i class="far fa-star rating-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <!--card of product end-->
+                <!--
+                                    <svg  width="26" height="24" viewBox="0 0 32 29" class="cart-btn">
+                                        <g class="cart-btn" transform="translate(-1181 -40)">
+                                            <use class="cart-btn" xlink:href="#cart" />
+                                        </g>
+                                    </svg>
+                -->
+                <span>Add to Cart</span>
+            </button>
         </div>
-    </section>
+    </form>
+</div>
 
-    //= src/subscribe.html
+<section class="container like-also-container">
+    <h3 class="like-also-heading">you may like also</h3>
 
-    //= src/footer.html
+    <div class="products">
+
+        <!--card of product begin-->
+        <div class="product-card">
+            <a class="product-card-link" href="singlePage.html">
+                <div class="product-img-wrap">
+                    <img class="product-img" src="img/products/product18.jpg" alt="product">
+                </div>
+
+                <div class="product-card-info">
+                    <p class="product-name">Mango People T-shirt</p>
+
+                    <div class="product-bottom">
+                        <p class="product-price">$52.00</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="far fa-star rating-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!--card of product end-->
+        <!--card of product begin-->
+        <div class="product-card">
+            <a class="product-card-link" href="singlePage.html">
+                <div class="product-img-wrap">
+                    <img class="product-img" src="img/products/product19.jpg" alt="product">
+                </div>
+
+                <div class="product-card-info">
+                    <p class="product-name">Mango People T-shirt</p>
+
+                    <div class="product-bottom">
+                        <p class="product-price">$52.00</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!--card of product end-->
+        <!--card of product begin-->
+        <div class="product-card">
+            <a class="product-card-link" href="singlePage.html">
+                <div class="product-img-wrap">
+                    <img class="product-img" src="img/products/product20.jpg" alt="product">
+                </div>
+
+                <div class="product-card-info">
+                    <p class="product-name">Mango People T-shirt</p>
+
+                    <div class="product-bottom">
+                        <p class="product-price">$52.00</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="far fa-star rating-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!--card of product end-->
+        <!--card of product begin-->
+        <div class="product-card">
+            <a class="product-card-link" href="singlePage.html">
+                <div class="product-img-wrap">
+                    <img class="product-img" src="img/products/product21.jpg" alt="product">
+                </div>
+
+                <div class="product-card-info">
+                    <p class="product-name">Mango People T-shirt</p>
+
+                    <div class="product-bottom">
+                        <p class="product-price">$52.00</p>
+                        <div class="product-rating">
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="fas fa-star rating-star"></i>
+                            <i class="far fa-star rating-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!--card of product end-->
+    </div>
+</section>
+
+//= src/subscribe.html
+
+//= src/footer.html
 </body>
 
 </html>
