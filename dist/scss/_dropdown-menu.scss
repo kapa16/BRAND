@@ -21,7 +21,7 @@
 }
 
 .dropdown-heading {
-    
+
     text-transform: uppercase;
     border-bottom: 1px solid $colorBgSite;
     color: $colorTextDarkLighter;
@@ -63,7 +63,7 @@
     color: $colorBrand;
 }
 
-.super-sale{
+.super-sale {
     width: 255px;
     height: 118px;
     display: flex;
@@ -73,10 +73,10 @@
     background: url("../img/superSale.jpg") no-repeat;
 }
 
-.super-sale-text{
+.super-sale-text {
     color: $colorWhite;
-font-size: 22px;
-font-weight: 400;
-text-transform: uppercase;
-letter-spacing: 0.55px;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.55px;
 }

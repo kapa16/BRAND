@@ -16,26 +16,26 @@
     margin-bottom: 113px;
 }
 
-.products-title {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 23px;
-}
-
-.products-description {
-    color: $colorTextGrayDarker;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 11px;
-    margin-top: 16px;
-}
-
 .products {
     @include display_align_justify_direction($display: flex, $align: flex-start, $justify: space-between, $flex-direction: "");
     flex-wrap: wrap;
     margin-bottom: 80px;
     overflow: hidden;
     padding: 4px;
+
+    &-title {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 23px;
+    }
+
+    .products-description {
+        color: $colorTextGrayDarker;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 11px;
+        margin-top: 16px;
+    }
 }
 
 .parent-product-card {

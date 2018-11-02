@@ -375,7 +375,7 @@ template {
 }
 
 ul,
-li{
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -393,7 +393,7 @@ p {
 }
 
 div,
-ul{
+ul {
     box-sizing: border-box;
 }
 
@@ -410,12 +410,13 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+
 input[type='number'] {
     -moz-appearance: textfield;
 }
 
 select {
-        /*for WebKit*/
+    /*for WebKit*/
     -webkit-appearance: none;
     /* for FF */
     -moz-appearance: none;

@@ -36,7 +36,6 @@ body {
     border: 1px solid $colorBrand;
 }
 
-
 .button-brand:hover {
     color: $colorBrand;
     background: $colorWhite;
@@ -45,8 +44,7 @@ body {
 
 .icon-drop-list {
     position: absolute;
-    top: 50%;
-    ;
+    top: 50%;;
     left: 100%;
     margin-left: -19px;
     margin-top: -8px;
