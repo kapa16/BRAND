@@ -1,0 +1,33 @@
+.category
+  height: 860px
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  justify-content: center
+  align-content: space-between
+  margin: 100px 0
+
+.category-card
+  position: relative
+  margin-bottom: 20px
+  transition: transform 0.3s
+  &:hover
+    position: relative
+    transform: scale(1.02)
+
+.badge
+  @include position_absolute_top_left(26px, 0)
+  background-color: $colorWhite
+  text-transform: uppercase
+  padding: 16px
+  font-weight: 900
+
+.first-string
+  font-size: 18px
+  line-height: 14px
+  color: $colorTextDark
+
+.second-string
+  margin-top: 14px
+  font-size: 30px
+  line-height: 23px
