@@ -35,7 +35,7 @@
 }
 
 .collection-name:after {
-  @include pos_abs_top_left(100%, 50%);
+  @include position_absolute_top_left(100%, 50%);
   margin-left: -32.5px;
   margin-top: -1px;
   content: "";
@@ -144,7 +144,7 @@
   display: block;
   width: 12px;
   height: 12px;
-  @include pos_abs_top_left(11px, 14px);
+  @include position_absolute_top_left(11px, 14px);
 }
 
 .color-red {
@@ -159,7 +159,7 @@
 .add-to-cart {
   width: 100%;
   height: 55px;
-  @include disp_flex_ai_jc_fd(center, center, row);
+  @include display_align_justify_direction(flex, center, center, row);
   background: $colorWhite;
   border: 1px solid $colorTextRed;
   color: $colorTextRed;

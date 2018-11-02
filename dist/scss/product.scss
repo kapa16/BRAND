@@ -209,7 +209,7 @@
   font-family: "Font Awesome 5 Free";
   font-size: 13px;
   content: "\2714";
-  @include pos_abs_top_left(0px, 1px);
+  @include position_absolute_top_left(0, 1px);
   color: $colorBrand;
 }
 
@@ -237,7 +237,7 @@
 }
 
 .products-filter-bar {
-  @include pos_abs_top_left(0px, 31px);
+  @include position_absolute_top_left(0px, 31px);
   width: 124px;
   height: 6px;
   background-color: $colorBrand;
@@ -253,11 +253,11 @@
 }
 
 .products-filter-leftpoint {
-  @include pos_abs_top_left(-4px, -7px);
+  @include position_absolute_top_left(-4px, -7px);
 }
 
 .products-filter-rightpoint {
-  @include pos_abs_top_left(-4px, 117px);
+  @include position_absolute_top_left(-4px, 117px);
 }
 
 .price-range {
@@ -376,11 +376,10 @@
   font-size: 16px;
   font-weight: bold;
   padding: 12px 46px;
-}
-
-.view-all:hover {
-  color: $colorWhite;
-  background: $colorTextRed;
+  &:hover {
+    color: $colorWhite;
+    background: $colorTextRed;
+  }
 }
 
 .pagination-link {

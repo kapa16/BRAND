@@ -6,89 +6,8 @@
 @import 'header';
 @import 'dropdown-menu';
 @import 'mainmenu';
-
-//===================== Slider BEGIN ================
-.slider {
-  height: 665px;
-  background: $colorBgSite;
-}
-
-.slider-container {
-  display: flex;
-  align-items: center;
-  height: $heightSlider - $heightMainMenu;
-  background: $colorBgSite url("../img/slider.jpg") no-repeat 0 (-$heightMainMenu);
-}
-
-.slider-content {
-  padding-left: 12px;
-  text-transform: uppercase;
-  color: $colorTextDark;
-  border-left: 12px solid $colorBrand;
-}
-
-.brand {
-  font-size: 60px;
-  font-weight: 900;
-  line-height: 45px;
-}
-
-.fashion {
-  margin-top: 20px;
-  font-size: 40px;
-  line-height: 30px;
-  font-weight: 900;
-
-  .brand-style {
-    font-weight: 900;
-  }
-}
-
-//===================== Slider END ================
-
-//===================== Category BEGIN ================
-.category {
-  height: 860px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: space-between;
-  margin: 100px 0;
-}
-
-.category-card {
-  position: relative;
-  margin-bottom: 20px;
-  transition: transform 0.3s;
-  &:hover {
-    position: relative;
-    transform: scale(1.02);
-  }
-}
-
-.badge {
-  @include pos_abs_top_left(26px, 0);
-  background-color: $colorWhite;
-  text-transform: uppercase;
-  padding: 16px;
-  font-weight: 900;
-}
-
-.first-string {
-  font-size: 18px;
-  line-height: 14px;
-  color: $colorTextDark;
-}
-
-.second-string {
-  margin-top: 14px;
-  font-size: 30px;
-  line-height: 23px;
-}
-
-//===================== Category END ================
-//===================== Category END ================
+@import 'slider';
+@import 'category';
 
 //===================== Products BEGIN ================
 
@@ -112,9 +31,7 @@
 }
 
 .products {
-  display: flex;
-  justify-content: space-between;
-  align-content: flex-start;
+  @include display_align_justify_direction($display:flex, $align:flex-start, $justify:space-between, $flex-direction:"");
   flex-wrap: wrap;
   margin-bottom: 80px;
   overflow: hidden;
@@ -122,12 +39,8 @@
 }
 
 .parent-product-card {
-  position: absolute;
-  top: 98px;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include position_absolute_top_left(98px, 0);
+  @include display_align_justify_direction($display:none, $align:center, $justify:center, $flex-direction:column);
 }
 
 .product-img-wrap,
@@ -157,8 +70,7 @@
   position: relative;
   margin-top: 39px;
   margin-bottom: 21px;
-  display: flex;
-  justify-content: center;
+  @include display_align_justify_direction($display:flex, $align:"", $justify:center, $flex-direction:"");
 
   &:hover {
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
@@ -178,9 +90,7 @@
 
 .product-card-info {
   height: 85px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include display_align_justify_direction($display:flex, $align:space-between, $justify:space-between, $flex-direction:column);
   padding: 19px 15px 21px 15px;
   box-sizing: border-box;
 }
@@ -195,8 +105,7 @@
 }
 
 .product-bottom {
-  display: flex;
-  justify-content: space-between;
+  @include display_align_justify_direction($display:flex, $align:"", $justify:space-between, $flex-direction:"");
 }
 
 .product-price {
@@ -234,8 +143,7 @@
 }
 
 .feauter-container {
-  display: flex;
-  justify-content: center;
+  @include display_align_justify_direction($display:flex, $align:"", $justify:center, $flex-direction:"");
   background: $colorTextDarkLittleLight;
 }
 
@@ -249,7 +157,7 @@
 }
 
 .feauter-banner-badge {
-  @include pos_abs_top_left(146px, 39px);
+  @include position_absolute_top_left(146px, 39px);
   text-transform: uppercase;
   color: $colorWhite;
 }
@@ -281,9 +189,7 @@
 
 .feauter-boxes {
   width: 373px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include display_align_justify_direction($display:flex, $align:"", $justify:space-between, $flex-direction:column);
   color: $colorTextWhiteDarker;
   padding: 48px 43px 48px 36px;
 }
@@ -379,7 +285,7 @@
 }
 
 .subscribe-box {
-  @include disp_flex_ai_jc_fd(center, center, column);
+  @include display_align_justify_direction(flex, center, center, column);
 }
 
 .feauter-box-info {
@@ -446,7 +352,7 @@
 
 .slider-control-wrap {
   cursor: pointer;
-  @include disp_flex_ai_jc_fd(center, center, row);
+  @include display_align_justify_direction(flex, center, center, row);
   width: 50px;
   height: 20px;
   margin: 31px 0 0 0;
@@ -469,8 +375,7 @@
 //===================== Footer BEGIN ================
 
 .footer-top {
-  display: flex;
-  justify-content: space-between;
+  @include display_align_justify_direction($display:flex, $align:"", $justify:space-between, $flex-direction:"");
   padding: 168px 0 89px 0;
 }
 
@@ -487,8 +392,7 @@
 
 .footer-nav {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+  @include display_align_justify_direction($display:flex, $align:"", $justify:space-around, $flex-direction:"");
 }
 
 .footer-menu-title {
@@ -518,7 +422,7 @@
 }
 
 .container-footer-bottom {
-  @include disp_flex_ai_jc_fd(center, space-between, row);
+  @include display_align_justify_direction($display:flex, $align:center, $justify:space-between, $flex-direction:"");
   font-size: 16px;
   font-weight: 400;
 }
@@ -528,9 +432,7 @@
 }
 
 .social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display_align_justify_direction($display:flex, $align:center, $justify:center, $flex-direction:"");
   width: 32px;
   height: 32px;
   background-color: $colorWhite;

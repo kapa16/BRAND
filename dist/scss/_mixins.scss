@@ -1,13 +1,13 @@
 
-@mixin pos_abs_top_left($top, $left){
+@mixin position_absolute_top_left($top, $left){
   position: absolute;
   top: $top;
-  left: $left;
+  @if($left != 0) {left: $left;}
 }
 
-@mixin disp_flex_ai_jc_fd($align, $justify, $flex-direction){
-  display: flex;
-  align-items: $align;
-  justify-content: $justify;
-  flex-direction: $flex-direction;
+@mixin display_align_justify_direction($display, $align, $justify, $flex-direction){
+  display: $display;
+  @if($align != ""){align-items: $align};
+  @if($justify != ""){justify-content: $justify};
+  @if($flex-direction != ""){flex-direction: $flex-direction};
 }
