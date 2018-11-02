@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f012702a-6e63-475a-99a3-d62ceea5defc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dist/scss/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/product.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/style.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -78,14 +79,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="sass" value="10" />
-          <entry key="scss" value="223" />
+          <entry key="sass" value="11" />
+          <entry key="scss" value="230" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="SCSS" value="223" />
-          <entry key="Sass" value="10" />
+          <entry key="SCSS" value="230" />
+          <entry key="Sass" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -108,20 +109,20 @@
     <splitter split-orientation="horizontal" split-proportion="0.6169935">
       <split-first>
         <leaf>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dist/scss/style.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="223">
-                  <caret line="198" column="14" selection-start-line="198" selection-start-column="14" selection-end-line="198" selection-end-column="14" />
+                <state relative-caret-position="-117">
+                  <caret line="18" selection-start-line="18" selection-end-line="18" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/scss/product.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1217">
-                  <caret line="379" column="23" selection-start-line="379" selection-start-column="23" selection-end-line="379" selection-end-column="23" />
+                <state relative-caret-position="282">
+                  <caret line="324" selection-start-line="324" selection-end-line="324" />
                 </state>
               </provider>
             </entry>
@@ -139,7 +140,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dist/scss/_mixins.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="119">
@@ -148,11 +149,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/scss/_category.sass">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="9" selection-start-column="9" selection-end-column="9" />
+                <state relative-caret-position="102">
+                  <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -182,7 +183,6 @@
       <find>;</find>
       <find>}</find>
       <find>pos_abs_top_left</find>
-      <find>abso</find>
       <find>disp_flex_ai_jc_fd</find>
       <find>products</find>
       <find>flex</find>
@@ -190,6 +190,8 @@
       <find>display_align_justify_direction</find>
       <find>: fle</find>
       <find>.product-card</find>
+      <find>.product-card-in</find>
+      <find>abso</find>
     </findStrings>
     <replaceStrings>
       <replace>disp_flex_ai_jc_fd</replace>
@@ -216,11 +218,11 @@
         <option value="J:/../../Try/Bootstrup sources/gulpfile.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/app/css/style.css" />
-        <option value="$PROJECT_DIR$/dist/scss/_category.sass" />
         <option value="$PROJECT_DIR$/dist/scss/_slider.sass" />
-        <option value="$PROJECT_DIR$/dist/scss/product.scss" />
         <option value="$PROJECT_DIR$/dist/scss/_mixins.scss" />
         <option value="$PROJECT_DIR$/dist/scss/style.scss" />
+        <option value="$PROJECT_DIR$/dist/scss/product.scss" />
+        <option value="$PROJECT_DIR$/dist/scss/_category.sass" />
       </list>
     </option>
   </component>
@@ -363,7 +365,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dist" />
     <property name="list.type.of.created.stylesheet" value="Sass" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SCSS" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Sass" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/dist/scss/shoppingCart.scss" />
   </component>
   <component name="RunDashboard">
@@ -417,12 +419,12 @@
       <updated>1541130935239</updated>
       <workItem from="1541130938311" duration="14349000" />
       <workItem from="1541163482488" duration="199000" />
-      <workItem from="1541163789633" duration="4115000" />
+      <workItem from="1541163789633" duration="4405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18663000" />
+    <option name="totallyTimeSpent" value="18953000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,24 +601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_category.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/scss/shoppingCart.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/product.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1217">
-          <caret line="379" column="23" selection-start-line="379" selection-start-column="23" selection-end-line="379" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -627,6 +615,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scss/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dist/scss/_mixins.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -634,10 +629,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/style.scss">
+    <entry file="file://$PROJECT_DIR$/dist/scss/_category.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="198" column="14" selection-start-line="198" selection-start-column="14" selection-end-line="198" selection-end-column="14" />
+        <state relative-caret-position="102">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scss/product.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="324" selection-start-line="324" selection-end-line="324" />
         </state>
       </provider>
     </entry>
