@@ -1,4 +1,16 @@
 "use strict";
+
+/* параметры для gulp-autoprefixer */
+var autoprefixerList = [
+    'Chrome >= 45',
+    'Firefox ESR',
+    'Edge >= 12',
+    'Explorer >= 10',
+    'iOS >= 9',
+    'Safari >= 9',
+    'Android >= 4.4',
+    'Opera >= 30'
+];
 /* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
 var path = {
     build: {
@@ -42,6 +54,7 @@ var gulp = require('gulp'),  // подключаем Gulp
     rigger = require('gulp-rigger'), // модуль для импорта содержимого одного файла в другой
     sourcemaps = require('gulp-sourcemaps'), // модуль для генерации карты исходных файлов
     sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
+    autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
     cache = require('gulp-cache'), // модуль для кэширования
     del = require('del'); // плагин для удаления файлов и каталогов
 
@@ -67,6 +80,9 @@ gulp.task('css:build', function () {
         .pipe(plumber()) // для отслеживания ошибок
         .pipe(sourcemaps.init()) // инициализируем sourcemap
         .pipe(sass()) // scss -> css
+        .pipe(autoprefixer({ // добавим префиксы
+            browsers: autoprefixerList
+        }))
         .pipe(sourcemaps.write('./')) // записываем sourcemap
         .pipe(gulp.dest(path.build.css)) // выгружаем в build
         .pipe(webserver.reload({stream: true})); // перезагрузим сервер
