@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f012702a-6e63-475a-99a3-d62ceea5defc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/_checkout.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_checkout.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_mixins.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/_product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_product.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/_shoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_shoppingCart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/_singlePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_singlePage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/_style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/shoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/shoppingCart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/singlePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/singlePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/feauter.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/feauter.html" afterDir="false" />
-    </list>
+    <list default="true" id="f012702a-6e63-475a-99a3-d62ceea5defc" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +113,7 @@
     <session id="-324690157">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -547,12 +535,12 @@
       <workItem from="1541130938311" duration="14349000" />
       <workItem from="1541163482488" duration="199000" />
       <workItem from="1541163789633" duration="12280000" />
-      <workItem from="1541180156976" duration="8703000" />
+      <workItem from="1541180156976" duration="9306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35531000" />
+    <option name="totallyTimeSpent" value="36134000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -565,7 +553,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1035" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4972253" visible="true" weight="0.18656716" />
       <window_info id="Structure" order="1" sideWeight="0.5005549" side_tool="true" weight="0.17857143" />
