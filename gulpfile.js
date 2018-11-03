@@ -14,30 +14,33 @@ var autoprefixerList = [
 /* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
 var path = {
     build: {
-        html:  'app/',
-        js:    'app/js/',
-        css:   'app/css/',
-        img:   'app/img/',
+        html: 'app/',
+        pug: 'app/',
+        js: 'app/js/',
+        css: 'app/css/',
+        img: 'app/img/',
         fonts: 'app/fonts/',
         webfonts: 'app/webfonts/'
     },
     src: {
-        html:  'dist/*.html',
-        js:    'dist/js/main.js',
+        html: 'dist/*.html',
+        pug: 'dist/pug/*.pug',
+        js: 'dist/js/main.js',
         style: 'dist/scss/*.+(scss|sass)',
-        img:   'dist/img/**/*.*',
+        img: 'dist/img/**/*.*',
         fonts: 'dist/fonts/**/*.*',
         webfonts: 'dist/webfonts/**/*.*'
     },
     watch: {
-        html:  'dist/**/*.html',
-        js:    'dist/js/**/*.js',
-        css:   'dist/scss/**/*.+(scss|sass)',
-        img:   'dist/img/**/*.*',
+        html: 'dist/**/*.html',
+        pug: 'dist/pug/**/*.pug',
+        js: 'dist/js/**/*.js',
+        css: 'dist/scss/**/*.+(scss|sass)',
+        img: 'dist/img/**/*.*',
         fonts: 'dist/fonts/**/*.*',
         webfonts: 'dist/webfonts/**/*.*'
     },
-    clean:     './app'
+    clean: './app'
 };
 /* настройки сервера */
 var config = {
@@ -56,7 +59,9 @@ var gulp = require('gulp'),  // подключаем Gulp
     sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
     autoprefixer = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
     cache = require('gulp-cache'), // модуль для кэширования
-    del = require('del'); // плагин для удаления файлов и каталогов
+    del = require('del'), // плагин для удаления файлов и каталогов
+    pug = require('gulp-pug'),
+    htmlbeautify = require('gulp-html-beautify');
 
 /* задачи */
 
@@ -72,6 +77,34 @@ gulp.task('html:build', function () {
         .pipe(rigger()) // импорт вложений
         .pipe(gulp.dest(path.build.html)) // выкладывание готовых файлов
         .pipe(webserver.reload({stream: true})); // перезагрузка сервера
+});
+
+//форматирование html
+gulp.task('htmlbeautify', function () {
+    var options = {
+        indentSize: 2,
+        unformatted: [
+            // https://www.w3.org/TR/html5/dom.html#phrasing-content
+            'abbr', 'area', 'b', 'bdi', 'bdo', 'br', 'cite',
+            'code', 'data', 'datalist', 'del', 'dfn', 'em', 'embed', 'i', 'ins', 'kbd', 'keygen', 'map', 'mark', 'math', 'meter', 'noscript',
+            'object', 'output', 'progress', 'q', 'ruby', 's', 'samp', 'small',
+            'strong', 'sub', 'sup', 'template', 'time', 'u', 'var', 'wbr', 'text',
+            'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
+        ]
+    };
+    gulp.src('app/*.html')
+        .pipe(htmlbeautify(options))
+        .pipe(gulp.dest('app/'))
+});
+
+//сбор pug
+gulp.task('pug:build', function () {
+    return gulp.src(path.src.pug)
+        .pipe(plumber())
+        .pipe(pug())
+        .pipe(gulp.dest(path.build.pug))
+        .pipe(htmlbeautify())
+        .pipe(webserver.reload({stream: true}));
 });
 
 // сбор стилей
@@ -100,11 +133,11 @@ gulp.task('js:build', function () {
 });
 
 // перенос шрифтов
-gulp.task('fonts:build', function() {
+gulp.task('fonts:build', function () {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.build.fonts));
 });
-gulp.task('webfonts:build', function() {
+gulp.task('webfonts:build', function () {
     gulp.src(path.src.webfonts)
         .pipe(gulp.dest(path.build.webfonts));
 });
@@ -122,13 +155,14 @@ gulp.task('clean:build', function () {
 
 // очистка кэша
 gulp.task('cache:clear', function () {
-  cache.clearAll();
+    cache.clearAll();
 });
 
 // сборка
 gulp.task('build', [
     'clean:build',
     'html:build',
+    'pug:build',
     'css:build',
     'js:build',
     'fonts:build',
@@ -137,8 +171,9 @@ gulp.task('build', [
 ]);
 
 // запуск задач при изменении файлов
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch(path.watch.html, ['html:build']);
+    gulp.watch(path.watch.pug, ['pug:build']);
     gulp.watch(path.watch.css, ['css:build']);
     gulp.watch(path.watch.js, ['js:build']);
     gulp.watch(path.watch.img, ['image:build']);
