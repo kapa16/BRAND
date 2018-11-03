@@ -8,8 +8,10 @@
         font-size: 16px
         font-weight: 700
         text-transform: uppercase
-        padding: 30px 0 6px 0
+        padding: 30px 0 30px 0
 
+    &-link:hover
+        color: $colorBrand
 
     &-list
         border-bottom: 1px solid $colorBgSite
@@ -17,6 +19,7 @@
         &-content
             @include display_align_justify_direction($display:flex, $align:flex-start, $justify:"", $flex-direction:row)
             margin-bottom: 80px
+            margin-top: -24px
 
         &-left
             margin-left: 35px
@@ -31,10 +34,18 @@
 
     &-label
         @include font-color-size-weight-transform($color: $colorTextDark, $size:12px, $weight: 400, $transform:uppercase)
-        display: block
+        @include display_align_justify_direction($display:flex, $align:center, $justify:"", $flex-direction:row)
 
         &:not(:last-of-type)
             margin-bottom: 20px
+
+    &-radio
+        margin-right: 14px
+
+    &-label:hover,
+    &-radio:hover
+        cursor: pointer
+        color: $colorBrand
 
     &-input
         width: 390px
@@ -42,6 +53,9 @@
 
     &-extra-info-link
         @include font-color-size-weight-transform($color: #b3b2b2, $size:13px)
+
+    &-extra-info-link:hover
+        color: $colorBrand
 
     &-extra-info-list:not(:last-of-type)
         margin-bottom: 15px
@@ -53,7 +67,7 @@
         margin-left: 290px
 
     &-label-login
-        margin: 23px 0 16px 0;
+        margin: 23px 0 16px 0
 
     &-select-item
         color: #b1b1b1
@@ -69,12 +83,20 @@
 
         &:hover
             cursor: pointer
+            border: 1px solid #ff0d0d
+
+        &:focus
+            border: 1px solid #ff0d0d
+            color: $colorBlack
 
 .button-form.button-checkout-form
     width: 180px
     height: 50px
-    margin: 0;
+    margin: 0
     @include font-color-size-weight-transform($color: #4a4a4a, $size:14px, $weight: 700, $transform:uppercase)
+
+    &:hover
+        color: $colorBrand
 
 .required-fileds
     @include font-color-size-weight-transform($color: #ff0d0d, $size:17px, $weight: 400)
@@ -92,3 +114,6 @@
     display: block
     margin-left: 32px
     @include font-color-size-weight-transform($color: #222222, $size:14px, $weight: 400)
+
+    &:hover
+        color: $colorBrand
