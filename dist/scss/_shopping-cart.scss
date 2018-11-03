@@ -27,7 +27,7 @@
 }
 
 .cart-table-cell {
-    @include display_align_justify_direction(flex, center,center,row);
+    @include display_align_justify_direction(flex, center, center, row);
     width: 11.6%;
     border-bottom: 1px solid $colorBorderForms;
     text-align: center;
