@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f012702a-6e63-475a-99a3-d62ceea5defc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/scss/_checkout.sass" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_checkout.sass" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/scss/_singlePage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_singlePage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/scss/_style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/shoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/shoppingCart.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -151,14 +148,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="351" />
+          <entry key="html" value="357" />
           <entry key="sass" value="696" />
           <entry key="scss" value="238" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="351" />
+          <entry key="HTML" value="357" />
           <entry key="SCSS" value="238" />
           <entry key="Sass" value="696" />
         </counts>
@@ -169,7 +166,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dist/checkout.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="97">
@@ -178,11 +175,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/shoppingCart.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2743">
-                  <caret line="170" column="46" selection-start-line="170" selection-start-column="46" selection-end-line="170" selection-end-column="46" />
+                <state relative-caret-position="261">
+                  <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -327,7 +324,6 @@
         <option value="$PROJECT_DIR$/dist/scss/_mixins.scss" />
         <option value="$PROJECT_DIR$/dist/scss/_mixins.sass" />
         <option value="$PROJECT_DIR$/dist/singlePage.html" />
-        <option value="$PROJECT_DIR$/dist/shoppingCart.html" />
         <option value="$PROJECT_DIR$/dist/scss/_shoppingCart.scss" />
         <option value="$PROJECT_DIR$/dist/checkout.html" />
         <option value="$PROJECT_DIR$/dist/src/feauter.html" />
@@ -338,6 +334,7 @@
         <option value="$PROJECT_DIR$/dist/scss/_singlePage.scss" />
         <option value="$PROJECT_DIR$/dist/scss/_style.scss" />
         <option value="$PROJECT_DIR$/dist/scss/_checkout.sass" />
+        <option value="$PROJECT_DIR$/dist/shoppingCart.html" />
       </list>
     </option>
   </component>
@@ -537,12 +534,12 @@
       <workItem from="1541163482488" duration="199000" />
       <workItem from="1541163789633" duration="12280000" />
       <workItem from="1541180156976" duration="9306000" />
-      <workItem from="1541219999460" duration="6146000" />
+      <workItem from="1541219999460" duration="6790000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42280000" />
+    <option name="totallyTimeSpent" value="42924000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -832,13 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/shoppingCart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2743">
-          <caret line="170" column="46" selection-start-line="170" selection-start-column="46" selection-end-line="170" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/scss/_mixins.sass">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -899,6 +889,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
           <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/shoppingCart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
         </state>
       </provider>
     </entry>
