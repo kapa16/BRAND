@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f012702a-6e63-475a-99a3-d62ceea5defc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/dist/scss/_shopping-cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_shopping-cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/shopping-cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/shopping-cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/src/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/src/header.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,19 +146,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="364" />
+          <entry key="html" value="380" />
           <entry key="js" value="120" />
           <entry key="pug" value="27" />
           <entry key="sass" value="696" />
-          <entry key="scss" value="351" />
+          <entry key="scss" value="358" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="364" />
+          <entry key="HTML" value="380" />
           <entry key="Jade" value="27" />
           <entry key="JavaScript" value="120" />
-          <entry key="SCSS" value="351" />
+          <entry key="SCSS" value="358" />
           <entry key="Sass" value="696" />
         </counts>
       </usages-collector>
@@ -182,11 +180,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/shopping-cart.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="245">
-                  <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
-                  <folding>
-                    <element signature="n#tr#2;n#tbody#0;n#table#0;n#form#0;n#body#0;n#html#0;n#!!top" />
-                  </folding>
+                <state relative-caret-position="-1161">
+                  <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
                 </state>
               </provider>
             </entry>
@@ -216,8 +211,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/scss/_shopping-cart.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="202">
-                  <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+                <state relative-caret-position="372">
+                  <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
                 </state>
               </provider>
             </entry>
@@ -533,12 +528,12 @@
       <workItem from="1541180156976" duration="9306000" />
       <workItem from="1541219999460" duration="7654000" />
       <workItem from="1541253701453" duration="2887000" />
-      <workItem from="1541272487784" duration="1299000" />
+      <workItem from="1541272487784" duration="1616000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47974000" />
+    <option name="totallyTimeSpent" value="48291000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -906,20 +901,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_shopping-cart.scss">
+    <entry file="file://$PROJECT_DIR$/dist/shopping-cart.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+        <state relative-caret-position="-1161">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/shopping-cart.html">
+    <entry file="file://$PROJECT_DIR$/dist/scss/_shopping-cart.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="63" column="35" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
-          <folding>
-            <element signature="n#tr#2;n#tbody#0;n#table#0;n#form#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="372">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
         </state>
       </provider>
     </entry>
