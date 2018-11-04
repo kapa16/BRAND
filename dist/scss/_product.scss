@@ -363,43 +363,6 @@
     color: $colorTextRed;
 }
 
-//=================== Feauter =====================
-
-.feauter {
-    height: 341px;
-    background: $colorTextDarkLittleLight;
-}
-
-.feauter-boxes-horizontal {
-    height: 100%;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    color: $colorTextWhiteDarker;
-    padding: 0;
-}
-
-.feauter-box {
-    flex-direction: column;
-    align-items: center;
-}
-
-.feauter-box-info {
-    text-align: center;
-}
-
-.feauter-box-icon {
-    margin-bottom: 23px;
-    height: auto;
-    width: auto;
-}
-
-.feauter-box-title {
-    line-height: 17px;
-    margin-bottom: 21px;
-}
-
 //=================== subscribe =====================
 
 .subscribe {

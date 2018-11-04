@@ -135,99 +135,7 @@
 
 //===================== Products END ================
 
-//===================== Fetured BEGIN ================
 
-.feauter {
-    height: auto; //529px;
-
-    &-container {
-        @include display_align_justify_direction($display: flex, $align: "", $justify: center, $flex-direction: "");
-        background: $colorTextDarkLittleLight;
-    }
-}
-
-.feauter-banner {
-    position: relative;
-    display: block;
-    width: 767px;
-    height: 529px;
-    background: url("../img/banner_small.jpg") no-repeat center;
-    background-size: cover;
-
-    &:hover &-badge-first-string {
-        font-size: 64px;
-        font-weight: 900;
-    }
-
-    &:hover &-badge-second-string {
-        font-size: 44px;
-        font-weight: 900;
-    }
-
-    &-badge {
-        @include position_absolute_top_left(146px, 39px);
-        text-transform: uppercase;
-        color: $colorWhite;
-
-        &-first-string {
-            font-size: 54px;
-            font-weight: 700;
-            line-height: 50px;
-            transition: font-size 0.3s;
-        }
-
-        &-second-string {
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 34px;
-            margin-top: 15px;
-            transition: font-size 0.3s;
-        }
-    }
-}
-
-.feauter-boxes {
-    width: 373px;
-    @include display_align_justify_direction($display: flex, $align: "", $justify: space-between, $flex-direction: column);
-    color: $colorTextWhiteDarker;
-    padding: 48px 43px 48px 36px;
-}
-
-.feauter-box {
-    display: flex;
-    width: 100%;
-    color: $colorTextWhiteDarker;
-
-    &:hover .feauter-box-title {
-        color: $colorBrand;
-    }
-
-    &-icon {
-        width: 78px;
-        height: 32px;
-        flex-shrink: 0;
-    }
-
-    &-info {
-        width: 100%;
-    }
-
-    &-title {
-        width: 100%;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 33px;
-    }
-
-    &-description {
-        width: 100%;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 24px;
-    }
-}
-
-//===================== Fetured END ================
 
 //===================== Subscribe BEGIN ================
 
@@ -288,7 +196,7 @@
     margin: 0 auto;
 }
 
-.feauter-box-info {
+.feature-box-info {
     overflow: hidden;
 }
 
@@ -493,18 +401,18 @@
 //    }
 //
 //
-//    .feauter-container {
+//    .feature-container {
 //        flex-direction: column;
 //        justify-content: center;
 //        align-items: center;
 //        height: auto;
 //    }
 //
-//    .feauter-banner {
+//    .feature-banner {
 //        width: 100%;
 //    }
 //
-//    .feauter-boxes {
+//    .feature-boxes {
 //        width: 100%;
 //        flex-direction: row;
 //        justify-content: space-between;
@@ -512,7 +420,7 @@
 //        padding: 20px 0;
 //    }
 //
-//    .feauter-box {
+//    .feature-box {
 //        flex-direction: column;
 //        justify-content: center;
 //        align-items: center;
@@ -520,17 +428,17 @@
 //        margin: 0 10px;
 //    }
 //
-//    .feauter-box-icon {
+//    .feature-box-icon {
 //        height: auto;
 //        width: auto;
 //    }
 //
-//    .feauter-box-title {
+//    .feature-box-title {
 //        margin: 20px 0 10px 0;
 //        line-height: 17px;
 //    }
 //
-//    .feauter-box-info {
+//    .feature-box-info {
 //        text-align: center;
 //    }
 //    
