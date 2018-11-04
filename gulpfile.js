@@ -16,6 +16,7 @@ var path = {
     build: {
         html: 'app/',
         pug: 'app/',
+        htmlbeautify: 'app/',
         js: 'app/js/',
         css: 'app/css/',
         img: 'app/img/',
@@ -25,6 +26,7 @@ var path = {
     src: {
         html: 'dist/*.html',
         pug: 'dist/pug/*.pug',
+        htmlbeautify: 'app/*.html',
         js: 'dist/js/main.js',
         style: 'dist/scss/*.+(scss|sass)',
         img: 'dist/img/**/*.*',
@@ -34,6 +36,7 @@ var path = {
     watch: {
         html: 'dist/**/*.html',
         pug: 'dist/pug/**/*.pug',
+        htmlbeautify: 'app/*.html',
         js: 'dist/js/**/*.js',
         css: 'dist/scss/**/*.+(scss|sass)',
         img: 'dist/img/**/*.*',
@@ -81,29 +84,21 @@ gulp.task('html:build', function () {
 
 //форматирование html
 gulp.task('htmlbeautify', function () {
-    var options = {
-        indentSize: 2,
-        unformatted: [
-            // https://www.w3.org/TR/html5/dom.html#phrasing-content
-            'abbr', 'area', 'b', 'bdi', 'bdo', 'br', 'cite',
-            'code', 'data', 'datalist', 'del', 'dfn', 'em', 'embed', 'i', 'ins', 'kbd', 'keygen', 'map', 'mark', 'math', 'meter', 'noscript',
-            'object', 'output', 'progress', 'q', 'ruby', 's', 'samp', 'small',
-            'strong', 'sub', 'sup', 'template', 'time', 'u', 'var', 'wbr', 'text',
-            'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt'
-        ]
+    let options = {
+        indentSize: 2
     };
     gulp.src('app/*.html')
         .pipe(htmlbeautify(options))
-        .pipe(gulp.dest('app/'))
+        .pipe(gulp.dest('app/'));
 });
 
 //сбор pug
 gulp.task('pug:build', function () {
-    return gulp.src(path.src.pug)
+    gulp.src(path.src.pug)
         .pipe(plumber())
         .pipe(pug())
         .pipe(gulp.dest(path.build.pug))
-        .pipe(htmlbeautify())
+        //.pipe('html:beautify')
         .pipe(webserver.reload({stream: true}));
 });
 
@@ -161,8 +156,9 @@ gulp.task('cache:clear', function () {
 // сборка
 gulp.task('build', [
     'clean:build',
-    'html:build',
     'pug:build',
+    'htmlbeautify',
+    'html:build',
     'css:build',
     'js:build',
     'fonts:build',
@@ -172,8 +168,9 @@ gulp.task('build', [
 
 // запуск задач при изменении файлов
 gulp.task('watch', function () {
-    gulp.watch(path.watch.html, ['html:build']);
     gulp.watch(path.watch.pug, ['pug:build']);
+    gulp.watch(path.watch.htmlbeautify, ['htmlbeautify']);
+    gulp.watch(path.watch.html, ['html:build']);
     gulp.watch(path.watch.css, ['css:build']);
     gulp.watch(path.watch.js, ['js:build']);
     gulp.watch(path.watch.img, ['image:build']);

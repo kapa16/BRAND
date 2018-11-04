@@ -1,3 +1,9 @@
-body
-    .container
-        h1.header
+div(class=['feature-boxes', 'feature-boxes-horizontal'])
+    - for(var i=0; i<3; i++)
+        a(href!="#", class='feature-box')
+            .feature-box-icon
+                img(src="img/delivery.svg" alt="delivery")
+            .feature-box-info
+                h4.feature-box-title Free Delivery
+                p.feature-box-description.
+                    Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.
