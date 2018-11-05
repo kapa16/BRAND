@@ -137,7 +137,7 @@
         background-color: $colorWhite;
         width: 100%;
         height: 45px;
-        border: 1px solid $colorBorderForms;
+
         margin: 20px 0 0 0;
     }
 
@@ -146,13 +146,21 @@
         font-size: 13px;
         font-weight: 300;
         width: 100%;
+        height: 100%;
         border: none;
         position: relative;
         padding: 0 25px 0 11px;
         background: transparent;
+        border: 1px solid $colorBorderForms;
 
         &:hover {
             cursor: pointer;
+            border: 1px solid #ff0d0d;
+        }
+
+        &:focus {
+            border: 1px solid #ff0d0d;
+            color: $colorBlack;
         }
     }
 }
