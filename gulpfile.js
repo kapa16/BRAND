@@ -85,7 +85,7 @@ gulp.task('html:build', function () {
 //форматирование html
 gulp.task('htmlbeautify', function () {
     let options = {
-        indentSize: 2
+        indentSize: 4
     };
     gulp.src('app/*.html')
         .pipe(htmlbeautify(options))
@@ -98,8 +98,8 @@ gulp.task('pug:build', function () {
         .pipe(plumber())
         .pipe(pug())
         .pipe(gulp.dest(path.build.pug))
-        //.pipe('html:beautify')
         .pipe(webserver.reload({stream: true}));
+    gulp.run('htmlbeautify');
 });
 
 // сбор стилей

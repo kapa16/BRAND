@@ -125,14 +125,14 @@
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
-          <entry key="html" value="9" />
+          <entry key="html" value="11" />
           <entry key="js" value="2" />
           <entry key="pug" value="1" />
           <entry key="rnc" value="3" />
@@ -143,7 +143,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="4" />
-          <entry key="HTML" value="9" />
+          <entry key="HTML" value="11" />
           <entry key="Jade" value="1" />
           <entry key="JavaScript" value="2" />
           <entry key="RNG Compact" value="3" />
@@ -154,8 +154,8 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="380" />
-          <entry key="js" value="120" />
-          <entry key="pug" value="27" />
+          <entry key="js" value="145" />
+          <entry key="pug" value="83" />
           <entry key="sass" value="696" />
           <entry key="scss" value="358" />
         </counts>
@@ -163,8 +163,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="380" />
-          <entry key="Jade" value="27" />
-          <entry key="JavaScript" value="120" />
+          <entry key="Jade" value="83" />
+          <entry key="JavaScript" value="145" />
           <entry key="SCSS" value="358" />
           <entry key="Sass" value="696" />
         </counts>
@@ -175,20 +175,25 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/gulpfile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1664">
-                  <caret line="171" column="54" selection-start-line="171" selection-start-column="42" selection-end-line="171" selection-end-column="54" />
+                <state relative-caret-position="408">
+                  <caret line="102" column="3" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/test.html">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="13" selection-start-column="13" selection-end-column="13" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="46" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="46" />
                 </state>
               </provider>
             </entry>
@@ -200,35 +205,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/pug/test.pug">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/scss/_style.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2329">
-                  <caret line="137" selection-start-line="137" selection-end-line="137" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/scss/_feature.sass">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1479">
-                  <caret line="87" selection-start-line="87" selection-end-line="87" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/dist/scss/_product.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="6188">
-                  <caret line="364" selection-start-line="364" selection-end-line="364" />
+                <state>
+                  <caret column="15" selection-start-column="15" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -343,8 +321,8 @@
         <option value="$PROJECT_DIR$/dist/scss/_feauter.sass" />
         <option value="$PROJECT_DIR$/dist/product.html" />
         <option value="$PROJECT_DIR$/dist/scss/_feature.sass" />
-        <option value="$PROJECT_DIR$/dist/pug/test.pug" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/dist/pug/test.pug" />
       </list>
     </option>
   </component>
@@ -400,8 +378,9 @@
           <GulpTaskState>
             <dependencies>
               <dependency value="clean:build" />
-              <dependency value="html:build" />
               <dependency value="pug:build" />
+              <dependency value="htmlbeautify" />
+              <dependency value="html:build" />
               <dependency value="css:build" />
               <dependency value="js:build" />
               <dependency value="fonts:build" />
@@ -446,6 +425,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -485,7 +465,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -548,8 +527,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gulp.js.htmlbeautify" />
         <item itemvalue="Gulp.js.default" />
+        <item itemvalue="Gulp.js.htmlbeautify" />
       </list>
     </recent_temporary>
   </component>
@@ -572,11 +551,12 @@
       <workItem from="1541272487784" duration="1616000" />
       <workItem from="1541334961237" duration="4444000" />
       <workItem from="1541341235140" duration="3703000" />
+      <workItem from="1541351085599" duration="3963000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56438000" />
+    <option name="totallyTimeSpent" value="60401000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -589,15 +569,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1035" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49389568" visible="true" weight="0.19509594" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49172187" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" sideWeight="0.5005549" side_tool="true" weight="0.17857143" />
-      <window_info id="Gulp" order="2" sideWeight="0.50610435" side_tool="true" visible="true" weight="0.19509594" />
+      <window_info id="Gulp" order="2" sideWeight="0.50827813" side_tool="true" visible="true" weight="0.19509594" />
       <window_info id="npm" order="3" sideWeight="0.50388455" side_tool="true" weight="0.19083156" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32963374" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32963374" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32963374" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -680,9 +661,6 @@
           <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/product.html">
       <provider selected="true" editor-type-id="text-editor" />
@@ -889,27 +867,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_feature.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_product.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6188">
-          <caret line="364" selection-start-line="364" selection-end-line="364" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/src/feature.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -921,41 +878,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="546" column="7" selection-start-line="546" selection-start-column="7" selection-end-line="546" selection-end-column="7" />
-          <folding>
-            <element signature="e#1368#1373#0" expanded="true" />
-            <element signature="e#1468#1473#0" expanded="true" />
-            <element signature="e#1965#1970#0" expanded="true" />
-            <element signature="e#2836#2841#0" expanded="true" />
-            <element signature="e#2936#2941#0" expanded="true" />
-            <element signature="e#3433#3438#0" expanded="true" />
-            <element signature="e#4307#4312#0" expanded="true" />
-            <element signature="e#4407#4412#0" expanded="true" />
-            <element signature="e#4904#4909#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/pug/test.pug">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/single-page.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/test.html">
+    <entry file="file://$PROJECT_DIR$/dist/scss/_style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="2329">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scss/_product.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6188">
+          <caret line="364" selection-start-line="364" selection-end-line="364" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scss/_feature.sass">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1664">
-          <caret line="171" column="54" selection-start-line="171" selection-start-column="42" selection-end-line="171" selection-end-column="54" />
+        <state relative-caret-position="408">
+          <caret line="102" column="3" selection-start-line="102" selection-start-column="3" selection-end-line="102" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/test.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/pug/test.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
         </state>
       </provider>
     </entry>
