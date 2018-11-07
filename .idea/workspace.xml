@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f012702a-6e63-475a-99a3-d62ceea5defc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scss/_dropdown-menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_dropdown-menu.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/scss/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scss/_header.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -162,7 +160,7 @@
           <entry key="js" value="145" />
           <entry key="pug" value="83" />
           <entry key="sass" value="696" />
-          <entry key="scss" value="502" />
+          <entry key="scss" value="503" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -170,7 +168,7 @@
           <entry key="HTML" value="380" />
           <entry key="Jade" value="83" />
           <entry key="JavaScript" value="145" />
-          <entry key="SCSS" value="502" />
+          <entry key="SCSS" value="503" />
           <entry key="Sass" value="696" />
         </counts>
       </usages-collector>
@@ -180,19 +178,16 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/src/header.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
-                  <folding>
-                    <element signature="n#nav#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-                  </folding>
+                <state relative-caret-position="357">
+                  <caret line="108" column="44" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dist/index.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="213">
@@ -226,8 +221,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dist/scss/_header.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+                <state relative-caret-position="359">
+                  <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
                 </state>
               </provider>
             </entry>
@@ -235,8 +230,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dist/scss/_dropdown-menu.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="25" />
+                <state relative-caret-position="274">
+                  <caret line="37" column="13" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -284,9 +279,9 @@
       <find>shoppingCar</find>
       <find>singleP</find>
       <find>feauter</find>
-      <find>dropdown-box</find>
       <find>rel</find>
       <find>rela</find>
+      <find>dropdown-box</find>
     </findStrings>
     <replaceStrings>
       <replace>disp_flex_ai_jc_fd</replace>
@@ -573,12 +568,12 @@
       <workItem from="1541341235140" duration="3703000" />
       <workItem from="1541351085599" duration="3963000" />
       <workItem from="1541512041776" duration="25000" />
-      <workItem from="1541597995086" duration="5401000" />
+      <workItem from="1541597995086" duration="6415000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67661000" />
+    <option name="totallyTimeSpent" value="68675000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -932,20 +927,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_dropdown-menu.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/src/header.html">
+    <entry file="file://$PROJECT_DIR$/dist/scss/_style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
-          <folding>
-            <element signature="n#nav#0;n#div#0;n#div#0;n#div#0;n#!!top" />
-          </folding>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
@@ -956,17 +941,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/scss/_style.scss">
+    <entry file="file://$PROJECT_DIR$/dist/src/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="357">
+          <caret line="108" column="44" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/scss/_dropdown-menu.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/scss/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="359">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
         </state>
       </provider>
     </entry>
