@@ -37,7 +37,10 @@
 }
 
 .main-logo-menu {
-    display: none;
+    display: flex;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: all 0.5s;
     position: absolute;
     z-index: 10;
     left: 0;
@@ -51,7 +54,7 @@
     cursor: pointer;
 
     .main-logo-menu {
-        display: flex;
+        transform: scaleY(1);
     }
 }
 
@@ -138,7 +141,7 @@
     background: $colorBgButton;
 
     .dropdown-box {
-        display: flex;
+        transform: scaleY(1);
     }
 }
 

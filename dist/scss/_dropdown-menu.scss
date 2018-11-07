@@ -1,5 +1,8 @@
 .dropdown-box {
-    display: none;
+    display: flex;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: all 0.5s;
     position: absolute;
     z-index: 10; //over header (2) and main menu (3)
     top: 36px;
