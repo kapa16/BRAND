@@ -1,6 +1,7 @@
 /*jslint node: true */
 "use strict";
 
+
 /**
  * объект корзины
  */
@@ -12,14 +13,18 @@ const basket = {
   },
   countProducts: 0,
   sumProducts: 0,
+  basketElement: document.querySelector('.basket-header'),
   basketContainerElement: document.querySelector('.basket-menu'),
   basketInfoElement: document.querySelector('.cart-quantity'),
-  basketMenuListClass: '.basket__menu-list',
-  basketCardClass: '.basket__card',
-  basketPhotoProductClass: '.photo-product',
-  basketProductInfoClass: '.product-info',
-  basketProductTitleClass: '.product-name',
-  basketForMenuClass: '.for-cart-menu',
+  basketMenuListClass: 'basket__menu-list',
+  basketCardClass: 'basket__card',
+  basketPhotoProductClass: 'photo-product',
+  basketProductInfoClass: 'product-info',
+  basketProductTitleClass: 'product-name',
+  basketProductRatingClass: 'product-rating',
+  basketProductTotalClass: 'basket__product-total',
+  basketForMenuClass: 'for-cart-menu',
+  basketQuantityClass: 'quantity',
 
   /**
    * Добавляет товар в корзину
@@ -76,7 +81,7 @@ const basket = {
     this.productsBasket.forEach(product => this.addProductElement(product));
   },
 
-  onClickBasket() {
+  onMouseoverBasket() {
     if (this.countProducts !== 0) {
       this.basketContainerElement.classList.toggle('hidden');
     }
@@ -94,26 +99,26 @@ const basket = {
    * Удаляет содержимое корзины в HTML для вывода текущих товаров корзины
    */
   clearBasketOnPage() {
-    this.basketContainerElement.innerHTML = '';
+    const basketElements = this.basketContainerElement.querySelectorAll('.basket__menu-list');
+    Array.prototype.forEach.call(basketElements, (el) => {
+      this.basketContainerElement.removeChild(el);
+    });
+
   },
 
   /**
    * Обновляет инофрмационное сообщение по содержимому корзины
    */
   refreshBasketInfo() {
-    if (this.countProducts === 0) {
-      this.basketInfoElement.textContent = 'Корзина пуста';
-    } else {
-      this.basketInfoElement.textContent = `Количество товаров в корзине: ${this.countProducts}, на сумму ${this.sumProducts}`;
-    }
+    this.basketInfoElement.textContent = this.countProducts;
   },
 
   /**
    * Обновляет счетчик товаров в корзине
    */
   refreshCountProducts() {
-    const countElement = this.basketContainerElement.querySelector('.basket__count-products');
-    countElement.textContent = this.countProducts;
+    // const countElement = this.basketContainerElement.querySelector('.basket__count-products');
+    // countElement.textContent = this.countProducts;
   },
 
   /**
@@ -131,7 +136,7 @@ const basket = {
     productListItem.appendChild(productCard);
 
     const imageProduct = new Image();
-    productCard.classList.add(this.basketPhotoProductClass);
+    imageProduct.classList.add(this.basketPhotoProductClass);
     imageProduct.src = product.imagePath;
     imageProduct.alt = product.alt;
     productCard.appendChild(imageProduct);
@@ -146,11 +151,19 @@ const basket = {
     titleProduct.textContent = product.name;
     productInfo.appendChild(titleProduct);
 
-    const priceProduct = document.createElement('div');
-    priceProduct.classList.add('product-card__price');
-    priceProduct.classList.add(this.basketForMenuClass);
-    priceProduct.textContent = product.price;
-    productInfo.appendChild(priceProduct);
+    const productRating = document.createElement('div');
+    productRating.classList.add(this.basketProductRatingClass);
+    productRating.classList.add(this.basketForMenuClass);
+    productInfo.appendChild(productRating);
+
+    const productTotal = document.createElement('div');
+    productTotal.classList.add(this.basketProductTotalClass);
+    productInfo.appendChild(productTotal);
+
+    const totalInfo = document.createElement('span');
+    totalInfo.classList.add(this.basketQuantityClass);
+    totalInfo.textContent = `${product.count} x ${product.sum}`;
+    productTotal.appendChild(totalInfo);
   },
 
   /**
@@ -170,5 +183,5 @@ const basket = {
 };
 
 
-basket.basketContainerElement.addEventListener('click', evt => basket.onClickBasket(evt));
+basket.basketElement.addEventListener('mouseover', evt => basket.onMouseoverBasket(evt));
 

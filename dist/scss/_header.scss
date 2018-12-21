@@ -252,6 +252,14 @@
     padding: 16px 0;
 }
 
+.photo-product {
+    display: block;
+    max-width:100px;
+    max-height:115px;
+    width: auto;
+    height: auto;
+}
+
 .card-cart-close {
     align-self: center;
     color: #c0c0c0;
@@ -268,7 +276,7 @@
 
 .product-name.for-cart-menu,
 .product-rating.for-cart-menu,
-.summa {
+.basket__product-total {
     font-size: 12px;
 }
 

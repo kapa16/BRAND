@@ -27,7 +27,7 @@ var path = {
         html: 'dist/*.html',
         pug: 'dist/pug/*.pug',
         htmlbeautify: 'app/*.html',
-        js: 'dist/js/main.js',
+        js: 'dist/js/**/*.js',//main.js',
         style: 'dist/scss/*.+(scss|sass)',
         img: 'dist/img/**/*.*',
         fonts: 'dist/fonts/**/*.*',
