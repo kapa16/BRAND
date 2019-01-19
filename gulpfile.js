@@ -180,7 +180,7 @@ if (gulpVersion === 3) {
     ]);
 } else if (gulpVersion === 4) {
 // сборка
-    gulp.task('build', [
+    gulp.task('build', gulp.parallel(
         'clean:build',
         'pug:build',
         'html:build',
@@ -189,24 +189,24 @@ if (gulpVersion === 3) {
         'fonts:build',
         'webFonts:build',
         'image:build'
-    ]);
+    ));
 
 // запуск задач при изменении файлов
     gulp.task('watch', function () {
-        gulp.watch(path.watch.pug, ['pug:build']);
-        gulp.watch(path.watch.html, ['html:build']);
-        gulp.watch(path.watch.css, ['css:build']);
-        gulp.watch(path.watch.js, ['js:build']);
-        gulp.watch(path.watch.img, ['image:build']);
-        gulp.watch(path.watch.fonts, ['fonts:build']);
-        gulp.watch(path.watch.webFonts, ['webFonts:build']);
+        gulp.watch(path.watch.pug, gulp.parallel('pug:build'));
+        gulp.watch(path.watch.html, gulp.parallel('html:build'));
+        gulp.watch(path.watch.css, gulp.parallel('css:build'));
+        gulp.watch(path.watch.js, gulp.parallel('js:build'));
+        gulp.watch(path.watch.img, gulp.parallel('image:build'));
+        gulp.watch(path.watch.fonts, gulp.parallel('fonts:build'));
+        gulp.watch(path.watch.webFonts, gulp.parallel('webFonts:build'));
     });
 
 // задача по умолчанию
-    gulp.task('default', [
+    gulp.task('default', gulp.parallel(
         'clean:build',
         'build',
         'webServer',
         'watch'
-    ]);
+    ));
 }
