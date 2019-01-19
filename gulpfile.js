@@ -13,9 +13,9 @@ const autoPrefixList = [
   'Android >= 4.4',
   'Opera >= 30'
 ];
-/* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
+/* пути к исходным файлам (src), к готовым файлам (dist), а также к тем, за изменениями которых нужно наблюдать (watch) */
 const path = {
-  build: {
+  dist: {
     html: 'dist/',
     pug: 'dist/',
     js: 'dist/js/',
@@ -78,25 +78,25 @@ gulp.task('webServer', function () {
 });
 
 // сбор html
-gulp.task('html:build', function () {
+gulp.task('html:dist', function () {
   gulp.src(path.src.html) // выбор всех html файлов по указанному пути
     .pipe(plumber()) // отслеживание ошибок
     .pipe(rigger()) // импорт вложений
-    .pipe(gulp.dest(path.build.html)) // выкладывание готовых файлов
+    .pipe(gulp.dest(path.dist.html)) // выкладывание готовых файлов
     .pipe(webServer.reload({stream: true})); // перезагрузка сервера
 });
 
 //сбор pug
-gulp.task('pug:build', function () {
+gulp.task('pug:dist', function () {
   gulp.src(path.src.pug)
     .pipe(plumber())
     .pipe(pug())
-    .pipe(gulp.dest(path.build.pug))
+    .pipe(gulp.dest(path.dist.pug))
     .pipe(webServer.reload({stream: true}));
 });
 
 // сбор стилей
-gulp.task('css:build', function () {
+gulp.task('css:dist', function () {
   gulp.src(path.src.style) // получим main.scss
     .pipe(plumber()) // для отслеживания ошибок
     .pipe(sourcemaps.init()) // инициализируем sourcemap
@@ -105,46 +105,46 @@ gulp.task('css:build', function () {
       browsers: autoPrefixList
     }))
     .pipe(sourcemaps.write('./')) // записываем sourcemap
-    .pipe(gulp.dest(path.build.css)) // выгружаем в build
+    .pipe(gulp.dest(path.dist.css)) // выгружаем в dist
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер
 });
 
 // сбор js
-gulp.task('js:build', function () {
+gulp.task('js:dist', function () {
   gulp.src(path.src.js) // получим файл main.js
     .pipe(plumber()) // для отслеживания ошибок
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     .pipe(sourcemaps.init()) //инициализируем sourcemap
     .pipe(sourcemaps.write('./')) //  записываем sourcemap
-    .pipe(gulp.dest(path.build.js)) // положим готовый файл
+    .pipe(gulp.dest(path.dist.js)) // положим готовый файл
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер
 });
 
 //минимизация js
 gulp.task('uglify', function() {
-  gulp.src(path.build.js)
+  gulp.src(path.dist.js)
     .pipe(uglify())
-    .pipe(gulp.dest(path.build.js))
+    .pipe(gulp.dest(path.dist.js))
 });
 
 // перенос шрифтов
-gulp.task('fonts:build', function () {
+gulp.task('fonts:dist', function () {
   gulp.src(path.src.fonts)
-    .pipe(gulp.dest(path.build.fonts));
+    .pipe(gulp.dest(path.dist.fonts));
 });
-gulp.task('webFonts:build', function () {
+gulp.task('webFonts:dist', function () {
   gulp.src(path.src.webFonts)
-    .pipe(gulp.dest(path.build.webFonts));
+    .pipe(gulp.dest(path.dist.webFonts));
 });
 
 // обработка картинок
-gulp.task('image:build', function () {
+gulp.task('image:dist', function () {
   gulp.src(path.src.img) // путь с исходниками картинок
-    .pipe(gulp.dest(path.build.img)); // выгрузка готовых файлов
+    .pipe(gulp.dest(path.dist.img)); // выгрузка готовых файлов
 });
 
-// удаление каталога build
-gulp.task('clean:build', function () {
+// удаление каталога dist
+gulp.task('clean:dist', function () {
   del.sync(path.clean);
 });
 
@@ -156,63 +156,63 @@ gulp.task('cache:clear', function () {
 
 if (gulpVersion === 3) {
 // сборка
-  gulp.task('build', [
-    'clean:build',
-    'pug:build',
-    'html:build',
-    'css:build',
-    'js:build',
-    'fonts:build',
-    'webFonts:build',
-    'image:build'
+  gulp.task('dist', [
+    'clean:dist',
+    'pug:dist',
+    'html:dist',
+    'css:dist',
+    'js:dist',
+    'fonts:dist',
+    'webFonts:dist',
+    'image:dist'
   ]);
 
 // запуск задач при изменении файлов
   gulp.task('watch', function () {
-    gulp.watch(path.watch.pug, ['pug:build']);
-    gulp.watch(path.watch.html, ['html:build']);
-    gulp.watch(path.watch.css, ['css:build']);
-    gulp.watch(path.watch.js, ['js:build']);
-    gulp.watch(path.watch.img, ['image:build']);
-    gulp.watch(path.watch.fonts, ['fonts:build']);
-    gulp.watch(path.watch.webFonts, ['webFonts:build']);
+    gulp.watch(path.watch.pug, ['pug:dist']);
+    gulp.watch(path.watch.html, ['html:dist']);
+    gulp.watch(path.watch.css, ['css:dist']);
+    gulp.watch(path.watch.js, ['js:dist']);
+    gulp.watch(path.watch.img, ['image:dist']);
+    gulp.watch(path.watch.fonts, ['fonts:dist']);
+    gulp.watch(path.watch.webFonts, ['webFonts:dist']);
   });
 
 // задача по умолчанию
   gulp.task('default', [
-    'clean:build',
-    'build',
+    'clean:dist',
+    'dist',
     'webServer',
     'watch'
   ]);
 } else if (gulpVersion === 4) {
 // сборка
-  gulp.task('build', gulp.parallel(
-    'clean:build',
-    'pug:build',
-    'html:build',
-    'css:build',
-    'js:build',
-    'fonts:build',
-    'webFonts:build',
-    'image:build'
+  gulp.task('dist', gulp.parallel(
+    'clean:dist',
+    'pug:dist',
+    'html:dist',
+    'css:dist',
+    'js:dist',
+    'fonts:dist',
+    'webFonts:dist',
+    'image:dist'
   ));
 
 // запуск задач при изменении файлов
   gulp.task('watch', function () {
-    gulp.watch(path.watch.pug, gulp.parallel('pug:build'));
-    gulp.watch(path.watch.html, gulp.parallel('html:build'));
-    gulp.watch(path.watch.css, gulp.parallel('css:build'));
-    gulp.watch(path.watch.js, gulp.parallel('js:build'));
-    gulp.watch(path.watch.img, gulp.parallel('image:build'));
-    gulp.watch(path.watch.fonts, gulp.parallel('fonts:build'));
-    gulp.watch(path.watch.webFonts, gulp.parallel('webFonts:build'));
+    gulp.watch(path.watch.pug, gulp.parallel('pug:dist'));
+    gulp.watch(path.watch.html, gulp.parallel('html:dist'));
+    gulp.watch(path.watch.css, gulp.parallel('css:dist'));
+    gulp.watch(path.watch.js, gulp.parallel('js:dist'));
+    gulp.watch(path.watch.img, gulp.parallel('image:dist'));
+    gulp.watch(path.watch.fonts, gulp.parallel('fonts:dist'));
+    gulp.watch(path.watch.webFonts, gulp.parallel('webFonts:dist'));
   });
 
 // задача по умолчанию
   gulp.task('default', gulp.parallel(
-    'clean:build',
-    'build',
+    'clean:dist',
+    'dist',
     'webServer',
     'watch'
   ));
