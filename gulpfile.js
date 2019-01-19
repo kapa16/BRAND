@@ -1,5 +1,7 @@
 "use strict";
 
+const gulpVersion = 3;
+
 /* параметры для gulp-autoprefixer */
 const autoPrefixList = [
     'Chrome >= 45',
@@ -144,33 +146,67 @@ gulp.task('cache:clear', function () {
     cache.clearAll();
 });
 
+
+if (gulpVersion === 3) {
 // сборка
-gulp.task('build', [
-    'clean:build',
-    'pug:build',
-    'html:build',
-    'css:build',
-    'js:build',
-    'fonts:build',
-    'webFonts:build',
-    'image:build'
-]);
+    gulp.task('build', [
+        'clean:build',
+        'pug:build',
+        'html:build',
+        'css:build',
+        'js:build',
+        'fonts:build',
+        'webFonts:build',
+        'image:build'
+    ]);
 
 // запуск задач при изменении файлов
-gulp.task('watch', function () {
-    gulp.watch(path.watch.pug, ['pug:build']);
-    gulp.watch(path.watch.html, ['html:build']);
-    gulp.watch(path.watch.css, ['css:build']);
-    gulp.watch(path.watch.js, ['js:build']);
-    gulp.watch(path.watch.img, ['image:build']);
-    gulp.watch(path.watch.fonts, ['fonts:build']);
-    gulp.watch(path.watch.webFonts, ['webFonts:build']);
-});
+    gulp.task('watch', function () {
+        gulp.watch(path.watch.pug, ['pug:build']);
+        gulp.watch(path.watch.html, ['html:build']);
+        gulp.watch(path.watch.css, ['css:build']);
+        gulp.watch(path.watch.js, ['js:build']);
+        gulp.watch(path.watch.img, ['image:build']);
+        gulp.watch(path.watch.fonts, ['fonts:build']);
+        gulp.watch(path.watch.webFonts, ['webFonts:build']);
+    });
 
 // задача по умолчанию
-gulp.task('default', [
-    'clean:build',
-    'build',
-    'webServer',
-    'watch'
-]);
+    gulp.task('default', [
+        'clean:build',
+        'build',
+        'webServer',
+        'watch'
+    ]);
+} else if (gulpVersion === 4) {
+// сборка
+    gulp.task('build', [
+        'clean:build',
+        'pug:build',
+        'html:build',
+        'css:build',
+        'js:build',
+        'fonts:build',
+        'webFonts:build',
+        'image:build'
+    ]);
+
+// запуск задач при изменении файлов
+    gulp.task('watch', function () {
+        gulp.watch(path.watch.pug, ['pug:build']);
+        gulp.watch(path.watch.html, ['html:build']);
+        gulp.watch(path.watch.css, ['css:build']);
+        gulp.watch(path.watch.js, ['js:build']);
+        gulp.watch(path.watch.img, ['image:build']);
+        gulp.watch(path.watch.fonts, ['fonts:build']);
+        gulp.watch(path.watch.webFonts, ['webFonts:build']);
+    });
+
+// задача по умолчанию
+    gulp.task('default', [
+        'clean:build',
+        'build',
+        'webServer',
+        'watch'
+    ]);
+}
