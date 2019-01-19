@@ -1,6 +1,6 @@
 "use strict";
 
-const gulpVersion = 3;
+const gulpVersion = 4;
 
 /* параметры для gulp-autoprefixer */
 const autoPrefixList = [
@@ -16,38 +16,38 @@ const autoPrefixList = [
 /* пути к исходным файлам (src), к готовым файлам (build), а также к тем, за изменениями которых нужно наблюдать (watch) */
 const path = {
   build: {
-    html: 'app/',
-    pug: 'app/',
-    js: 'app/js/',
-    css: 'app/css/',
-    img: 'app/img/',
-    fonts: 'app/fonts/',
-    webFonts: 'app/webfonts/'
+    html: 'dist/',
+    pug: 'dist/',
+    js: 'dist/js/',
+    css: 'dist/css/',
+    img: 'dist/img/',
+    fonts: 'dist/fonts/',
+    webFonts: 'dist/webfonts/'
   },
   src: {
-    html: 'dist/*.html',
-    pug: 'dist/pug/*.pug',
-    js: 'dist/js/**/*.js',//main.js',
-    style: 'dist/scss/*.+(scss|sass)',
-    img: 'dist/img/**/*.*',
-    fonts: 'dist/fonts/**/*.*',
-    webFonts: 'dist/webfonts/**/*.*'
+    html: 'src/*.html',
+    pug: 'src/pug/*.pug',
+    js: 'src/js/**/*.js',
+    style: 'src/scss/*.+(scss|sass)',
+    img: 'src/img/**/*.*',
+    fonts: 'src/fonts/**/*.*',
+    webFonts: 'src/webfonts/**/*.*'
   },
   watch: {
-    html: 'dist/**/*.html',
-    pug: 'dist/pug/**/*.pug',
-    js: 'dist/js/**/*.js',
-    css: 'dist/scss/**/*.+(scss|sass)',
-    img: 'dist/img/**/*.*',
-    fonts: 'dist/fonts/**/*.*',
-    webFonts: 'dist/webfonts/**/*.*'
+    html: 'src/**/*.html',
+    pug: 'src/pug/**/*.pug',
+    js: 'src/js/**/*.js',
+    css: 'src/scss/**/*.+(scss|sass)',
+    img: 'src/img/**/*.*',
+    fonts: 'src/fonts/**/*.*',
+    webFonts: 'src/webfonts/**/*.*'
   },
-  clean: './app'
+  clean: './dist'
 };
 /* настройки сервера */
 const config = {
   server: {
-    baseDir: './app'
+    baseDir: './dist'
   },
   notify: false
 };
@@ -56,7 +56,7 @@ const config = {
 const gulp = require('gulp'),  // подключаем Gulp
   sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
   webServer = require('browser-sync'), // сервер для работы и автоматического обновления страниц
-  concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
+  //concat = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
   uglify = require('gulp-uglifyjs'), // Подключаем gulp-uglifyjs (для сжатия JS)
   cssnano = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
   del = require('del'), // плагин для удаления файлов и каталогов
@@ -118,6 +118,13 @@ gulp.task('js:build', function () {
     .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.build.js)) // положим готовый файл
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер
+});
+
+//минимизация js
+gulp.task('uglify', function() {
+  gulp.src(path.build.js)
+    .pipe(uglify())
+    .pipe(gulp.dest(path.build.js))
 });
 
 // перенос шрифтов

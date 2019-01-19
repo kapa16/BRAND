@@ -22,7 +22,12 @@
     "gulp-pug": "^4.0.1",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4"
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-concat": "latest",
+    "gulp-uglifyjs": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-imagemin": "latest",
+    "imagemin-pngquant": "latest"
   },
   "dependencies": {
     "lodash": "^4.17.11",
