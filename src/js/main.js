@@ -9,14 +9,6 @@ function hideMenu(classMenu, elem) {
 
 $(document).ready(function () {
 
-//    $(".logo-brand").on("mouseenter", function () {
-//        showMenu(".main-logo-menu");
-//    });
-
-//    $(".browse").on("mouseenter", function () {
-//        showMenu(".dropdown-box");
-//    });
-
     $(".cart-header").on("mouseenter", function () {
         showMenu(".cart-menu");
     });
