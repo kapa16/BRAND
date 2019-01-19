@@ -78,7 +78,7 @@ gulp.task('webServer', function () {
 });
 
 // сбор html
-gulp.task('html:dist', function () {
+gulp.task('html', function () {
   gulp.src(path.src.html) // выбор всех html файлов по указанному пути
     .pipe(plumber()) // отслеживание ошибок
     .pipe(rigger()) // импорт вложений
@@ -87,7 +87,7 @@ gulp.task('html:dist', function () {
 });
 
 //сбор pug
-gulp.task('pug:dist', function () {
+gulp.task('pug', function () {
   gulp.src(path.src.pug)
     .pipe(plumber())
     .pipe(pug())
@@ -96,7 +96,7 @@ gulp.task('pug:dist', function () {
 });
 
 // сбор стилей
-gulp.task('css:dist', function () {
+gulp.task('css', function () {
   gulp.src(path.src.style) // получим main.scss
     .pipe(plumber()) // для отслеживания ошибок
     .pipe(sourcemaps.init()) // инициализируем sourcemap
@@ -110,42 +110,37 @@ gulp.task('css:dist', function () {
 });
 
 // сбор js
-gulp.task('js:dist', function () {
+gulp.task('js', function () {
   gulp.src(path.src.js) // получим файл main.js
     .pipe(plumber()) // для отслеживания ошибок
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     .pipe(sourcemaps.init()) //инициализируем sourcemap
+    .pipe(uglify())
     .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.dist.js)) // положим готовый файл
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер
 });
 
-//минимизация js
-gulp.task('uglify', function() {
-  gulp.src(path.dist.js)
-    .pipe(uglify())
-    .pipe(gulp.dest(path.dist.js))
-});
-
 // перенос шрифтов
-gulp.task('fonts:dist', function () {
+gulp.task('fonts', function () {
   gulp.src(path.src.fonts)
     .pipe(gulp.dest(path.dist.fonts));
 });
-gulp.task('webFonts:dist', function () {
+gulp.task('webFonts', function () {
   gulp.src(path.src.webFonts)
     .pipe(gulp.dest(path.dist.webFonts));
 });
 
 // обработка картинок
-gulp.task('image:dist', function () {
+gulp.task('image', function () {
   gulp.src(path.src.img) // путь с исходниками картинок
     .pipe(gulp.dest(path.dist.img)); // выгрузка готовых файлов
 });
 
 // удаление каталога dist
-gulp.task('clean:dist', function () {
+gulp.task('clean', function () {
   del.sync(path.clean);
+  cache.clearAll();
 });
 
 // очистка кэша
@@ -157,30 +152,30 @@ gulp.task('cache:clear', function () {
 if (gulpVersion === 3) {
 // сборка
   gulp.task('dist', [
-    'clean:dist',
-    'pug:dist',
-    'html:dist',
-    'css:dist',
-    'js:dist',
-    'fonts:dist',
-    'webFonts:dist',
-    'image:dist'
+    'clean',
+    'pug',
+    'html',
+    'css',
+    'js',
+    'fonts',
+    'webFonts',
+    'image'
   ]);
 
 // запуск задач при изменении файлов
   gulp.task('watch', function () {
-    gulp.watch(path.watch.pug, ['pug:dist']);
-    gulp.watch(path.watch.html, ['html:dist']);
-    gulp.watch(path.watch.css, ['css:dist']);
-    gulp.watch(path.watch.js, ['js:dist']);
-    gulp.watch(path.watch.img, ['image:dist']);
-    gulp.watch(path.watch.fonts, ['fonts:dist']);
-    gulp.watch(path.watch.webFonts, ['webFonts:dist']);
+    gulp.watch(path.watch.pug, ['pug']);
+    gulp.watch(path.watch.html, ['html']);
+    gulp.watch(path.watch.css, ['css']);
+    gulp.watch(path.watch.js, ['js']);
+    gulp.watch(path.watch.img, ['image']);
+    gulp.watch(path.watch.fonts, ['fonts']);
+    gulp.watch(path.watch.webFonts, ['webFonts']);
   });
 
 // задача по умолчанию
   gulp.task('default', [
-    'clean:dist',
+    'clean',
     'dist',
     'webServer',
     'watch'
@@ -188,30 +183,30 @@ if (gulpVersion === 3) {
 } else if (gulpVersion === 4) {
 // сборка
   gulp.task('dist', gulp.parallel(
-    'clean:dist',
-    'pug:dist',
-    'html:dist',
-    'css:dist',
-    'js:dist',
-    'fonts:dist',
-    'webFonts:dist',
-    'image:dist'
+    'clean',
+    'pug',
+    'html',
+    'css',
+    'js',
+    'fonts',
+    'webFonts',
+    'image'
   ));
 
 // запуск задач при изменении файлов
   gulp.task('watch', function () {
-    gulp.watch(path.watch.pug, gulp.parallel('pug:dist'));
-    gulp.watch(path.watch.html, gulp.parallel('html:dist'));
-    gulp.watch(path.watch.css, gulp.parallel('css:dist'));
-    gulp.watch(path.watch.js, gulp.parallel('js:dist'));
-    gulp.watch(path.watch.img, gulp.parallel('image:dist'));
-    gulp.watch(path.watch.fonts, gulp.parallel('fonts:dist'));
-    gulp.watch(path.watch.webFonts, gulp.parallel('webFonts:dist'));
+    gulp.watch(path.watch.pug, gulp.parallel('pug'));
+    gulp.watch(path.watch.html, gulp.parallel('html'));
+    gulp.watch(path.watch.css, gulp.parallel('css'));
+    gulp.watch(path.watch.js, gulp.parallel('js'));
+    gulp.watch(path.watch.img, gulp.parallel('image'));
+    gulp.watch(path.watch.fonts, gulp.parallel('fonts'));
+    gulp.watch(path.watch.webFonts, gulp.parallel('webFonts'));
   });
 
 // задача по умолчанию
   gulp.task('default', gulp.parallel(
-    'clean:dist',
+    'clean',
     'dist',
     'webServer',
     'watch'

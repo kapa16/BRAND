@@ -1,0 +1,20 @@
+{
+  "name": "brand",
+  "description": "brand",
+  "main": "index.js",
+  "authors": [
+    "Pavel"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kapa16/BRAND",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery-ui": "^1.12.1"
+  }
+}
