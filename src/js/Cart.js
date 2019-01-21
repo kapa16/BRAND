@@ -28,16 +28,34 @@ class Cart {
     let $cartItemsDiv = $('<div/>', {
       class: 'basket-menu hidden'
     });
-    let $totalGoods = $('<div/>', {
-      class: 'cart-summary sum-goods'
-    });
     let $totalPrice = $('<div/>', {
-      class: 'cart-summary sum-price'
+      class: 'cart-total'
     });
-    // $(this.container).text('Корзина');
-    // $cartItemsDiv.appendTo($(this.container));
-    // $totalGoods.appendTo($(this.container));
-    // $totalPrice.appendTo($(this.container));
+    $totalPrice.append('<p>TOTAL</p>');
+    $totalPrice.append('<p class="cart-total-sum">$0.00</p>');
+
+    const $cartButtons = $('<div/>', {
+      class: 'cart-menu-buttons'
+    });
+    const $checkoutButton = $('<a/>', {
+      href: 'checkout.html',
+      class: 'cart-menu-button',
+      text: 'Checkout'
+    });
+    const $cartButton = $('<a/>', {
+      href: 'shopping-cart.html',
+      class: 'cart-menu-button',
+      text: 'Go to cart'
+    });
+    $cartButtons
+      .append($checkoutButton)
+      .append($cartButton);
+
+    $cartItemsDiv
+      .append('<div class="cart-items-wrap"></div>')
+      .append($totalPrice)
+      .append($cartButtons)
+      .appendTo($(this.container));
   }
 
   _addEventHandlers() {
@@ -49,24 +67,43 @@ class Cart {
   }
 
   _renderItem(product) {
-    let $container = $('<div/>', {
+    const $container = $('<div/>', {
       class: 'basket__card',
       'data-product': product.id_product
     });
-    $container.append($(`<p class="product-name">${product.product_name}</p>`));
 
-    const $quantity = $('<div/>', {
-      class: 'quantity-wrap'
+    const $img = $('<img/>', {
+      src: product.img_src,
+      alt: product.img_alt,
+      class: "photo-product"
     });
+    $img.appendTo($container);
 
-    $quantity.append($(`<button class="btn-quantity reduce-quantity">-</button>`));
-    $quantity.append($(`<p class="product-quantity">${product.quantity}</p>`));
-    $quantity.append($(`<button class="btn-quantity increase-quantity">+</button>`));
-    $container.append($quantity);
+    const $productInfo = $('<div/>', {
+      class: "product-info"
+    });
+    $productInfo.append($(`<p class="product-name for-cart-menu">${product.product_name}</p>`));
 
-    $container.append($(`<p class="product-price">${product.price} руб.</p>`));
-    $container.append($(`<button class="btn-quantity delete-product">X</button>`));
-    $container.appendTo($('.cart-items-wrap'));
+    const $productRating = $('<div/>', {
+      class: "product-rating for-cart-menu"
+    });
+    for (let i = 0; i < 5; i++) {
+      $productRating.append('<i class="fas fa-star rating-star"></i>');
+    }
+
+
+    // const $quantity = $('<div/>', {
+    //   class: 'quantity-wrap'
+    // });
+    //
+    // $quantity.append($(`<button class="btn-quantity reduce-quantity">-</button>`));
+    // $quantity.append($(`<p class="product-quantity">${product.quantity}</p>`));
+    // $quantity.append($(`<button class="btn-quantity increase-quantity">+</button>`));
+    // $container.append($quantity);
+    //
+    // $container.append($(`<p class="product-price">${product.price} руб.</p>`));
+    // $container.append($(`<button class="btn-quantity delete-product">X</button>`));
+    // $container.appendTo($('.cart-items-wrap'));
   }
 
   _renderSum() {
@@ -92,7 +129,9 @@ class Cart {
   }
 
   addProduct(element) {
-    let productId = +$(element).data('id');
+    const $productContainer = $(element).closest('product-card');
+    const $img = $productContainer.find('.product-img');
+    let productId = +$productContainer.data('id');
     let find = this._getCartItem(productId);
     if (find) {
       this._changeQuantity(find, 1);
@@ -101,7 +140,9 @@ class Cart {
         id_product: productId,
         product_name: $(element).data('name'),
         price: +$(element).data('price'),
-        quantity: 1
+        quantity: 1,
+        img_src: $img.src,
+        img_alt: $img.alt
       };
       this.cartItems.push(product);
       this._renderItem(product);
