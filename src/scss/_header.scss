@@ -188,7 +188,7 @@
     align-items: center;
 }
 
-.basket-header {
+.cart-container {
     cursor: pointer;
     width: 33px;
     height: 30px;
@@ -200,7 +200,7 @@
     fill: #222;
 }
 
-.basket-header:hover #cart {
+.cart-container:hover #cart {
     fill: $colorBrand;
 }
 
@@ -232,6 +232,10 @@
     width: 262px;
     padding: 0 17px;
 }
+
+//.cart-container:hover .basket-menu{
+//    display: block;
+//}
 
 .basket-menu:after {
     content: "";
