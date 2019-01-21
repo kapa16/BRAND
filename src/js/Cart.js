@@ -61,9 +61,8 @@ class Cart {
   _addEventHandlers() {
     $(this.container).mouseenter(() => this._showCartProducts());
 
-    $(this.container).on('click', '.reduce-quantity', evt => this._onChangeQuantity(evt, -1));
-    $(this.container).on('click', '.increase-quantity', evt => this._onChangeQuantity(evt, 1));
-    $(this.container).on('click', '.delete-product', evt => this._onChangeQuantity(evt, 0, true));
+    // $(this.container).on('click', '.reduce-quantity', evt => this._onChangeQuantity(evt, -1));
+    // $(this.container).on('click', '.increase-quantity', evt => this._onChangeQuantity(evt, 1));
   }
 
   _getMainItemContainer(className, id) {
@@ -106,7 +105,7 @@ class Cart {
   }
 
   _renderItemMenuCart(product) {
-    const $container = this._getMainItemContainer('basket__card', product.id_product);
+    const $container = this._getMainItemContainer('basket__card cart-item-wrapper', product.id_product);
 
     const $img = this._getImageElement(product);
     $img.addClass('photo-product');
@@ -126,17 +125,17 @@ class Cart {
       .append($productRating)
       .append($total);
 
-    const $deleteBtn = this._getDivElement("fas fa-times-circle delete-product");
 
     $container
       .append($img)
       .append($productInfo)
-      .append($deleteBtn)
+      .append(this._getDivElement("fas fa-times-circle delete-product")
+        .click(evt => this._onChangeQuantity(evt.target, true)))
       .appendTo($('.cart-items-wrap'));
   }
 
   _renderItemPageCart(product) {
-    const $container = this._getMainItemContainer('cart-table-row', product.id_product);
+    const $container = this._getMainItemContainer('cart-table-row cart-item-wrapper', product.id_product);
 
     const $productDetails = this._getDivElement('product-details cart-table-cell');
     const $img = this._getImageElement(product);
@@ -145,9 +144,9 @@ class Cart {
     $productDescription
       .append(this._getParagraphElement("product-name", product.product_name))
       .append(this._getProductRatingElement())
-      .append(this._getParagraphElement("product-details-properties", "Color:")
+      .append(this._getParagraphElement("product-details-properties", "Color: ")
         .append(this._getSpanElement("product-details-value", product.color)))
-      .append(this._getParagraphElement("product-details-properties", "Size:")
+      .append(this._getParagraphElement("product-details-properties", "Size: ")
         .append(this._getSpanElement("product-details-value", product.size)));
 
     $productDetails
@@ -156,18 +155,21 @@ class Cart {
 
     $container
       .append($productDetails)
-      .append(this._getDivElement('cart-table-cell product-price', `&#36;${product.price}`))
+      .append(this._getDivElement('cart-table-cell', `&#36;${product.price}`))
       .append(this._getDivElement('cart-table-cell')
-        .append($('<input class="cart-table-quantity" value="2" type="number" name="quantity">').val(product.quantity)))
+        .append($('<input class="cart-table-quantity" value="2" type="number" name="quantity">')
+          .val(product.quantity)
+          .change(evt => this._onChangeQuantity(evt.target))))
       .append(this._getDivElement('cart-table-cell', product.shipping))
-      .append(this._getDivElement('cart-table-cell product-sum', `&#36;${product.quantity * product.price}`))
+      .append(this._getDivElement('cart-table-cell  product-price', `&#36;${product.quantity * product.price}`))
       .append(this._getDivElement('cart-table-cell')
-        .append('<i class="fas fa-times-circle cart-table-close-icon delete-product"></i>'))
+        .append(this._getDivElement("fas fa-times-circle cart-table-close-icon delete-product"))
+        .click(evt => this._onChangeQuantity(evt.target, true)))
       .appendTo($('.cart-table'));
   }
 
   _renderSum() {
-    $('.cart-quantity').text(this.countGoods);
+    // $('.cart-quantity').text(this.countGoods);
     $('.cart-total-sum').text(`$${this.amount}`);
   }
 
@@ -215,22 +217,33 @@ class Cart {
     this._renderSum();
   }
 
-  _getEventProductId(evt) {
-    return $(evt.target).closest('.basket__card').data('product');
+  _getItemWrapper(element) {
+    return $(element).closest('.cart-item-wrapper');
   }
 
-  _onChangeQuantity(evt, quantity = 1, deleteItem = false) {
-    let find = this._getCartItem(this._getEventProductId(evt));
-    this._changeQuantity(find, deleteItem ? -find.quantity : quantity);
+  _getEventProductId(element) {
+    return this._getItemWrapper(element).data('product');
+  }
+
+  _onChangeQuantity(element, deleteItem = false) {
+    let find = this._getCartItem(this._getEventProductId(element));
+    let quantity = 0;
+    const $inputEl = this._getItemWrapper(element).find('.cart-table-quantity');
+    if ($inputEl.length) {
+      quantity = +$inputEl[0].value;
+    }
+    this._changeQuantity(find, deleteItem ? 0 : quantity);
   }
 
   _changeQuantity(cartItem, quantity) {
-    cartItem.quantity += quantity;
-    this.countGoods += quantity;
-    this.amount += cartItem.price * quantity;
-    if (cartItem.quantity === 0) {
+    this.countGoods -= cartItem.quantity;
+    this.amount -= cartItem.price * cartItem.quantity;
+    if (quantity === 0) {
       this._remove(cartItem.id_product)
     } else {
+      cartItem.quantity = quantity;
+      this.countGoods += quantity;
+      this.amount += cartItem.price * quantity;
       this._updateCart(cartItem);
     }
     this._renderSum();

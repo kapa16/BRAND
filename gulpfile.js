@@ -35,6 +35,7 @@ const path = {
   watch: {
     html: 'src/**/*.html',
     js: 'src/js/**/*.js',
+    json: 'src/json/*.json',
     css: 'src/scss/**/*.+(scss|sass)',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*',
@@ -165,6 +166,7 @@ gulp.task('watch', function () {
   gulp.watch(path.watch.html, gulp.series('html'));
   gulp.watch(path.watch.css, gulp.series('css'));
   gulp.watch(path.watch.js, gulp.series('js'));
+  gulp.watch(path.watch.js, gulp.series('json'));
   gulp.watch(path.watch.img, gulp.series('image'));
   gulp.watch(path.watch.fonts, gulp.series('fonts'));
   gulp.watch(path.watch.webFonts, gulp.series('webFonts'));
