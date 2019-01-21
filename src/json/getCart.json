@@ -10,7 +10,9 @@
       "img_src": "img/productCart1.jpg",
       "img_alt": "productCart1",
       "color": "red",
-      "size": "XXL"
+      "size": "XXL",
+      "shipping": "FREE"
+
     },
     {
       "id_product": 456,
@@ -20,7 +22,8 @@
       "img_src": "img/productCart2.jpg",
       "img_alt": "productCart2",
       "color": "red",
-      "size": "XXL"
+      "size": "XXL",
+      "shipping": "FREE"
     }
   ]
 }

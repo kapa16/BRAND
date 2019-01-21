@@ -66,50 +66,104 @@ class Cart {
     $(this.container).on('click', '.delete-product', evt => this._onChangeQuantity(evt, 0, true));
   }
 
-  _renderItem(product) {
-    const $container = $('<div/>', {
-      class: 'basket__card',
-      'data-product': product.id_product
+  _getMainItemContainer(className, id) {
+    return $('<div/>', {
+      class: className,
+      'data-product': id
     });
-    $container.appendTo($('.cart-items-wrap'));
+  }
 
-    const $img = $('<img/>', {
+  _getImageElement(product) {
+    return $('<img/>', {
       src: product.img_src,
       alt: product.img_alt,
-      class: "photo-product"
     });
+  }
 
-    const $productInfo = $('<div/>', {
-      class: "product-info"
-    });
-    $productInfo
-      .append($(`<p class="product-name for-cart-menu">${product.product_name}</p>`));
-
-    const $productRating = $('<div/>', {
-      class: "product-rating for-cart-menu"
-    });
+  _getProductRatingElement() {
+    const $productRating = $('<div class="product-rating"></div>');
     for (let i = 0; i < 5; i++) {
       $productRating.append('<i class="fas fa-star rating-star"></i>');
     }
-    $productRating.appendTo($productInfo);
+    return $productRating;
+  }
 
-    const $total = $('<div/>', {
-      class: "basket__product-total"
-    });
+  _getDivElement(className, text = '') {
+    return $(`<div class="${className}">${text}</div>`);
+  }
+
+  _getParagraphElement(className, text) {
+    return $(`<p class="${className}">${text}</p>`);
+  }
+
+  _getSpanElement(className, text) {
+    return $(`<span class="${className}">${text}</span>`);
+  }
+
+  _renderItem(product) {
+    this._renderItemMenuCart(product);
+    this._renderItemPageCart(product);
+  }
+
+  _renderItemMenuCart(product) {
+    const $container = this._getMainItemContainer('basket__card', product.id_product);
+
+    const $img = this._getImageElement(product);
+    $img.addClass('photo-product');
+
+    const $productInfo = this._getDivElement("product-info");
+    const $productName = this._getParagraphElement("product-name for-cart-menu", product.product_name);
+    const $productRating = this._getProductRatingElement();
+    $productRating.addClass('for-cart-menu');
+    const $total = this._getDivElement("basket__product-total");
     $total
-      .append(`<span class="product-quantity">${product.quantity} x </span>`)
-      .append(`<span class="product-price">&#36;${product.price}</span>`)
-      .appendTo($productInfo);
+      .append(this._getSpanElement("product-quantity", product.quantity))
+      .append(`<span> x </span>`)
+      .append(this._getSpanElement("product-price", `&#36;${product.price}`));
 
-    const $closeBtn = $('<div/>', {
-      class: "fas fa-times-circle delete-product"
-    });
-    $closeBtn.click();
+    $productInfo
+      .append($productName)
+      .append($productRating)
+      .append($total);
+
+    const $deleteBtn = this._getDivElement("fas fa-times-circle delete-product");
 
     $container
       .append($img)
       .append($productInfo)
-      .append($closeBtn);
+      .append($deleteBtn)
+      .appendTo($('.cart-items-wrap'));
+  }
+
+  _renderItemPageCart(product) {
+    const $container = this._getMainItemContainer('cart-table-row', product.id_product);
+
+    const $productDetails = this._getDivElement('product-details cart-table-cell');
+    const $img = this._getImageElement(product);
+
+    const $productDescription = this._getDivElement('product-details-description');
+    $productDescription
+      .append(this._getParagraphElement("product-name", product.product_name))
+      .append(this._getProductRatingElement())
+      .append(this._getParagraphElement("product-details-properties", "Color:")
+        .append(this._getSpanElement("product-details-value", product.color)))
+      .append(this._getParagraphElement("product-details-properties", "Size:")
+        .append(this._getSpanElement("product-details-value", product.size)));
+
+    $productDetails
+      .append($img)
+      .append($productDescription);
+
+    $container
+      .append($productDetails)
+      .append(this._getDivElement('cart-table-cell product-price', `&#36;${product.price}`))
+      .append(this._getDivElement('cart-table-cell')
+        .append($('<input class="cart-table-quantity" value="2" type="number" name="quantity">').val(product.quantity)))
+      .append(this._getDivElement('cart-table-cell', product.shipping))
+      .append(this._getDivElement('cart-table-cell product-sum', `&#36;${product.quantity * product.price}`))
+      .append(this._getDivElement('cart-table-cell')
+        .append('<i class="fas fa-times-circle cart-table-close-icon delete-product"></i>'))
+      .appendTo($('.cart-table'));
   }
 
   _renderSum() {
@@ -119,7 +173,7 @@ class Cart {
 
   _updateCart(product) {
     let $container = $(`div[data-product="${product.id_product}"]`);
-    $container.find('.product-quantity').text(product.quantity + ' x ');
+    $container.find('.product-quantity').text(product.quantity);
     $container.find('.product-price').text(`$${product.quantity * product.price}`);
   }
 
@@ -149,7 +203,9 @@ class Cart {
         price: $productContainer.data('price'),
         quantity: 1,
         img_src: $img.src,
-        img_alt: $img.alt
+        img_alt: $img.alt,
+        color: $productContainer.data('color'),
+        size: $productContainer.data('size')
       };
       this.cartItems.push(product);
       this._renderItem(product);
