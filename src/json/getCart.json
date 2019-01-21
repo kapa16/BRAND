@@ -8,7 +8,9 @@
       "price": 450,
       "quantity": 1,
       "img_src": "img/productCart1.jpg",
-      "img_alt": "productCart1"
+      "img_alt": "productCart1",
+      "color": "red",
+      "size": "XXL"
     },
     {
       "id_product": 456,
@@ -16,7 +18,9 @@
       "price": 390,
       "quantity": 1,
       "img_src": "img/productCart2.jpg",
-      "img_alt": "productCart2"
+      "img_alt": "productCart2",
+      "color": "red",
+      "size": "XXL"
     }
   ]
 }
