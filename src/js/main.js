@@ -1,12 +1,12 @@
-//= ../libs/jquery/dist/jquery.js
-//= ../libs/jquery-ui/jquery-ui.js
+// = ../libs/jquery/dist/jquery.js
+// = ../libs/jquery-ui/jquery-ui.js
 
-//= _Cart.js
+//= Cart.js
 
 $(document).ready(() => {
 
   // Корзина
-  let cart = new Cart('getCart.json');
+  let cart = new Cart('json/getCart.json');
 
   // Добавление товара
   $('.add-cart-wrap').click(e => {

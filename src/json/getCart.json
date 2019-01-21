@@ -4,7 +4,7 @@
   "contents": [
     {
       "id_product": 123,
-      "product_name": "Ноутбук",
+      "product_name": "Rebox Zane",
       "price": 450,
       "quantity": 1,
       "img_src": "img/productCart1.jpg",
@@ -12,11 +12,11 @@
     },
     {
       "id_product": 456,
-      "product_name": "Мышка",
+      "product_name": "Mango People T-shirt",
       "price": 390,
       "quantity": 1,
       "img_src": "img/productCart2.jpg",
-      "img_alt": "productCart2",
+      "img_alt": "productCart2"
     }
   ]
 }

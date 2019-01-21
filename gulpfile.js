@@ -15,8 +15,9 @@ const autoPrefixList = [
 const path = {
   dist: {
     html: 'dist/',
-    pug: 'dist/',
     js: 'dist/js/',
+    libs: 'dist/libs/',
+    json: 'dist/json/',
     css: 'dist/css/',
     img: 'dist/img/',
     fonts: 'dist/fonts/',
@@ -24,8 +25,8 @@ const path = {
   },
   src: {
     html: 'src/*.html',
-    pug: 'src/pug/*.pug',
     js: 'src/js/main.js',//**/*.js',
+    json: 'src/json/*.json',
     style: 'src/scss/*.+(scss|sass)',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/**/*.*',
@@ -33,7 +34,6 @@ const path = {
   },
   watch: {
     html: 'src/**/*.html',
-    pug: 'src/pug/**/*.pug',
     js: 'src/js/**/*.js',
     css: 'src/scss/**/*.+(scss|sass)',
     img: 'src/img/**/*.*',
@@ -63,8 +63,7 @@ const gulp = require('gulp'),  // подключаем Gulp
   rigger = require('gulp-rigger'), // модуль для импорта содержимого одного файла в другой
   sourcemaps = require('gulp-sourcemaps'), // модуль для генерации карты исходных файлов
   autoPrefix = require('gulp-autoprefixer'), // модуль для автоматической установки автопрефиксов
-  cache = require('gulp-cache'), // модуль для кэширования
-  pug = require('gulp-pug');
+  cache = require('gulp-cache'); // модуль для кэширования
 
 
 /* задачи */
@@ -81,15 +80,6 @@ gulp.task('html', async function () {
     .pipe(rigger()) // импорт вложений
     .pipe(gulp.dest(path.dist.html)) // выкладывание готовых файлов
     .pipe(webServer.reload({stream: true})); // перезагрузка сервера
-});
-
-//сбор pug
-gulp.task('pug', async function () {
-  gulp.src(path.src.pug)
-    .pipe(plumber())
-    .pipe(pug())
-    .pipe(gulp.dest(path.dist.pug))
-    .pipe(webServer.reload({stream: true}));
 });
 
 // сбор стилей
@@ -112,10 +102,22 @@ gulp.task('js', async function () {
     .pipe(plumber()) // для отслеживания ошибок
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     .pipe(sourcemaps.init()) //инициализируем sourcemap
-    .pipe(minify({noSource:true}))
+    .pipe(minify())//{noSource:true}))
     .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.dist.js)) // положим готовый файл
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер
+});
+
+//библиотеки
+gulp.task('libs', async function () {
+  gulp.src(['src/libs/jquery/dist/jquery.min.js', 'src/libs/jquery-ui/jquery-ui.min.js'])
+    .pipe(gulp.dest(path.dist.libs));
+});
+
+//json
+gulp.task('json', async function () {
+  gulp.src(path.src.json)
+    .pipe(gulp.dest(path.dist.json));
 });
 
 // перенос шрифтов
@@ -146,32 +148,32 @@ gulp.task('cache:clear', async function () {
 
 
 // сборка
-  gulp.task('dist', gulp.series(
-    'clean',
-    'pug',
-    'html',
-    'css',
-    'js',
-    'fonts',
-    'webFonts',
-    'image'
-  ));
+gulp.task('dist', gulp.series(
+  'clean',
+  'html',
+  'css',
+  'js',
+  'libs',
+  'json',
+  'fonts',
+  'webFonts',
+  'image'
+));
 
 // запуск задач при изменении файлов
-  gulp.task('watch', function () {
-    gulp.watch(path.watch.pug, gulp.series('pug'));
-    gulp.watch(path.watch.html, gulp.series('html'));
-    gulp.watch(path.watch.css, gulp.series('css'));
-    gulp.watch(path.watch.js, gulp.series('js'));
-    gulp.watch(path.watch.img, gulp.series('image'));
-    gulp.watch(path.watch.fonts, gulp.series('fonts'));
-    gulp.watch(path.watch.webFonts, gulp.series('webFonts'));
-  });
+gulp.task('watch', function () {
+  gulp.watch(path.watch.html, gulp.series('html'));
+  gulp.watch(path.watch.css, gulp.series('css'));
+  gulp.watch(path.watch.js, gulp.series('js'));
+  gulp.watch(path.watch.img, gulp.series('image'));
+  gulp.watch(path.watch.fonts, gulp.series('fonts'));
+  gulp.watch(path.watch.webFonts, gulp.series('webFonts'));
+});
 
 // задача по умолчанию
-  gulp.task('default', gulp.series(
-    'clean',
-    'dist',
-    'webServer',
-    'watch'
-  ));
+gulp.task('default', gulp.series(
+  'clean',
+  'dist',
+  'webServer',
+  'watch'
+));

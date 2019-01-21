@@ -59,7 +59,7 @@ class Cart {
   }
 
   _addEventHandlers() {
-    $( this.container).mouseenter(() => this._showCartProducts());
+    $(this.container).mouseenter(() => this._showCartProducts());
 
     $(this.container).on('click', '.reduce-quantity', evt => this._onChangeQuantity(evt, -1));
     $(this.container).on('click', '.increase-quantity', evt => this._onChangeQuantity(evt, 1));
@@ -71,18 +71,19 @@ class Cart {
       class: 'basket__card',
       'data-product': product.id_product
     });
+    $container.appendTo($('.cart-items-wrap'));
 
     const $img = $('<img/>', {
       src: product.img_src,
       alt: product.img_alt,
       class: "photo-product"
     });
-    $img.appendTo($container);
 
     const $productInfo = $('<div/>', {
       class: "product-info"
     });
-    $productInfo.append($(`<p class="product-name for-cart-menu">${product.product_name}</p>`));
+    $productInfo
+      .append($(`<p class="product-name for-cart-menu">${product.product_name}</p>`));
 
     const $productRating = $('<div/>', {
       class: "product-rating for-cart-menu"
@@ -90,31 +91,36 @@ class Cart {
     for (let i = 0; i < 5; i++) {
       $productRating.append('<i class="fas fa-star rating-star"></i>');
     }
+    $productRating.appendTo($productInfo);
 
+    const $total = $('<div/>', {
+      class: "basket__product-total"
+    });
+    $total
+      .append(`<span class="product-quantity">${product.quantity} x </span>`)
+      .append(`<span class="product-price">&#36;${product.price}</span>`)
+      .appendTo($productInfo);
 
-    // const $quantity = $('<div/>', {
-    //   class: 'quantity-wrap'
-    // });
-    //
-    // $quantity.append($(`<button class="btn-quantity reduce-quantity">-</button>`));
-    // $quantity.append($(`<p class="product-quantity">${product.quantity}</p>`));
-    // $quantity.append($(`<button class="btn-quantity increase-quantity">+</button>`));
-    // $container.append($quantity);
-    //
-    // $container.append($(`<p class="product-price">${product.price} руб.</p>`));
-    // $container.append($(`<button class="btn-quantity delete-product">X</button>`));
-    // $container.appendTo($('.cart-items-wrap'));
+    const $closeBtn = $('<div/>', {
+      class: "fas fa-times-circle delete-product"
+    });
+    $closeBtn.click();
+
+    $container
+      .append($img)
+      .append($productInfo)
+      .append($closeBtn);
   }
 
   _renderSum() {
-    $('.sum-goods').text(`Всего товаров в корзине: ${this.countGoods}`);
-    $('.sum-price').text(`Общая сумма: ${this.amount} руб.`);
+    $('.cart-quantity').text(this.countGoods);
+    $('.cart-total-sum').text(`$${this.amount}`);
   }
 
   _updateCart(product) {
     let $container = $(`div[data-product="${product.id_product}"]`);
-    $container.find('.product-quantity').text(product.quantity);
-    $container.find('.product-price').text(`${product.quantity * product.price} руб.`);
+    $container.find('.product-quantity').text(product.quantity + ' x ');
+    $container.find('.product-price').text(`$${product.quantity * product.price}`);
   }
 
   _getCartItem(id) {
@@ -124,13 +130,14 @@ class Cart {
   _showCartProducts() {
     $('.basket-menu').removeClass('hidden').mouseleave(() => this._hideCartProducts());
   }
-  _hideCartProducts(){
+
+  _hideCartProducts() {
     $('.basket-menu').addClass('hidden');
   }
 
   addProduct(element) {
-    const $productContainer = $(element).closest('product-card');
-    const $img = $productContainer.find('.product-img');
+    const $productContainer = $(element).closest('.product-card');
+    const $img = $productContainer.find('.product-img')[0];
     let productId = +$productContainer.data('id');
     let find = this._getCartItem(productId);
     if (find) {
@@ -138,8 +145,8 @@ class Cart {
     } else {
       let product = {
         id_product: productId,
-        product_name: $(element).data('name'),
-        price: +$(element).data('price'),
+        product_name: $productContainer.data('name'),
+        price: $productContainer.data('price'),
         quantity: 1,
         img_src: $img.src,
         img_alt: $img.alt
@@ -153,7 +160,7 @@ class Cart {
   }
 
   _getEventProductId(evt) {
-    return $(evt.target).closest('.cart-item').data('product');
+    return $(evt.target).closest('.basket__card').data('product');
   }
 
   _onChangeQuantity(evt, quantity = 1, deleteItem = false) {
