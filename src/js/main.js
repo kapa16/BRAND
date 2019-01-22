@@ -12,6 +12,10 @@ $(document).ready(() => {
   $('.add-cart-wrap').click(e => {
     cart.addProduct(e.target);
   });
+  // Очистка корзины
+  $('.clear-cart-btn').click(evt => {
+    cart.clearCart(evt);
+  });
 
 });
 

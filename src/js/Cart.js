@@ -60,9 +60,6 @@ class Cart {
 
   _addEventHandlers() {
     $(this.container).mouseenter(() => this._showCartProducts());
-
-    // $(this.container).on('click', '.reduce-quantity', evt => this._onChangeQuantity(evt, -1));
-    // $(this.container).on('click', '.increase-quantity', evt => this._onChangeQuantity(evt, 1));
   }
 
   _getMainItemContainer(className, id) {
@@ -111,20 +108,13 @@ class Cart {
     $img.addClass('photo-product');
 
     const $productInfo = this._getDivElement("product-info");
-    const $productName = this._getParagraphElement("product-name for-cart-menu", product.product_name);
-    const $productRating = this._getProductRatingElement();
-    $productRating.addClass('for-cart-menu');
-    const $total = this._getDivElement("basket__product-total");
-    $total
-      .append(this._getSpanElement("product-quantity", product.quantity))
-      .append(`<span> x </span>`)
-      .append(this._getSpanElement("product-price", `&#36;${product.price}`));
-
     $productInfo
-      .append($productName)
-      .append($productRating)
-      .append($total);
-
+      .append(this._getParagraphElement("product-name for-cart-menu", product.product_name))
+      .append(this._getProductRatingElement().addClass('for-cart-menu'))
+      .append(this._getDivElement("basket__product-total")
+        .append(this._getSpanElement("product-quantity", product.quantity))
+        .append(`<span> x </span>`)
+        .append(this._getSpanElement("product-price", `&#36;${product.price}`)));
 
     $container
       .append($img)
@@ -169,7 +159,7 @@ class Cart {
   }
 
   _renderSum() {
-    // $('.cart-quantity').text(this.countGoods);
+    $('.cart-quantity').text(this.countGoods);
     $('.cart-total-sum').text(`$${this.amount}`);
   }
 
@@ -185,6 +175,7 @@ class Cart {
 
   _showCartProducts() {
     $('.basket-menu').removeClass('hidden').mouseleave(() => this._hideCartProducts());
+    $('body:not(.cart-container)').click(() => this._hideCartProducts());
   }
 
   _hideCartProducts() {
@@ -254,5 +245,12 @@ class Cart {
     this.cartItems.splice(this.cartItems.indexOf(find), 1);
     let $container = $(`div[data-product="${id}"]`);
     $container.remove();
+  }
+
+  clearCart(evt) {
+    evt.preventDefault();
+    while (this.cartItems.length) {
+      this._changeQuantity(this.cartItems[this.countGoods - 1], 0);
+    }
   }
 }
