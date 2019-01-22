@@ -59,7 +59,22 @@ class Cart {
   }
 
   _addEventHandlers() {
-    $(this.container).mouseenter(() => this._showCartProducts());
+    const $cartMenu = $('.basket-menu');
+    $(this.container)
+      .mousemove(() => $cartMenu.fadeIn())
+      .mouseleave(() => $cartMenu.delay(500).fadeOut());
+
+    $cartMenu
+      .mousemove(() => $cartMenu.stop())
+      .mouseleave(() => {
+        $cartMenu.fadeOut()
+      });
+    // $(this.container).mouseenter(() => this._showCartProducts());
+  }
+
+  _showCartProducts() {
+    const $cartMenu = $('.basket-menu');
+
   }
 
   _getMainItemContainer(className, id) {
@@ -173,14 +188,9 @@ class Cart {
     return this.cartItems.find(product => product.id_product === id);
   }
 
-  _showCartProducts() {
-    $('.basket-menu').removeClass('hidden').mouseleave(() => this._hideCartProducts());
-    $('body:not(.cart-container)').click(() => this._hideCartProducts());
-  }
-
-  _hideCartProducts() {
-    $('.basket-menu').addClass('hidden');
-  }
+  // _hideCartProducts() {
+  //   $('.basket-menu').addClass('hidden');
+  // }
 
   addProduct(evt) {
     evt.preventDefault();

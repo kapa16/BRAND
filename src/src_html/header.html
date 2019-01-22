@@ -7,13 +7,13 @@
                     BRAN<span class="brand-style letter-d">D</span>
                 </p>
             </a>
-            <nav class="main-logo-menu">
+            <nav class="main-logo-menu hidden" id="menu">
                 <div class="container">
                     <ul class="logo-menu">
                         <li class="logo-menu-list"><a href="index.html" class="logo-menu-link menu-link">Home</a></li>
                         <li class="logo-menu-list list-man">
                             <a href="product.html" class="logo-menu-link menu-link">Man</a>
-                            <div class="dropdown-box">
+                            <div class="dropdown-box" hidden>
                                 <div class="dropdown-flex">
                                     <h3 class="dropdown-heading">Men</h3>
                                     <ul class="dropdown-ul">
@@ -49,7 +49,7 @@
                         </li>
                         <li class="logo-menu-list  list-women">
                             <a href="product.html" class="logo-menu-link menu-link">Women</a>
-                            <div class="dropdown-box">
+                            <div class="dropdown-box" hidden>
                                 <div class="dropdown-flex">
                                     <h3 class="dropdown-heading">Women</h3>
                                     <ul class="dropdown-ul">
@@ -94,10 +94,17 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="logo-menu-list"><a href="product.html" class="logo-menu-link menu-link">Kids</a></li>
-                        <li class="logo-menu-list"><a href="product.html" class="logo-menu-link menu-link">Accoseriese</a></li>
-                        <li class="logo-menu-list"><a href="product.html" class="logo-menu-link menu-link">Featured</a></li>
-                        <li class="logo-menu-list"><a href="product.html" class="logo-menu-link menu-link">Hot Deals</a></li>
+                        <li class="logo-menu-list">
+                            <a href="product.html" class="logo-menu-link menu-link">Kids</a></li>
+                        <li class="logo-menu-list">
+                            <a href="product.html" class="logo-menu-link menu-link">Accoseriese</a>
+                        </li>
+                        <li class="logo-menu-list">
+                            <a href="product.html" class="logo-menu-link menu-link">Featured</a>
+                        </li>
+                        <li class="logo-menu-list">
+                            <a href="product.html" class="logo-menu-link menu-link">Hot Deals</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -105,37 +112,35 @@
         <form action="#" class="search-header">
             <div class="browse">
                 Browse <i class="fas fa-caret-down caret-browse"></i>
-                <div class="dropdown-browse">
-                    <div class="dropdown-box">
-                        <div class="dropdown-flex">
-                            <h3 class="dropdown-heading">Women</h3>
-                            <ul class="dropdown-ul">
-                                <li><a href="#" class="dropdown-menu-link">Dresses</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Tops</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Sweaters/Knits</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Jackets/Coats</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Blazers</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Denim</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Leggings/Pants</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Skirts/Shorts</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Accessories </a></li>
-                                <li><a href="#" class="dropdown-menu-link">Bags/Purses</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Swimwear/Underwear</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Nightwear</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Shoes</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Beauty</a></li>
-                            </ul>
-                            <h3 class="dropdown-heading">Men</h3>
-                            <ul class="dropdown-ul">
-                                <li><a href="#" class="dropdown-menu-link">Tees/Tank tops</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Shirts/Polos</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Sweaters</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Sweatshirts/Hoodies</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Blazers</a></li>
-                                <li><a href="#" class="dropdown-menu-link">Jackets/vests</a></li>
+                <div class="dropdown-box hidden">
+                    <div class="dropdown-flex">
+                        <h3 class="dropdown-heading">Women</h3>
+                        <ul class="dropdown-ul">
+                            <li><a href="#" class="dropdown-menu-link">Dresses</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Tops</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Sweaters/Knits</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Jackets/Coats</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Blazers</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Denim</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Leggings/Pants</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Skirts/Shorts</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Accessories </a></li>
+                            <li><a href="#" class="dropdown-menu-link">Bags/Purses</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Swimwear/Underwear</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Nightwear</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Shoes</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Beauty</a></li>
+                        </ul>
+                        <h3 class="dropdown-heading">Men</h3>
+                        <ul class="dropdown-ul">
+                            <li><a href="#" class="dropdown-menu-link">Tees/Tank tops</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Shirts/Polos</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Sweaters</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Sweatshirts/Hoodies</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Blazers</a></li>
+                            <li><a href="#" class="dropdown-menu-link">Jackets/vests</a></li>
 
-                            </ul>
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -149,13 +154,15 @@
         <div class="cart-container">
             <!--Cart icon-->
             <a href="shopping-cart.html">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="29" viewBox="0 0 32 29">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32"
+                     height="29" viewBox="0 0 32 29">
                     <defs>
-                        <path id="cart" d="M1181 41.182c0-.65.533-1.182 1.184-1.182h4.28c.533 0 1.007.354 1.145.867l4.833 17.455h13.178l4.379-10.048H1195.4a1.186 1.186 0 0 1-1.184-1.182c0-.65.533-1.182 1.184-1.182h16.413c.394 0 .77.197.986.532.217.335.257.749.099 1.123l-5.405 12.412c-.198.433-.612.709-1.085.709h-14.855a1.184 1.184 0 0 1-1.144-.867l-4.833-17.455h-3.393a1.186 1.186 0 0 1-1.184-1.182zm6.747 25.138a2.684 2.684 0 0 1 5.365 0 2.684 2.684 0 0 1-5.365 0zm16.788.178c-.1-1.458 1.006-2.758 2.485-2.857 1.48-.098 2.762 1.025 2.86 2.483.04.728-.177 1.418-.65 1.95a2.678 2.678 0 0 1-1.835.926h-.197c-1.401 0-2.565-1.103-2.663-2.502z" />
+                        <path id="cart"
+                              d="M1181 41.182c0-.65.533-1.182 1.184-1.182h4.28c.533 0 1.007.354 1.145.867l4.833 17.455h13.178l4.379-10.048H1195.4a1.186 1.186 0 0 1-1.184-1.182c0-.65.533-1.182 1.184-1.182h16.413c.394 0 .77.197.986.532.217.335.257.749.099 1.123l-5.405 12.412c-.198.433-.612.709-1.085.709h-14.855a1.184 1.184 0 0 1-1.144-.867l-4.833-17.455h-3.393a1.186 1.186 0 0 1-1.184-1.182zm6.747 25.138a2.684 2.684 0 0 1 5.365 0 2.684 2.684 0 0 1-5.365 0zm16.788.178c-.1-1.458 1.006-2.758 2.485-2.857 1.48-.098 2.762 1.025 2.86 2.483.04.728-.177 1.418-.65 1.95a2.678 2.678 0 0 1-1.835.926h-.197c-1.401 0-2.565-1.103-2.663-2.502z"/>
                     </defs>
                     <g>
                         <g transform="translate(-1181 -40)">
-                            <use xlink:href="#cart" />
+                            <use xlink:href="#cart"/>
                         </g>
                     </g>
                 </svg>

@@ -1,4 +1,10 @@
 //===================== Header BEGIN ================
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
 
 .header-flex {
     display: flex;
@@ -38,9 +44,6 @@
 
 .main-logo-menu {
     display: flex;
-    transform: scaleY(0);
-    transform-origin: 0 0;
-    transition: all 0.5s;
     position: absolute;
     z-index: 10;
     left: 0;
@@ -52,10 +55,6 @@
 
 .logo-brand:hover {
     cursor: pointer;
-
-    .main-logo-menu {
-        transform: scaleY(1);
-    }
 }
 
 .logo-menu {
@@ -65,41 +64,35 @@
     align-items: center;
     width: 100%;
     height: 51px;
-}
 
-.logo-menu-link {
-    color: $colorTextDark;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 20px 24px 12px 24px;
-    text-transform: uppercase;
-    border-bottom: 3px solid $colorWhite;
-
-}
-
-.logo-menu-link:hover {
-    border-bottom: 3px solid $colorMenuBorderHover;
-}
-
-.logo-menu-list:hover {
     .dropdown-box {
-        display: flex;
-        top: 46px;
-        left: 25px;
-        transform: scaleY(1);
+        left: 100px;
+    }
 
+    &-link {
+        color: $colorTextDark;
+        font-size: 14px;
+        font-weight: 700;
+        padding: 20px 24px 12px 24px;
+        text-transform: uppercase;
+        border-bottom: 3px solid $colorWhite;
+
+        &:hover {
+            border-bottom: 3px solid $colorMenuBorderHover;
+        }
     }
 }
 
 .list-man {
     .dropdown-box:after {
-        left: 102px;
+        left: 200px;
     }
+
 }
 
 .list-women {
     .dropdown-box:after {
-        left: 198px;
+        left: 282px;
     }
 }
 
@@ -141,10 +134,6 @@
     cursor: pointer;
     color: $colorBlack;
     background: $colorBgButton;
-
-    .dropdown-box {
-        transform: scaleY(1);
-    }
 }
 
 //================= Button Browes END ======================
@@ -233,10 +222,6 @@
     padding: 0 17px;
 }
 
-//.cart-container:hover .basket-menu{
-//    display: block;
-//}
-
 .basket-menu:after {
     content: "";
     height: 10px;
@@ -258,8 +243,8 @@
 
 .photo-product {
     display: block;
-    max-width:100px;
-    max-height:115px;
+    max-width: 100px;
+    max-height: 115px;
     width: auto;
     height: auto;
 }
