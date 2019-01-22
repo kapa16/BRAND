@@ -1,88 +1,88 @@
 body {
-    font-family: 'Lato', sans-serif;
-    color: $colorTextDark;
+  font-family: 'Lato', sans-serif;
+  color: $colorTextDark;
 }
 
 .header {
-    width: 100%;
-    height: $heightHeader;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
-    border: 1px solid #ececec;
-    background-color: $colorWhite;
-    position: relative;
+  width: 100%;
+  height: $heightHeader;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
+  border: 1px solid #ececec;
+  background-color: $colorWhite;
+  position: relative;
 }
 
 .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    height: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  height: 100%;
 }
 
 //Для ссылок меню
 .menu-link {
-    display: block;
-    height: 100%;
+  display: block;
+  height: 100%;
 }
 
 .brand-style {
-    color: $colorBrand;
+  color: $colorBrand;
 }
 
 .button-brand {
-    background: $colorBrand;
+  background: $colorBrand;
+  color: $colorWhite;
+  font-weight: 400;
+  border: 1px solid $colorBrand;
+
+  &:hover {
+    color: $colorBrand;
+    background: $colorWhite;
+  }
+
+  &:active {
     color: $colorWhite;
-    font-weight: 400;
-    border: 1px solid $colorBrand;
-
-    &:hover {
-        color: $colorBrand;
-        background: $colorWhite;
-    }
-
-    &:active {
-        color: $colorWhite;
-        background: $colorBrand;
-    }
+    background: $colorBrand;
+  }
 }
 
 .button-brand-white {
-    background: $colorWhite;
+  background: $colorWhite;
+  color: $colorBrand;
+  font-weight: 400;
+  border: 1px solid $colorBrand;
+
+  &:hover {
+    color: $colorWhite;
+    background: $colorBrand;
+  }
+
+  &:active {
     color: $colorBrand;
-    font-weight: 400;
-    border: 1px solid $colorBrand;
-
-    &:hover {
-        color: $colorWhite;
-        background: $colorBrand;
-    }
-
-    &:active {
-        color: $colorBrand;
-        background: $colorWhite;
-    }
+    background: $colorWhite;
+  }
 }
 
 .button-black {
-    display: block;
-    border: 1px solid $colorBorderForms;
-    background: $colorWhite;
-    color: #4a4a4a;
+  display: block;
+  border: 1px solid $colorBorderForms;
+  background: $colorWhite;
+  color: #4a4a4a;
 
-    &:hover {
-        border: 1px solid $colorBrand;
-        color: $colorBrand;
-    }
+  &:hover {
+    border: 1px solid $colorBrand;
+    color: $colorBrand;
+  }
 
-    &:active {
-        background: $colorBrand;
-        color: $colorWhite;
-    }
+  &:active {
+    background: $colorBrand;
+    color: $colorWhite;
+  }
 }
 
 .icon-drop-list {
-    position: absolute;
-    top: 50%;;
-    left: 100%;
-    margin-left: -19px;
-    margin-top: -8px;
+  position: absolute;
+  top: 50%;;
+  left: 100%;
+  margin-left: -19px;
+  margin-top: -8px;
 }

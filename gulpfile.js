@@ -149,8 +149,7 @@ gulp.task('cache:clear', async function () {
 
 
 // сборка
-gulp.task('dist', gulp.series(
-  'clean',
+gulp.task('dist', gulp.parallel(
   'html',
   'css',
   'js',
