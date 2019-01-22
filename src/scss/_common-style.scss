@@ -10,7 +10,6 @@ body {
     border: 1px solid #ececec;
     background-color: $colorWhite;
     position: relative;
-    //    z-index: 2;
 }
 
 .container {
@@ -30,16 +29,37 @@ body {
 }
 
 .button-brand {
-    background-color: $colorBrand;
+    background: $colorBrand;
     color: $colorWhite;
     font-weight: 400;
     border: 1px solid $colorBrand;
+
+    &:hover {
+        color: $colorBrand;
+        background: $colorWhite;
+    }
+
+    &:active {
+        color: $colorWhite;
+        background: $colorBrand;
+    }
 }
 
-.button-brand:hover {
-    color: $colorBrand;
+.button-brand-white {
     background: $colorWhite;
+    color: $colorBrand;
+    font-weight: 400;
     border: 1px solid $colorBrand;
+
+    &:hover {
+        color: $colorWhite;
+        background: $colorBrand;
+    }
+
+    &:active {
+        color: $colorBrand;
+        background: $colorWhite;
+    }
 }
 
 .button-black {
@@ -47,10 +67,12 @@ body {
     border: 1px solid $colorBorderForms;
     background: $colorWhite;
     color: #4a4a4a;
+
     &:hover {
         border: 1px solid $colorBrand;
         color: $colorBrand;
     }
+
     &:active {
         background: $colorBrand;
         color: $colorWhite;

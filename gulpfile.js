@@ -103,7 +103,7 @@ gulp.task('js', async function () {
     .pipe(plumber()) // для отслеживания ошибок
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     .pipe(sourcemaps.init()) //инициализируем sourcemap
-    .pipe(minify())//{noSource:true}))
+    .pipe(minify({noSource:true}))
     .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.dist.js)) // положим готовый файл
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер

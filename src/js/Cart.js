@@ -182,13 +182,14 @@ class Cart {
     $('.basket-menu').addClass('hidden');
   }
 
-  addProduct(element) {
-    const $productContainer = $(element).closest('.product-card');
-    const $img = $productContainer.find('.product-img')[0];
+  addProduct(evt) {
+    evt.preventDefault();
+    const $productContainer = $(evt.target).closest('[data-id]');
+    const $img = $productContainer.find('img')[0];
     let productId = +$productContainer.data('id');
     let find = this._getCartItem(productId);
     if (find) {
-      this._changeQuantity(find, 1);
+      this._changeQuantity(find, find.quantity + 1);
     } else {
       let product = {
         id_product: productId,

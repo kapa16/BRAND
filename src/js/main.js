@@ -9,8 +9,8 @@ $(document).ready(() => {
   let cart = new Cart('json/getCart.json');
 
   // Добавление товара
-  $('.add-cart-wrap').click(e => {
-    cart.addProduct(e.target);
+  $('.add-cart-wrap').click(evt => {
+    cart.addProduct(evt);
   });
   // Очистка корзины
   $('.clear-cart-btn').click(evt => {
