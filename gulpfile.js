@@ -46,9 +46,10 @@ const path = {
 /* настройки сервера */
 const config = {
   server: {
-    baseDir: './dist'
+    baseDir: 'dist'
   },
-  notify: false
+  browser: 'chrome'
+  //notify: false
 };
 
 /* подключаем gulp и плагины */
@@ -161,7 +162,7 @@ gulp.task('dist', gulp.parallel(
 ));
 
 // запуск задач при изменении файлов
-gulp.task('watch', function () {
+gulp.task('watch', async function () {
   gulp.watch(path.watch.html, gulp.series('html'));
   gulp.watch(path.watch.css, gulp.series('css'));
   gulp.watch(path.watch.js, gulp.series('js'));
