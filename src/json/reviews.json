@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "author": "Ann",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "approved": false
+  },
+  {
+    "id": 2,
+    "author": "Ivan",
+    "text": "Fugit illum, inventore officiis quidem repellendus suscipit voluptas?",
+    "approved": false
+  },
+  {
+    "id": 3,
+    "author": "Marta",
+    "text": "Cum dolor eum harum magnam, omnis porro reprehenderit veritatis vitae voluptatem.",
+    "approved": false
+  },
+  {
+    "id": 4,
+    "author": "Peter",
+    "text": "Aperiam cum, eaque enim fugiat minus quae repellendus similique soluta suscipit tempora.",
+    "approved": false
+  }
+]
