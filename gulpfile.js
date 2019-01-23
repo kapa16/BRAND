@@ -53,13 +53,13 @@ const config = {
 
 /* подключаем gulp и плагины */
 const gulp = require('gulp'),  // подключаем Gulp
-  htmlMin = require('gulp-htmlmin'),
+  htmlMin = require('gulp-htmlmin'), //минификация html
   sass = require('gulp-sass'), // модуль для компиляции SASS (SCSS) в CSS
   cssMin = require('gulp-csso'), // Подключаем пакет для минификации CSS
   webServer = require('browser-sync'), // сервер для работы и автоматического обновления страниц
   minifyJs = require('gulp-terser'), // Подключаем gulp-terser (для сжатия JS)
   del = require('del'), // плагин для удаления файлов и каталогов
-  imagemin = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
+  imageMin = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
   plumber = require('gulp-plumber'), // модуль для отслеживания ошибок
   rigger = require('gulp-rigger'), // модуль для импорта содержимого одного файла в другой
   sourcemaps = require('gulp-sourcemaps'), // модуль для генерации карты исходных файлов
@@ -106,13 +106,13 @@ gulp.task('css', () => {
 gulp.task('js', () => {
   return gulp.src(path.src.js) // получим файл main.js
   //.pipe(plumber()) // для отслеживания ошибок
-    .pipe(sourcemaps.init()) //инициализируем sourcemap
     .pipe(rigger()) // импортируем все указанные файлы в main.js
+    .pipe(sourcemaps.init()) //инициализируем sourcemap
     .pipe(minifyJs()) //минификация
+    .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.dist.js)) // положим готовый файл
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер
 });
@@ -159,7 +159,7 @@ gulp.task('webFonts', async () => {
 // обработка картинок
 gulp.task('image', async () => {
   gulp.src(path.src.img) // путь с исходниками картинок
-    .pipe(imagemin())
+    .pipe(imageMin())
     .pipe(gulp.dest(path.dist.img)); // выгрузка готовых файлов
 });
 

@@ -1,5 +1,5 @@
 class Cart {
-  constructor(source, container = '.cart-container') {
+  constructor(source, container = '.cart__container') {
     this.source = source;
     this.container = container;
     this.countGoods = 0; // Общее кол-во товаров в корзине
@@ -26,7 +26,7 @@ class Cart {
 
   _render() {
     let $cartItemsDiv = $('<div/>', {
-      class: 'basket-menu hidden'
+      class: 'cart__menu hidden'
     });
     let $totalPrice = $('<div/>', {
       class: 'cart-total'
@@ -35,16 +35,16 @@ class Cart {
     $totalPrice.append('<p class="cart-total-sum">$0.00</p>');
 
     const $cartButtons = $('<div/>', {
-      class: 'cart-menu-buttons'
+      class: 'cart__menu-buttons'
     });
     const $checkoutButton = $('<a/>', {
       href: 'checkout.html',
-      class: 'cart-menu-button',
+      class: 'cart__menu-button',
       text: 'Checkout'
     });
     const $cartButton = $('<a/>', {
       href: 'shopping-cart.html',
-      class: 'cart-menu-button',
+      class: 'cart__menu-button',
       text: 'Go to cart'
     });
     $cartButtons
@@ -59,7 +59,7 @@ class Cart {
   }
 
   _addEventHandlers() {
-    const $cartMenu = $('.basket-menu');
+    const $cartMenu = $('.cart__menu');
     $(this.container)
       .mousemove(() => $cartMenu.fadeIn())
       .mouseleave(() => $cartMenu.delay(500).fadeOut());
@@ -73,7 +73,7 @@ class Cart {
   }
 
   _showCartProducts() {
-    const $cartMenu = $('.basket-menu');
+    const $cartMenu = $('.cart__menu');
 
   }
 
@@ -117,7 +117,7 @@ class Cart {
   }
 
   _renderItemMenuCart(product) {
-    const $container = this._getMainItemContainer('basket__card cart-item-wrapper', product.id_product);
+    const $container = this._getMainItemContainer('cart__card cart-item-wrapper', product.id_product);
 
     const $img = this._getImageElement(product);
     $img.addClass('photo-product');
@@ -126,7 +126,7 @@ class Cart {
     $productInfo
       .append(this._getParagraphElement("product-name for-cart-menu", product.product_name))
       .append(this._getProductRatingElement().addClass('for-cart-menu'))
-      .append(this._getDivElement("basket__product-total")
+      .append(this._getDivElement("cart__product-total")
         .append(this._getSpanElement("product-quantity", product.quantity))
         .append(`<span> x </span>`)
         .append(this._getSpanElement("product-price", `&#36;${product.price}`)));
@@ -174,7 +174,7 @@ class Cart {
   }
 
   _renderSum() {
-    $('.cart-quantity').text(this.countGoods);
+    $('.cart__quantity').text(this.countGoods);
     $('.cart-total-sum').text(`$${this.amount}`);
   }
 
@@ -189,7 +189,7 @@ class Cart {
   }
 
   // _hideCartProducts() {
-  //   $('.basket-menu').addClass('hidden');
+  //   $('.cart__menu').addClass('hidden');
   // }
 
   addProduct(evt) {
@@ -200,6 +200,7 @@ class Cart {
     let find = this._getCartItem(productId);
     if (find) {
       this._changeQuantity(find, find.quantity + 1);
+      this._showMessage(`Количество товара ${find.product_name} увеличено`);
     } else {
       let product = {
         id_product: productId,
@@ -215,8 +216,13 @@ class Cart {
       this._renderItem(product);
       this.amount += product.price;
       this.countGoods += product.quantity;
+      this._showMessage(`Товар ${product.product_name} успешно добавлен в корзину`);
     }
     this._renderSum();
+  }
+
+  _showMessage(msg) {
+    $('.cart__add-message').text(msg).fadeIn('slow').delay(3000).fadeOut('slow');
   }
 
   _getItemWrapper(element) {
