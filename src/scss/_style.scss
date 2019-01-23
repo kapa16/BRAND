@@ -65,6 +65,9 @@
     &:hover {
         box-shadow: 0 0 8px $colorWhite;
     }
+    &:active {
+        box-shadow: 0 0 2px $colorWhite;
+    }
 }
 
 .product-card {

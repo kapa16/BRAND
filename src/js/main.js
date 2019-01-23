@@ -23,7 +23,7 @@ $(document).ready(() => {
   $logoMenu
     .fadeOut()
     .mouseleave(() => $logoMenu.fadeOut());
-  $('.logo-brand')
+  $('.header')
     .mousemove(() => $logoMenu.fadeIn());
 
   //Подменю логотипа
@@ -54,6 +54,8 @@ $(document).ready(() => {
   //sidebar
   const accordion = new Accordion('.sidebar');
 });
+
+
 
 
 //--------------------Старый код, потом изменю ----------------------------------------------
