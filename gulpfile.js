@@ -24,7 +24,7 @@ const path = {
   },
   src: {
     html: 'src/*.html',
-    js: 'src/js/main.js',//**/*.js',
+    js: ['src/js/main.js', 'src/js/review.js'],//**/*.js',
     json: 'src/json/*.json',
     style: 'src/scss/*.+(scss|sass)',
     img: 'src/img/**/*.*',

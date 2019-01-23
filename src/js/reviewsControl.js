@@ -1,12 +1,10 @@
-class CommentsControl {
-  constructor(source, container = '#comments-container', form = '#comment-form') {
+class ReviewsControl {
+  constructor(source, container = '#reviews-container', form = '#review-form') {
     this.source = source;
     this.container = container;
     this.form = form;
-    this.comments = [];
-
+    this.reviews = [];
     this._init();
-
   }
 
   _init() {
@@ -14,9 +12,9 @@ class CommentsControl {
     fetch(this.source)
       .then(result => result.json())
       .then(data => {
-        for (const comment of data) {
-          this.comments.push(comment);
-          this._renderComment(comment)
+        for (const review of data) {
+          this.reviews.push(review);
+          this._renderReview(review)
         }
       })
   }
@@ -27,9 +25,9 @@ class CommentsControl {
     $labelUser.append($userId);
 
     const $text = $('<textarea/>', {
-      id: 'commentText',
+      id: 'reviewText',
       class: "form-elements",
-      name: "comment",
+      name: "review",
       cols: "30",
       rows: "10",
       placeholder: "Напишите отзыв"
@@ -43,72 +41,87 @@ class CommentsControl {
       .submit(evt => this._onFormSubmit(evt));
   }
 
-  _renderComment(comment) {
-    const $commentWrap = $(`<div class="comment" data-id="${comment.id}"></div>`);
-    const $userName = $(`<p class="comment-user">${comment.author}</p>`);
-    const $top = $('<div class="comment-top"></div>');
-    $top.append($userName);
+  _renderReview(review) {
+    const $reviewWrap = $(`<div class="review" data-id="${review.id}"></div>`);
+    const $reviewRating = this._getReviewRatingElement();
 
-    if (comment.approved) {
-      $commentWrap.addClass('approved');
-    } else {
-      const $approveBtn = $(`<button class="btn" data-id="${comment.id}">Одобрить</button>`);
-      $approveBtn.click(evt => this._onApproveClick(evt));
-      $top.append($approveBtn);
-    }
-    const $deleteBtn = $(`<button class="btn" data-id="${comment.id}">X</button>`);
+    const $userName = $(`<p class="review__user  brand-style">${review.author}</p>`);
+    const $reviewText = $(`<p class="review__text">${review.text}</p>`);
+    const $content = $('<div class="review__content"></div>');
+    $content
+      .append($userName)
+      .append($reviewText);
+
+    const $control = $('<div class="review__control"></div>');
+
+    const $deleteBtn = $(`<div class="fas fa-times-circle delete-product" data-id="${review.id}"></div>`);
     $deleteBtn.click(evt => this._onDeleteClick(evt));
-    $top.append($deleteBtn);
+    $control.append($deleteBtn);
 
-    const $commentText = $(`<p class="comment-text">${comment.text}</p>`);
+    if (review.approved) {
+      $reviewWrap.addClass('approved');
+    } else {
+      const $approveBtn = $(`<div class="button-black review__btn" data-id="${review.id}">Approve</div>`);
+      $approveBtn.click(evt => this._onApproveClick(evt));
+      $control.append($approveBtn);
+    }
 
-    $commentWrap
-      .append($top)
-      .append($commentText)
+    $reviewWrap
+      .append($reviewRating)
+      .append($content)
+      .append($control)
       .prependTo($(this.container));
   }
 
-  _getCommentWrap(targetEl) {
-    return $(targetEl)
-      .closest('.comment');
+  _getReviewRatingElement() {
+    const $reviewRating = $('<div class="review__rating"></div>');
+    for (let i = 0; i < 5; i++) {
+      $reviewRating.append('<i class="fas fa-star rating-star"></i>');
+    }
+    return $reviewRating;
   }
 
-  _findComment(id) {
-    for (const comment of this.comments) {
-      if (comment.id === +id) {
-        return comment;
+  _getReviewWrap(targetEl) {
+    return $(targetEl)
+      .closest('.review');
+  }
+
+  _findReview(id) {
+    for (const review of this.reviews) {
+      if (review.id === +id) {
+        return review;
       }
     }
   }
 
   _onApproveClick(evt) {
-    this._getCommentWrap(evt.target).addClass('approved')
-    const commentId = evt.target.dataset.id;
+    this._getReviewWrap(evt.target).addClass('approved')
+    const reviewId = evt.target.dataset.id;
 
-    this._findComment(commentId).approved = true;
+    this._findReview(reviewId).approved = true;
 
     $(evt.target).remove();
   }
 
   _onDeleteClick(evt) {
-    const comment = this._findComment(evt.target.dataset.id);
-    this.comments.splice(this.comments.indexOf(comment), 1);
-    this._getCommentWrap(evt.target).remove();
+    const review = this._findReview(evt.target.dataset.id);
+    this.reviews.splice(this.reviews.indexOf(review), 1);
+    this._getReviewWrap(evt.target).remove();
   }
 
-  _getLastCommentId() {
-    const ids = this.comments.map(obj => obj.id);
+  _getLastReviewId() {
+    const ids = this.reviews.map(obj => obj.id);
     return Math.max(...ids) + 1;
   }
 
-  _addComment() {
-    const newComment = {
-      id: this._getLastCommentId(),
+  _addReview() {
+    const newreview = {
+      id: this._getLastReviewId(),
       author: $('#userName').val(),
-      text: $('#commentText').val()
+      text: $('#reviewText').val()
     };
-    this.comments.push(newComment);
-    this._renderComment(newComment);
+    this.reviews.push(newreview);
+    this._renderReview(newreview);
   }
 
   _onFormSubmit(evt) {
@@ -116,13 +129,13 @@ class CommentsControl {
     if (!this.validateForm()) {
       alert('Необходимо заполнить форму');
     }
-    this._addComment();
+    this._addReview();
     $('#userName').val('');
-    $('#commentText').val('');
+    $('#reviewText').val('');
   }
 
   validateForm() {
-    return this._checkField('#userName') && this._checkField('#commentText');
+    return this._checkField('#userName') && this._checkField('#reviewText');
   }
 
   _checkField(selector) {
