@@ -1,3 +1,16 @@
-//= reviewsControl.js
+//= ReviewsControl.js
+//= Carousel.js
+//= SelectColor.js
 
-const review = new ReviewsControl('json/reviews.json');
+$(document).ready(() => {
+  const reviews = new ReviewsControl('json/reviews.json');
+
+  const carousel = new Carousel();
+
+  const selectColor = new SelectColor([
+    {red: 'red'},
+    {blue: 'blue'},
+    {green: '#98FB98'}
+  ]);
+
+});

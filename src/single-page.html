@@ -26,9 +26,24 @@
 //= src_html/breadcramb.html
 
 <div data-id="456" data-name="Mango People T-shirt" data-price="52">
-    <div class="image-slide">
-        <div class="container slider-photos">
-            <img src="img/productsingle.jpg" alt="product">
+    <div class="carousel">
+        <div class="container carousel__photos">
+            <div class="carousel__block">
+                <img src="img/productsingle.jpg" alt="product">
+            </div>
+            <div class="carousel__block hidden">
+                <img src="img/productsingle1.jpg" alt="product">
+            </div>
+            <div class="carousel__block hidden">
+                <img src="img/productsingle2.jpg" alt="product">
+            </div>
+        </div>
+
+        <div href="#" class="carousel__prev carousel__control">
+            <span class="carousel__icon_prev carousel__icon"></span>
+        </div>
+        <div href="#" class="carousel__next carousel__control">
+            <span class="carousel__icon_next carousel__icon"></span>
         </div>
     </div>
 
@@ -67,21 +82,22 @@
             <div class="product-options">
                 <div class="product-option">
                     <label class="single-product-sort-label" for="color">CHOOSE COLOR</label>
-                    <span class="select-wrap">
-                        <span class="color-example color-red"></span>
+                    <span class="select-wrap" id="color">
+                        <span class="color-example color-select"></span>
+                        <span class=""></span>
                         <i class="fas fa-angle-down icon-drop-list"></i>
-                        <select class="select-item" name="color" id="color">
-                            <option value="red">red</option>
-                            <option value="blue">blue</option>
-                            <option value="black">black</option>
-                        </select>
+<!--                        <select class="select-item" name="color" id="color">
+                            <option value="red" data-class="red"><span class="color-example color-red"></span>red</option>
+                            <option value="blue" data-class="blue">blue</option>
+                            <option value="black" data-class="black">black</option>
+                        </select>-->
                     </span>
                 </div>
                 <div class="product-option">
                     <label class="single-product-sort-label" for="size">CHOOSE SIZE</label>
                     <span class="select-wrap">
                         <i class="fas fa-angle-down icon-drop-list"></i>
-                        <select class="select-item" name="size" id="size">
+                        <select class="select__item" name="size" id="size">
                             <option value="XXL">XXL</option>
                             <option value="XL">XL</option>
                             <option value="L">L</option>
@@ -95,7 +111,7 @@
                 <div class="product-option">
                     <label class="single-product-sort-label" for="quantity">QUANTITY</label>
                     <span class="select-wrap">
-                        <input class="select-item" type="number" name="quantity" id="quantity">
+                        <input class="select__item" type="number" name="quantity" id="quantity">
                     </span>
                 </div>
             </div>
@@ -234,7 +250,7 @@
 
 //= src_html/footer.html
 
-<script src="js/review.min.js"></script>
+<script src="js/single-page.min.js"></script>
 </body>
 
 </html>

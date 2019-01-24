@@ -1,5 +1,5 @@
 class ReviewsControl {
-  constructor(source, container = '#reviews-container', form = '#review-form') {
+  constructor(source, container = '#reviews-container', form = '#singlePage-form') {
     this.source = source;
     this.container = container;
     this.form = form;
@@ -27,7 +27,7 @@ class ReviewsControl {
     const $text = $('<textarea/>', {
       id: 'reviewText',
       class: "form-elements",
-      name: "review",
+      name: "singlePage",
       cols: "30",
       rows: "10",
       placeholder: "Напишите отзыв"
@@ -83,7 +83,7 @@ class ReviewsControl {
 
   _getReviewWrap(targetEl) {
     return $(targetEl)
-      .closest('.review');
+      .closest('.singlePage');
   }
 
   _findReview(id) {

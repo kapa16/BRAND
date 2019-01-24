@@ -1,13 +1,16 @@
 
-.image-slide 
+.carousel
     border: 1px solid $colorBorderForms
     background-color: #f7f7f7
     padding-bottom: 90px
 
-.slider-photos 
-    display: flex
-    justify-content: center
-    padding-top: 10px
+    &__photos
+        display: flex
+        justify-content: center
+        padding-top: 10px
+
+    &__block img
+        max-height: 675px
 
 .product-description 
     position: relative
@@ -94,7 +97,7 @@
     justify-content: space-between
     margin-bottom: 28px
 
-.single-product-sort-label 
+.single-product-sort-label
     height: auto
     color: #2f2f2f
     font-size: 14px
@@ -104,38 +107,48 @@
     padding: 0
     margin: 0
 
-.select-wrap 
-    position: relative
-    display: flex
-    align-items: center
-    margin: 16px 0
-    width: 144px
-    height: 35px
-    border: 1px solid $colorBorderForms
-    background-color: $colorWhite
-
-.select-item 
-    width: 100%
-    border: none
-    position: relative
-    padding: 0 25px 0 11px
-    background: transparent
-
-.select-item:hover 
-    cursor: pointer
-
-#color 
+#color
     text-transform: capitalize
     padding: 0 11px 0 39px
 
-.color-example 
+.color-example
     display: block
     width: 12px
     height: 12px
     @include position_absolute_top_left(11px, 14px)
 
-.color-red 
+.color-select
     background: $colorTextRed
+
+.select
+    &-wrap
+        position: relative
+        display: flex
+        align-items: center
+        margin: 16px 0
+        width: 144px
+        height: 35px
+        border: 1px solid $colorBorderForms
+        background-color: $colorWhite
+
+    &__items
+        position: absolute
+        top: 35px
+        left: 0
+        right: 0
+        border: 1px solid $colorBorderForms
+        background-color: $colorWhite
+
+    &__item
+        width: 100%
+        border: none
+        position: relative
+        padding: 8px 0 8px 40px
+        background: transparent
+        box-sizing: border-box
+
+    &__item:hover
+        cursor: pointer
 
 #cart-btn 
     fill: $colorBrand

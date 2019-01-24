@@ -24,7 +24,7 @@ const path = {
   },
   src: {
     html: 'src/*.html',
-    js: ['src/js/main.js', 'src/js/review.js'],//**/*.js',
+    js: ['src/js/main.js', 'src/js/single-page.js'],//**/*.js',
     json: 'src/json/*.json',
     style: 'src/scss/*.+(scss|sass)',
     img: 'src/img/**/*.*',
@@ -108,11 +108,11 @@ gulp.task('js', () => {
   //.pipe(plumber()) // для отслеживания ошибок
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     .pipe(sourcemaps.init()) //инициализируем sourcemap
-    .pipe(minifyJs()) //минификация
-    .pipe(sourcemaps.write('./')) //  записываем sourcemap
+    //.pipe(minifyJs()) //минификация
     .pipe(rename({
       suffix: '.min'
     }))
+    .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.dist.js)) // положим готовый файл
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер
 });
