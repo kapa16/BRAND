@@ -6,6 +6,16 @@
 
 $(document).ready(() => {
 
+  $(window).scroll(() => {
+    if ($(this).scrollTop() > 40) {
+      $('.header').height(60);
+    } else if ($(this).scrollTop() === 0) {
+      $('.header').height(100);
+    } else {
+      $('.header').height(100 - $(this).scrollTop());
+    }
+  });
+
   // Корзина
   let cart = new Cart('json/getCart.json');
 

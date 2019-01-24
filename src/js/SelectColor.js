@@ -14,14 +14,14 @@ class SelectColor {
       $(this.containerId).click(() => this.$listWrap.toggle());
       $(this.containerId).on('click', '.select__item', evt => this._onChooseItem(evt))
     }
+    this._createMainElement();
     this._setChosenItem();
   }
 
-  _setChosenItem() {
+  _createMainElement() {
     $(this.containerId)
-      .append($('<span class="color-example color-select"></span>')
-        .css('background', this.currenColor.color))
-      .append(`<span>${this.currenColor.name}</span>`)
+      .append($('<span class="color-example color-select"></span>'))
+      .append(`<span class="color-name"></span>`)
       .append('<i class="fas fa-angle-down icon-drop-list"></i>');
   }
 
@@ -36,6 +36,15 @@ class SelectColor {
     this.$listWrap
       .hide()
       .appendTo($(this.containerId));
+  }
+
+  _setChosenItem() {
+    $(this.containerId)
+      .find('.color-select')
+        .css('background', this.currenColor.color);
+    $(this.containerId)
+      .find('.color-name')
+      .text(this.currenColor.name);
   }
 
   _onChooseItem(evt){
