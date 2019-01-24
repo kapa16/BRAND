@@ -21,6 +21,6 @@ class SelectColor {
       .hide()
       .appendTo($(this.containerId));
 
-    $(this.containerId).find('.color-select').after(`<span></span>`);
+    $(this.containerId).find('.color-select').after(`<span>Red</span>`);
   }
 }
