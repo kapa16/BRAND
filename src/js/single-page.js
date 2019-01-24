@@ -8,9 +8,9 @@ $(document).ready(() => {
   const carousel = new Carousel();
 
   const selectColor = new SelectColor([
-    {red: 'red'},
-    {blue: 'blue'},
-    {green: '#98FB98'}
+    {name: 'red', color: 'red'},
+    {name: 'blue', color: 'blue'},
+    {name: 'green', color: '#98FB98'}
   ]);
 
 });
