@@ -3,24 +3,84 @@
     "id": 1,
     "author": "Ann",
     "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "rating": 4,
     "approved": false
   },
   {
     "id": 2,
     "author": "Ivan",
     "text": "Fugit illum, inventore officiis quidem repellendus suscipit voluptas?",
+    "rating": 5,
     "approved": false
   },
   {
     "id": 3,
     "author": "Marta",
     "text": "Cum dolor eum harum magnam, omnis porro reprehenderit veritatis vitae voluptatem.",
+    "rating": 3,
     "approved": false
   },
   {
     "id": 4,
     "author": "Peter",
     "text": "Aperiam cum, eaque enim fugiat minus quae repellendus similique soluta suscipit tempora.",
+    "rating": 3,
+    "approved": false
+  },
+  {
+    "id": 5,
+    "author": "Ann",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "rating": 4,
+    "approved": false
+  },
+  {
+    "id": 6,
+    "author": "Ivan",
+    "text": "Fugit illum, inventore officiis quidem repellendus suscipit voluptas?",
+    "rating": 4,
+    "approved": false
+  },
+  {
+    "id": 7,
+    "author": "Marta",
+    "text": "Cum dolor eum harum magnam, omnis porro reprehenderit veritatis vitae voluptatem.",
+    "rating": 5,
+    "approved": false
+  },
+  {
+    "id": 8,
+    "author": "Peter",
+    "text": "Aperiam cum, eaque enim fugiat minus quae repellendus similique soluta suscipit tempora.",
+    "rating": 4,
+    "approved": false
+  },
+  {
+    "id": 9,
+    "author": "Ann",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "rating": 4,
+    "approved": false
+  },
+  {
+    "id": 10,
+    "author": "Ivan",
+    "text": "Fugit illum, inventore officiis quidem repellendus suscipit voluptas?",
+    "rating": 4,
+    "approved": false
+  },
+  {
+    "id": 11,
+    "author": "Marta",
+    "text": "Cum dolor eum harum magnam, omnis porro reprehenderit veritatis vitae voluptatem.",
+    "rating": 5,
+    "approved": false
+  },
+  {
+    "id": 12,
+    "author": "Peter",
+    "text": "Aperiam cum, eaque enim fugiat minus quae repellendus similique soluta suscipit tempora.",
+    "rating": 4,
     "approved": false
   }
 ]

@@ -1,9 +1,11 @@
 class ReviewsControl {
-  constructor(source, container = '#reviews-container', form = '#singlePage-form') {
+  constructor(source, countReviewOnPage = 5, container = '#reviews-container', form = '#singlePage-form') {
     this.source = source;
     this.container = container;
     this.form = form;
     this.reviews = [];
+    this.countReviewOnPage = countReviewOnPage;
+    this.pagination = Object;
     this._init();
   }
 
@@ -14,9 +16,21 @@ class ReviewsControl {
       .then(data => {
         for (const review of data) {
           this.reviews.push(review);
-          this._renderReview(review)
         }
-      })
+        if (this.countReviewOnPage) {
+          this.pagination = new Pagination(this._getCountReviewParts(), this.container);
+          $(this.container)
+            .on('click', this.pagination.paginationItemSelector, evt => {
+              this.pagination.changePagination(evt);
+              this._renderReviews();
+            });
+        }
+        this._renderReviews();
+      });
+  }
+
+  _getCountReviewParts() {
+    return Math.ceil(this.reviews.length / this.countReviewOnPage);
   }
 
   _renderForm() {
@@ -39,6 +53,24 @@ class ReviewsControl {
       .append($text)
       .append($btn)
       .submit(evt => this._onFormSubmit(evt));
+  }
+
+  _renderReviews() {
+    $(this.container).text('');
+    let reviewsToShow = [];
+    if (this.countReviewOnPage) {
+      const firstReviewToShow = this.pagination.currentPart * this.countReviewOnPage;
+      let lastReviewToShow = firstReviewToShow + this.countReviewOnPage;
+      reviewsToShow = this.reviews.slice(firstReviewToShow, lastReviewToShow);
+    } else {
+      reviewsToShow = this.reviews.slice(0);
+    }
+    reviewsToShow.forEach(review => this._renderReview(review));
+
+    if (this._getCountReviewParts()) {
+      this.pagination.countParts = this._getCountReviewParts();
+      this.pagination.render();
+    }
   }
 
   _renderReview(review) {
@@ -106,7 +138,8 @@ class ReviewsControl {
   _onDeleteClick(evt) {
     const review = this._findReview(evt.target.dataset.id);
     this.reviews.splice(this.reviews.indexOf(review), 1);
-    this._getReviewWrap(evt.target).remove();
+    this._renderReviews();
+    // this._getReviewWrap(evt.target).remove();
   }
 
   _getLastReviewId() {
@@ -115,13 +148,13 @@ class ReviewsControl {
   }
 
   _addReview() {
-    const newreview = {
+    const newReview = {
       id: this._getLastReviewId(),
       author: $('#userName').val(),
       text: $('#reviewText').val()
     };
-    this.reviews.push(newreview);
-    this._renderReview(newreview);
+    this.reviews.push(newReview);
+    this._renderReviews();
   }
 
   _onFormSubmit(evt) {

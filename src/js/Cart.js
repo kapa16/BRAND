@@ -267,7 +267,7 @@ class Cart {
   clearCart(evt) {
     evt.preventDefault();
     while (this.cartItems.length) {
-      this._changeQuantity(this.cartItems[this.countGoods - 1], 0);
+      this._changeQuantity(this.cartItems[this.cartItems.length - 1], 0);
     }
   }
 }

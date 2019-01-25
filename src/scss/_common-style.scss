@@ -89,3 +89,62 @@ body {
   margin-left: -19px;
   margin-top: -8px;
 }
+
+//===================== Pagination ====================
+
+.pagination {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  border: 1px solid $colorBorderSidebar;
+
+  &-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-link {
+    color: #c4c4c4;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+
+    &-prev,
+    &-next {
+      position: relative;
+      padding-left: 15px;
+      color: #aaaaaa;
+    }
+
+    &-prev:before,
+    &-next:before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 700;
+        color: #aaaaaa;
+        font-size: 18px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+      }
+
+    &-prev:before {
+      content: "\f104";
+      transform: translateX(-60%);
+    }
+
+    &-next:before {
+      content: "\f105";
+      transform: translateX(-40%);
+    }
+
+    &-dot {
+      padding: 10px 0;
+    }
+
+    &-prev:hover,
+    &-next:hover,
+    &-active {
+      color: $colorTextRed;
+    }
+  }
+}

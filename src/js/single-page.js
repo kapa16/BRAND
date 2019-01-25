@@ -1,6 +1,8 @@
 //= ReviewsControl.js
 //= Carousel.js
 //= SelectColor.js
+//= Pagination.js
+
 
 $(document).ready(() => {
   const reviews = new ReviewsControl('json/reviews.json');

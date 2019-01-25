@@ -107,12 +107,12 @@ gulp.task('js', () => {
   return gulp.src(path.src.js) // получим файл main.js
   //.pipe(plumber()) // для отслеживания ошибок
     .pipe(rigger()) // импортируем все указанные файлы в main.js
-    .pipe(sourcemaps.init()) //инициализируем sourcemap
-    //.pipe(minifyJs()) //минификация
+    // .pipe(sourcemaps.init()) //инициализируем sourcemap
+    .pipe(minifyJs()) //минификация
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(sourcemaps.write('./')) //  записываем sourcemap
+    // .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.dist.js)) // положим готовый файл
     .pipe(webServer.reload({stream: true})); // перезагрузим сервер
 });
@@ -121,7 +121,7 @@ gulp.task('js', () => {
 gulp.task('js:babel', () => {
   return gulp.src(path.src.js) // получим файл main.js
   //.pipe(plumber()) // для отслеживания ошибок
-    .pipe(sourcemaps.init()) //инициализируем sourcemap
+  //   .pipe(sourcemaps.init()) //инициализируем sourcemap
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     .pipe(babel({
       presets: ['@babel/env']
@@ -130,7 +130,7 @@ gulp.task('js:babel', () => {
     .pipe(rename({
       suffix: '.es5'
     }))
-    .pipe(sourcemaps.write('./')) //  записываем sourcemap
+    // .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.dist.js)); // положим готовый файл
 });
 
