@@ -108,7 +108,7 @@ gulp.task('js', () => {
   //.pipe(plumber()) // для отслеживания ошибок
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     // .pipe(sourcemaps.init()) //инициализируем sourcemap
-    .pipe(minifyJs()) //минификация
+    //.pipe(minifyJs()) //минификация
     .pipe(rename({
       suffix: '.min'
     }))
@@ -157,8 +157,8 @@ gulp.task('webFonts', async () => {
 });
 
 // обработка картинок
-gulp.task('image', async () => {
-  gulp.src(path.src.img) // путь с исходниками картинок
+gulp.task('image', () => {
+  return gulp.src(path.src.img) // путь с исходниками картинок
     .pipe(imageMin())
     .pipe(gulp.dest(path.dist.img)); // выгрузка готовых файлов
 });

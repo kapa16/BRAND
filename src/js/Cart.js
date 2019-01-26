@@ -69,7 +69,6 @@ class Cart {
       .mouseleave(() => {
         $cartMenu.fadeOut()
       });
-    // $(this.container).mouseenter(() => this._showCartProducts());
   }
 
   _showCartProducts() {
@@ -188,25 +187,27 @@ class Cart {
     return this.cartItems.find(product => product.id_product === id);
   }
 
-  // _hideCartProducts() {
-  //   $('.cart__menu').addClass('hidden');
-  // }
-
   addProduct(evt) {
     evt.preventDefault();
     const $productContainer = $(evt.target).closest('[data-id]');
     const $img = $productContainer.find('img')[0];
+    const $inputQuantity = $productContainer.find('#quantity')[0];
+    let addQuantity = 1;
+    if ($inputQuantity) {
+      addQuantity = +$inputQuantity.value;
+      $inputQuantity.value = 1;
+    }
     let productId = +$productContainer.data('id');
     let find = this._getCartItem(productId);
     if (find) {
-      this._changeQuantity(find, find.quantity + 1);
+      this._changeQuantity(find, find.quantity + addQuantity);
       this._showMessage(`Количество товара ${find.product_name} увеличено`);
     } else {
       let product = {
         id_product: productId,
         product_name: $productContainer.data('name'),
         price: $productContainer.data('price'),
-        quantity: 1,
+        quantity: addQuantity,
         img_src: $img.src,
         img_alt: $img.alt,
         color: $productContainer.data('color'),
