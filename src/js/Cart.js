@@ -1,4 +1,9 @@
 class Cart {
+  /**
+   * Конструктор класса корзины
+   * @param {String} source - путь к файлу для загрузки корзины
+   * @param {String} container - селектор класса контейнера, содержащего корзину
+   */
   constructor(source, container = '.cart__container') {
     this.source = source;
     this.container = container;
@@ -8,6 +13,10 @@ class Cart {
     this._init();
   }
 
+  /**
+   * Инициализация корзины
+   * @private
+   */
   _init() {
     this._render();
     this._addEventHandlers();
@@ -24,6 +33,10 @@ class Cart {
       })
   }
 
+  /**
+   * Создает элементы корзины и дополнительных данных
+   * @private
+   */
   _render() {
     let $cartItemsDiv = $('<div/>', {
       class: 'cart__menu hidden'
@@ -58,6 +71,10 @@ class Cart {
       .appendTo($(this.container));
   }
 
+  /**
+   * Добавляет слушатели событий для показа / скрытия состава корзины
+   * @private
+   */
   _addEventHandlers() {
     const $cartMenu = $('.cart__menu');
     $(this.container)
@@ -71,11 +88,13 @@ class Cart {
       });
   }
 
-  _showCartProducts() {
-    const $cartMenu = $('.cart__menu');
-
-  }
-
+  /**
+   * Создает элемент контейнера для продукта корзины
+   * @param {String} className - имя класса
+   * @param {String} id - id товара
+   * @returns {jQuery.fn.init|jQuery|HTMLElement} - jquery - элемент корзины
+   * @private
+   */
   _getMainItemContainer(className, id) {
     return $('<div/>', {
       class: className,
@@ -83,6 +102,12 @@ class Cart {
     });
   }
 
+  /**
+   * Создает элемент изображения товара в корзине
+   * @param {Object} product - объект товара из массива корзины
+   * @returns {jQuery.fn.init|jQuery|HTMLElement} - jquery - элемент изображения
+   * @private
+   */
   _getImageElement(product) {
     return $('<img/>', {
       src: product.img_src,
@@ -90,6 +115,11 @@ class Cart {
     });
   }
 
+  /**
+   * Создает элемент рейтинга товара
+   * @returns {jQuery.fn.init|jQuery|HTMLElement} - jquery - элемент рейтинга
+   * @private
+   */
   _getProductRatingElement() {
     const $productRating = $('<div class="product-rating"></div>');
     for (let i = 0; i < 5; i++) {
@@ -98,10 +128,24 @@ class Cart {
     return $productRating;
   }
 
+  /**
+   * создает элемент div с заданным классом и содержимым
+   * @param {String} className - имя класса
+   * @param {String} text - содержание элемента
+   * @returns {jQuery.fn.init|jQuery|HTMLElement} - jquery - элемент div
+   * @private
+   */
   _getDivElement(className, text = '') {
     return $(`<div class="${className}">${text}</div>`);
   }
 
+  /**
+   * создает элемент <p> с заданным классом и содержимым
+   * @param {String} className - имя класса
+   * @param {String} text - содержание элемента
+   * @returns {jQuery.fn.init|jQuery|HTMLElement} - jquery - элемент p
+   * @private
+   */
   _getParagraphElement(className, text) {
     return $(`<p class="${className}">${text}</p>`);
   }
@@ -115,6 +159,11 @@ class Cart {
     this._renderItemPageCart(product);
   }
 
+  /**
+   * Выводит в корзину меню продукт
+   * @param {Object} product - продукт из массива корзины
+   * @private
+   */
   _renderItemMenuCart(product) {
     const $container = this._getMainItemContainer('cart__card cart-item-wrapper', product.id_product);
 
@@ -138,6 +187,11 @@ class Cart {
       .appendTo($('.cart-items-wrap'));
   }
 
+  /**
+   * Выводит на странице корзины продукт
+   * @param {Object} product - продукт из массива корзины
+   * @private
+   */
   _renderItemPageCart(product) {
     const $container = this._getMainItemContainer('cart-table-row cart-item-wrapper', product.id_product);
 
@@ -172,11 +226,20 @@ class Cart {
       .appendTo($('.cart-table'));
   }
 
+  /**
+   * Обновляет общие суммы
+   * @private
+   */
   _renderSum() {
     $('.cart__quantity').text(this.countGoods);
     $('.cart-total-sum').text(`$${this.amount}`);
   }
 
+  /**
+   * Обновляет инормацию по товару
+   * @param {Object} product - продукт из массива корзины
+   * @private
+   */
   _updateCart(product) {
     let $container = $(`div[data-product="${product.id_product}"]`);
     $container.find('.product-quantity').text(product.quantity);
@@ -187,6 +250,10 @@ class Cart {
     return this.cartItems.find(product => product.id_product === id);
   }
 
+  /**
+   * Добавляет товар в корзину
+   * @param {Event} evt - событие нажатия на кнопку добавления товара
+   */
   addProduct(evt) {
     evt.preventDefault();
     const $productContainer = $(evt.target).closest('[data-id]');

@@ -24,7 +24,7 @@ const path = {
   },
   src: {
     html: 'src/*.html',
-    js: ['src/js/main.js', 'src/js/single-page.js'],//**/*.js',
+    js: ['src/js/main.js', 'src/js/single-page.js', 'src/js/slider.js'],//**/*.js',
     json: 'src/json/*.json',
     style: 'src/scss/*.+(scss|sass)',
     img: 'src/img/**/*.*',
@@ -78,7 +78,7 @@ gulp.task('webServer', () => {
 // сбор html
 gulp.task('html', () => {
   return gulp.src(path.src.html) // выбор всех html файлов по указанному пути
-  //.pipe(plumber()) // отслеживание ошибок
+    .pipe(plumber()) // отслеживание ошибок
     .pipe(rigger()) // импорт вложений
     .pipe(htmlMin({
       collapseWhitespace: true
@@ -105,10 +105,10 @@ gulp.task('css', () => {
 // сбор js
 gulp.task('js', () => {
   return gulp.src(path.src.js) // получим файл main.js
-  //.pipe(plumber()) // для отслеживания ошибок
+    .pipe(plumber()) // для отслеживания ошибок
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     // .pipe(sourcemaps.init()) //инициализируем sourcemap
-    //.pipe(minifyJs()) //минификация
+    .pipe(minifyJs()) //минификация
     .pipe(rename({
       suffix: '.min'
     }))
@@ -120,8 +120,8 @@ gulp.task('js', () => {
 // babel
 gulp.task('js:babel', () => {
   return gulp.src(path.src.js) // получим файл main.js
-  //.pipe(plumber()) // для отслеживания ошибок
-  //   .pipe(sourcemaps.init()) //инициализируем sourcemap
+    .pipe(plumber()) // для отслеживания ошибок
+    .pipe(sourcemaps.init()) //инициализируем sourcemap
     .pipe(rigger()) // импортируем все указанные файлы в main.js
     .pipe(babel({
       presets: ['@babel/env']
@@ -130,7 +130,7 @@ gulp.task('js:babel', () => {
     .pipe(rename({
       suffix: '.es5'
     }))
-    // .pipe(sourcemaps.write('./')) //  записываем sourcemap
+    .pipe(sourcemaps.write('./')) //  записываем sourcemap
     .pipe(gulp.dest(path.dist.js)); // положим готовый файл
 });
 

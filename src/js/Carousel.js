@@ -1,17 +1,34 @@
 class Carousel {
-  constructor(containerClass = '.carousel') {
-    this.containerClass = containerClass;
+  /**
+   * Конструктор класса карусели
+   * @param {String} containerSelector - строка с селектором класса контейнера
+   */
+  constructor(containerSelector = '.carousel') {
+    this.containerSelector = containerSelector;
     this._init();
   }
 
+  /**
+   * Инициализация
+   * @private
+   */
   _init() {
     this._addHandlers();
   }
 
+  /**
+   * Добавление слушателя событий нажатия на кнопки смены изображений
+   * @private
+   */
   _addHandlers() {
-    $(this.containerClass).on('click', '.carousel__control', evt => this._onControlClick(evt))
+    $(this.containerSelector).on('click', '.carousel__control', evt => this._onControlClick(evt))
   }
 
+  /**
+   * Обработка нажатий на кнопки смены изображений
+   * @param {Event} evt - событие нажатия на кнопку
+   * @private
+   */
   _onControlClick(evt) {
     let direction = 1;
     if ($(evt.target).closest('.carousel__control').hasClass('carousel__prev')) {
@@ -20,6 +37,11 @@ class Carousel {
     this._changeSlide(direction);
   }
 
+  /**
+   * Меняет изображение в переданном направлении
+   * @param {integer} direction - направление смены изображения
+   * @private
+   */
   _changeSlide(direction) {
     const $currentElement = $('.carousel__block:visible');
     let $nextElement = $currentElement;

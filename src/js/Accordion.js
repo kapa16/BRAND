@@ -4,10 +4,19 @@ class Accordion {
     this._init();
   }
 
+  /**
+   * Инициализация - добавляем слушатель событий
+   * @private
+   */
   _init(){
     $(this.containerClass).find('.sidebar-title').click(evt => this._toggleMenu(evt));
   }
 
+  /**
+   * Открытие / скрытие меню
+   * @param {Event} evt событие нажатия на заголовок меню
+   * @private
+   */
   _toggleMenu(evt) {
     $('.menu-open').removeClass('menu-open');
 

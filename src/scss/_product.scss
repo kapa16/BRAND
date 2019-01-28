@@ -192,14 +192,13 @@
 }
 
 .products-filter-bar {
-    @include position_absolute_top_left(0px, 31px);
-    width: 124px;
+    @include position_absolute_top_left(0px, 5px);
+    width: 270px;
     height: 6px;
     background-color: $colorBrand;
 }
 
-.products-filter-leftpoint,
-.products-filter-rightpoint {
+.products-filter-point {
     cursor: pointer;
     width: 14px;
     height: 14px;
@@ -207,12 +206,12 @@
     border-radius: 50%;
 }
 
-.products-filter-leftpoint {
-    @include position_absolute_top_left(-4px, -7px);
+.products-filter-point-left {
+    @include position_absolute_top_left(-4px, 0);
 }
 
-.products-filter-rightpoint {
-    @include position_absolute_top_left(-4px, 117px);
+.products-filter-point-right {
+    @include position_absolute_top_left(-4px, 268px);
 }
 
 .price-range {
